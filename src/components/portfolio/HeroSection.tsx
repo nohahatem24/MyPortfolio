@@ -34,20 +34,23 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
-            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-opacity duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Noha Hatem</span>
+              Hi, I'm{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+                Noha Hatem
+              </span>
             </h1>
             
-            <p className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-opacity duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+            <p className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               Creating digital experiences with purpose, impact, and heart.
             </p>
             
-            <div className={`flex flex-wrap justify-center lg:justify-start gap-3 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-opacity duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+            <div className={`flex flex-wrap justify-center lg:justify-start gap-3 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <span className="bg-white/60 dark:bg-gray-800/60 px-4 py-2 rounded-full shadow-sm backdrop-blur-sm">UI/UX Designer</span>
               <span className="bg-white/60 dark:bg-gray-800/60 px-4 py-2 rounded-full shadow-sm backdrop-blur-sm">Flutter Developer</span>
@@ -55,8 +58,8 @@ export default function HeroSection() {
               <span className="bg-white/60 dark:bg-gray-800/60 px-4 py-2 rounded-full shadow-sm backdrop-blur-sm">Creative Technologist</span>
             </div>
             
-            <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-opacity duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <Button 
                 onClick={scrollToAbout}
@@ -73,8 +76,8 @@ export default function HeroSection() {
               </Button>
             </div>
             
-            <div className={`flex justify-center lg:justify-start space-x-6 transition-opacity duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+            <div className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <a 
                 href="mailto:nohahatem.nh@gmail.com" 
@@ -103,8 +106,8 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Professional Photo */}
-          <div className={`flex justify-center lg:justify-end transition-opacity duration-1000 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+          <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
             <div className="relative">
               {/* Professional Photo Placeholder */}
