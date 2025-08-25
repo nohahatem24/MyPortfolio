@@ -6,7 +6,7 @@ I design, code, and create meaningful digital experiences by blending creativity
 
 UI/UX Designer, Flutter Developer, Graphic Designer, Creative Technologist, Software Engineer ...
 
-Sometimes you may call me Artist ! 🎨🖌
+Sometimes you might call me Artist ! 🎨🖌
 
 All fueled by a passion for building things that matter.
 
