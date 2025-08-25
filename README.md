@@ -14,7 +14,7 @@ All fueled by a passion for building things that matter.
 
 ### 📌 Want to know more? Check out my portfolio below!
 
-🌐 Portfolio: [noha-portfolio-delta-hazel-66.vercel.app](https://noha-portfolio-delta-hazel-66.vercel.app/)
+🌐 Portfolio: [Noha's Portfolio](https://noha-portfolio-delta-hazel-66.vercel.app/)
 
 ### 📬 Contact Me
 
