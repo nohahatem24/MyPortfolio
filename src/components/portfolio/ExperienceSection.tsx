@@ -97,7 +97,7 @@ export default function ExperienceSection() {
                   </div>
                   <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4 space-x-2">
                     <span>{exp.company}</span>
-                    <span>•</span>
+                    <span>|</span>
                     <span>{exp.location}</span>
                   </div>
                   <div className="space-y-3">

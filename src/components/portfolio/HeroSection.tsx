@@ -27,7 +27,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       ref={ref}
       className="min-h-screen flex items-center justify-center relative pt-16 bg-[#fffaf5] dark:bg-gray-900 transition-colors"
     >
@@ -35,67 +35,67 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
-            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
+            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
               Hi, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
                 Noha Hatem
               </span>
             </h1>
-            
-            <p className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              Creating digital experiences with purpose, impact, and heart.
+
+            <p className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+              I design, code, and create — from mobile apps to handmade art — blending creativity, empathy, and clean code to craft meaningful digital experiences.
             </p>
-            
-            <div className={`flex flex-row justify-center lg:justify-start gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm shrink-0">UI/UX Designer</span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm shrink-0">Flutter Developer</span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm shrink-0">Graphic Designer</span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm shrink-0">Creative Technologist</span>
+
+            <div className={`flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">UI/UX Designer</span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">Flutter Developer</span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">Graphic Designer</span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">Creative Technologist</span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">Software Engineer</span>
             </div>
-            
-            <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <Button 
+
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+              <Button
                 onClick={scrollToAbout}
                 className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 text-lg transform hover:scale-105 transition-transform shadow-lg"
               >
                 View My Work
               </Button>
-              <Button 
+              <Button
                 onClick={scrollToContact}
-                variant="outline" 
+                variant="outline"
                 className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 dark:hover:bg-purple-900/20 dark:border-purple-500 dark:text-purple-400 px-8 py-3 text-lg bg-transparent transform hover:scale-105 transition-transform"
               >
                 Get In Touch
               </Button>
             </div>
-            
-            <div className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-              <a 
-                href="mailto:nohahatem.nh@gmail.com" 
+
+            <div className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
                 aria-label="Email"
               >
                 <Mail className="h-6 w-6" />
               </a>
-              <a 
-                href="tel:+201554199143" 
+
+              <a
+                href="tel:+201554199143"
                 className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
                 aria-label="Phone"
               >
                 <Phone className="h-6 w-6" />
               </a>
-              <a 
-                href="https://github.com/nohahatem24" 
+              <a
+                href="https://github.com/nohahatem24"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
@@ -107,15 +107,14 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Professional Photo */}
-          <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}>
+          <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}>
             <div className="relative">
               {/* Professional Photo Placeholder */}
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 dark:from-pink-800 dark:to-purple-800 p-2 shadow-2xl">
                 <div className="w-full h-full rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm flex items-center justify-center">
                   {/* My image */}
-                  <img 
+                  <img
                     src={HeroImage}
                     alt="Noha Hatem - UI/UX Designer & Flutter Developer"
                     className="w-full h-full rounded-full object-cover"
@@ -129,7 +128,7 @@ export default function HeroSection() {
                   </div> */}
                 </div>
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-pink-500 rounded-full animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
