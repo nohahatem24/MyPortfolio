@@ -10,7 +10,9 @@ Sometimes you might call me Artist ! 🎨🖌
 
 All fueled by a passion for building things that matter.
 
-## 💡 Curious, creative, and always open to learning ⋆˙⟡
+## 💡 Curious, creative, and always open to learning 
+
+## ⟡˙⋆ “Designing with Heart, Coding with Vision” ⋆˙⟡
 
 ### 📌 Want to know more? Check out my portfolio below!
 
