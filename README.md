@@ -4,7 +4,7 @@ I design, code, and create meaningful digital experiences by blending creativity
 
 ## ⟡˙⋆ “Designing with Heart, Coding with Vision” ⋆˙⟡
 
-## 👒 I wear many hats: 
+### 👒 I wear many hats: 
 
 UI/UX Designer, Flutter Developer, Graphic Designer, Software Engineer, Creative Technologist ...
 
