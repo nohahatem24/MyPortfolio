@@ -10,9 +10,7 @@ Sometimes you may call me Artist ! 🎨🖌
 
 All fueled by a passion for building things that matter.
 
-
 ## 💡 Curious, creative, and always learning.
-
 
 ### 📌 Want to know more? Check out my portfolio below!
 
