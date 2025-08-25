@@ -6,11 +6,11 @@ I design, code, and create meaningful digital experiences by blending creativity
 
 ### 👒 I wear many hats: 
 
-    UI/UX Designer, Flutter Developer, Graphic Designer, Software Engineer, Creative Technologist ...
-
-    Sometimes you might call me Artist ! 🎨🖌
-
-    All fueled by a passion for building things that matter.
+   UI/UX Designer, Flutter Developer, Graphic Designer, Software Engineer, Creative Technologist ...
+ 
+   Sometimes you might call me Artist ! 🎨🖌
+   
+   All fueled by a passion for building things that matter.
 
 ## 💡 Curious, creative, and always open to learning 
 
