@@ -33,13 +33,12 @@ export default function HeroSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
             <h1
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               Hi, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
@@ -48,27 +47,17 @@ export default function HeroSection() {
             </h1>
 
             <p
-              className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               I design, code, and create 𓆩♡𓆪 <br />
               from mobile apps to handmade art ⋆˙⟡ <br />
               blending creativity, empathy, and clean code to craft meaningful digital experiences.
             </p>
 
-            <p
-              className={`text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 transition-all duration-1000 delay-250 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <strong>I wear many hats:</strong>
-            </p>
-
             <div
-              className={`flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
                 UI/UX Designer
@@ -88,9 +77,8 @@ export default function HeroSection() {
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               <Button
                 onClick={scrollToAbout}
@@ -108,9 +96,8 @@ export default function HeroSection() {
             </div>
 
             <div
-              className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com"
@@ -141,9 +128,8 @@ export default function HeroSection() {
             </div>
 
             <p
-              className={`text-gray-500 dark:text-gray-400 text-center italic font-semibold text-xl md:text-2xl mt-8 transition-all duration-1000 delay-600 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`text-gray-500 dark:text-gray-400 text-center italic font-semibold text-xl md:text-2xl mt-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               ⊹₊⟡⋆ Let’s create something amazing together! ⊹₊⟡⋆
             </p>
@@ -151,9 +137,8 @@ export default function HeroSection() {
 
           {/* Right Column - Professional Photo */}
           <div
-            className={`flex justify-center lg:justify-end mb-12 lg:mb-0 transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+            className={`flex justify-center lg:justify-end mb-12 lg:mb-0 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
           >
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 dark:from-pink-800 dark:to-purple-800 p-2 shadow-2xl">
