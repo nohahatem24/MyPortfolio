@@ -1,6 +1,6 @@
 /**
  * Modal component for displaying overlay content
- * Provides accessible modal dialogs with keyboard navigation
+ * Provides accessible modal dialogs with keyboard navigation and safe TypeScript handling
  */
 
 import React, { useEffect, useRef } from 'react';
@@ -18,6 +18,30 @@ interface ModalProps {
 export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-4xl' }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
+  // Trap focus inside modal
+  const trapFocus = (event: KeyboardEvent) => {
+    if (event.key !== 'Tab' || !modalRef.current) return;
+
+    const focusableElements = Array.from(
+      modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => !el.hasAttribute('disabled'));
+
+    if (focusableElements.length === 0) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    } else if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+    }
+  };
+
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -27,20 +51,21 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-4xl'
 
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', trapFocus);
       document.body.style.overflow = 'hidden';
-      
-      // Focus management
-      const focusableElements = modalRef.current?.querySelectorAll(
+
+      // Focus first focusable element
+      const focusableElements = modalRef.current?.querySelectorAll<HTMLElement>(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
-      const firstFocusable = focusableElements?.[0] as HTMLElement;
-      firstFocusable?.focus();
+      focusableElements?.[0]?.focus();
     } else {
       document.body.style.overflow = 'unset';
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', trapFocus);
       document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
@@ -50,19 +75,24 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-4xl'
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      
+
       {/* Modal */}
-      <div 
+      <div
         ref={modalRef}
         className={`relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl ${maxWidth} w-full max-h-[90vh] overflow-hidden`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h2>
+          <h2 id="modal-title" className="text-2xl font-bold text-gray-900 dark:text-white">
+            {title}
+          </h2>
           <Button
             onClick={onClose}
             variant="ghost"
@@ -73,7 +103,7 @@ export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-4xl'
             <span className="sr-only">Close modal</span>
           </Button>
         </div>
-        
+
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
           {children}
