@@ -57,7 +57,7 @@ export default function AboutSection() {
       { name: 'Photoroom', level: 75 },
       { name: 'Pixcelcut', level: 85 },
       { name: 'Snapseed', level: 95 },
-      
+
     ],
     'AI Tools': [
       { name: 'ChatGPT', level: 95 },
@@ -115,7 +115,7 @@ export default function AboutSection() {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* About Me Card */}
             <div className={`lg:col-span-2 bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-lg backdrop-blur-sm ${isVisible ? 'opacity-100' : 'opacity-0'} transition-all duration-1000`}>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Hello there! I'm Noha Hatem</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Hello there! I'm Noha Hatem ࿔*˖˚🎀</h3>
               <div className="relative">
                 {/* Profile Image */}
                 <div className="float-right ml-6 mb-4">
@@ -132,19 +132,29 @@ export default function AboutSection() {
                     <div className="w-32 h-32" style={{ shapeOutside: 'circle(50%)', clipPath: 'circle(50%)' }}></div>
                   </div>
                 </div>
-                {/* Text */}
+                {/* About Me */}
                 <div className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+
                   <p className="mb-4">
-                    I'm a passionate UI/UX designer and Flutter developer with a deep love for creating
-                    meaningful digital experiences. My journey in the tech world is fueled by creativity,
-                    empathy, and a desire to solve real problems through thoughtful design and clean code.
+                    I design, code, and create meaningful digital experiences that blend creativity, empathy, and clean code. From mobile apps to web solutions, I love turning ideas into something real, functional, and beautiful.
                   </p>
-                  <p>
-                    Beyond the digital realm, I express myself through various art forms and handmade
-                    creations. This blend of technical expertise and artistic sensibility allows me to
-                    bring a unique perspective to every project I undertake.
+                  <p className="mb-2 text-lg font-bold text-pink-600 dark:text-purple-400">
+                    I wear many hats:
+                  </p>
+                  <p className="mb-4">
+                    UI/UX Designer, Flutter Developer, Graphic Designer, Creative Technologist, and Software Engineer — sometimes you might even call me an Artist! 🖌🎨
+                  </p>
+                  <p className="mb-4">
+                    Beyond screens and code, I express myself through handmade art, drawing, coloring, and creative designs, which gives me a unique perspective on every project I take on.
+                  </p>
+                  <p className="mb-4">
+                    Curious, playful, and always open to learning. I enjoy exploring new ideas, experimenting with colors, and turning imagination into reality.
+                  </p>
+                  <p className="text-center font-semibold italic text-pink-400 dark:text-purple-400 text-20 mt-4">
+                    ⟡⋆₊⊹ Designing with Heart, Coding with Vision! ⊹₊⋆⟡
                   </p>
                 </div>
+
               </div>
             </div>
 
@@ -156,7 +166,7 @@ export default function AboutSection() {
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">My CV</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6">Click below to view my complete CV</p>
               <a
-                href="https://drive.google.com/file/d/1a4736VsE6qzpkIv9OPZ7xKhpoD3z3tZ_/view"
+                href="https://drive.google.com/file/d/10OUO9ReIalTF6I5j7ehFw8a3hV2CW5ZD/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg hover:shadow-lg transform hover:scale-105"
