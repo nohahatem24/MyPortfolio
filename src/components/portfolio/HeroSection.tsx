@@ -127,12 +127,6 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <p
-              className={`text-gray-500 dark:text-gray-400 text-center italic font-semibold text-xl md:text-2xl mt-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              ⊹₊⟡⋆ Let’s create something amazing together! ⊹₊⟡⋆
-            </p>
           </div>
 
           {/* Right Column - Professional Photo */}
