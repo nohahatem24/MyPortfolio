@@ -1,5 +1,5 @@
 {
-  "name": "web-creator",
+  "name": "noha-portfolio",
   "version": "1.0.0",
   "scripts": {
     "dev": "node scripts/build.mjs",
@@ -64,6 +64,7 @@
     "autoprefixer": "^10.4.21",
     "esbuild": "0.25.4",
     "esbuild-style-plugin": "^1.6.3",
+    "fs-extra": "^11.3.1",
     "imagemin": "^9.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
