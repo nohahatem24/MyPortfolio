@@ -1,4 +1,4 @@
-# ୨ৎ── 🎀 Hi! I'm Noha Hatem 🎀──୨ৎ
+# 🎀Hi! I'm Noha Hatem🎀
 
 I design, code, and create meaningful digital experiences by blending creativity, empathy, and clean code. From mobile apps to web solutions, I bring ideas to life with a unique mix of design thinking and technical expertise.
 
