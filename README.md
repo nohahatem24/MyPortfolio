@@ -8,10 +8,11 @@ UI/UX Designer, Flutter Developer, Graphic Designer, Creative Technologist, and 
 
 ## 💡 Curious, creative, and always learning.
 
-## 📌 Want to know more? Check out my portfolio below!
+
+### 📌 Want to know more? Check out my portfolio below!
 
 🌐 Portfolio: [noha-portfolio-delta-hazel-66.vercel.app](https://noha-portfolio-delta-hazel-66.vercel.app/)
 
-## 📬 Contact Me
+### 📬 Contact Me
 
 📧 Email: nohahatem.nh@gmail.com
