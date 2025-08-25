@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Briefcase, Calendar, CheckCircle } from 'lucide-react';
+import { Briefcase, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 interface ExperienceItem {
@@ -57,54 +57,72 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section 
-      id="experience" 
+    <section
+      id="experience"
       ref={ref}
       className="py-20 bg-[#fffaf5] dark:bg-gray-900 transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Professional Experience</h2>
+        {/* Section Header */}
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Professional Experience
+          </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             My journey building digital experiences and creative solutions.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4"></div>
         </div>
-        
+
+        {/* Experience Cards */}
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all duration-500 ${
-                isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-10'
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              style={{ 
-                transitionDelay: `${200 + index * 100}ms` 
+              style={{
+                transitionDelay: `${200 + index * 100}ms`
               }}
             >
               <div className="flex items-start space-x-4">
+                {/* Icon */}
                 <div className="bg-pink-100 dark:bg-purple-900/30 p-3 rounded-full flex-shrink-0">
                   <Briefcase className="h-6 w-6 text-pink-600 dark:text-purple-400" />
                 </div>
+
+                {/* Content */}
                 <div className="flex-1">
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                    <span className="text-gray-600 dark:text-gray-400 font-semibold">{exp.period}</span>
+                  {/* Title + Period (responsive) */}
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {exp.title}
+                    </h3>
+                    <span className="text-gray-600 dark:text-gray-400 font-semibold mt-1 sm:mt-0">
+                      {exp.period}
+                    </span>
                   </div>
+
+                  {/* Company and Location */}
                   <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4 space-x-2">
                     <span>{exp.company}</span>
                     <span>|</span>
                     <span>{exp.location}</span>
                   </div>
+
+                  {/* Achievements */}
                   <div className="space-y-3">
                     {exp.achievements.map((achievement, achievementIndex) => (
                       <div key={achievementIndex} className="flex items-start space-x-3">
                         <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {achievement}
+                        </span>
                       </div>
                     ))}
                   </div>
