@@ -156,7 +156,7 @@ export default function AboutSection() {
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">My CV</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6">Click below to view my complete CV</p>
               <a
-                href="https://drive.google.com/file/d/14lDkCro31kewFuHl4Qxn-9SdjK-cNqbU/view"
+                href="https://drive.google.com/file/d/1a4736VsE6qzpkIv9OPZ7xKhpoD3z3tZ_/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg hover:shadow-lg transform hover:scale-105"

@@ -43,9 +43,13 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <p className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}>
-              I design, code, and create — from mobile apps to handmade art — blending creativity, empathy, and clean code to craft meaningful digital experiences.
+            <p
+              className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+            >
+              I design, code, and create 𓆩♡𓆪<br />
+              from mobile apps to handmade art ⋆˙⟡<br />
+              blending creativity, empathy, and clean code to craft meaningful digital experiences.
             </p>
 
             <div className={`flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

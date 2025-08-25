@@ -59,7 +59,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
           {/* Content */}
           <div className="flex-1 overflow-hidden bg-gray-100 dark:bg-gray-900 p-0">
             <iframe
-              src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+              src="https://drive.google.com/file/d/1a4736VsE6qzpkIv9OPZ7xKhpoD3z3tZ_/view"
               className="w-full h-full border-0"
               allow="autoplay"
             />
@@ -74,7 +74,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               Close
             </button>
             <a
-              href="https://drive.google.com/file/d/1O87vLXoMOUkOuUlH2TfcHf-9y-QqgAAU/view"
+              href="https://drive.google.com/file/d/1a4736VsE6qzpkIv9OPZ7xKhpoD3z3tZ_/view"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg hover:shadow-lg transition-all duration-300"
