@@ -7,7 +7,7 @@ I design, code, and create meaningful digital experiences by blending creativity
 💡 Curious, creative, and always learning.
 📌 Want to know more? Check out my portfolio below!
 
-🌐 Portfolio: noha-portfolio-delta-hazel-66.vercel.app
+🌐 Portfolio: [noha-portfolio-delta-hazel-66.vercel.app](https://noha-portfolio-delta-hazel-66.vercel.app/)
 
 📬 Contact Me
 Email: nohahatem.nh@gmail.com
