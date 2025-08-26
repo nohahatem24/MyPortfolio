@@ -97,10 +97,10 @@ export default function ProjectsSection() {
         HieroVisionProjectMobile20,
         HieroVisionProjectMobile21,
         HieroVisionProjectMobile7,
+        HieroVisionProjectMobile5,
         HieroVisionProjectMobile2,
         HieroVisionProjectMobile3,
         HieroVisionProjectMobile4,
-        HieroVisionProjectMobile5,
         HieroVisionProjectMobile6,
         HieroVisionProjectMobile8,
         HieroVisionProjectMobile10,
@@ -160,29 +160,28 @@ export default function ProjectsSection() {
         'Strengthened UI/UX design skills and AI integration experience',
         'Project became a showcase of blending technology, AI, education, and heritage'
       ],
-      role: `
+      role:
+        `
       <strong class="block mb-2 ml-4">Mobile & Web Development</strong>
-<ul class="list-disc ml-10 mb-4 text-justify">
-  <li>Led the development of the mobile application using Flutter.</li>
-  <li>Designed the UI/UX for both mobile and web platforms, ensuring a smooth, intuitive, and visually engaging experience.</li>
-  <li>Ensured the platform remained modern, accessible, and fun for all users.</li>
-</ul>
+      <ul class="list-disc ml-10 mb-4 text-justify">
+        <li>Led the development of the mobile application using Flutter.</li>
+        <li>Designed the UI/UX for both mobile and web platforms, ensuring a smooth, intuitive, and visually engaging experience.</li>
+        <li>Ensured the platform remained modern, accessible, and fun for all users.</li>
+      </ul>
 
-<strong class="block mb-2 ml-4">AI Integration</strong>
-<ul class="list-disc ml-10 mb-4 text-justify">
-  <li>Integrated AI tools to enhance content creation, translation, and interactive features.</li>
-  <li>Implemented features that made learning more immersive and personalized.</li>
-</ul>
+      <strong class="block mb-2 ml-4">AI Integration</strong>
+      <ul class="list-disc ml-10 mb-4 text-justify">
+        <li>Integrated AI tools to enhance content creation, translation, and interactive features.</li>
+        <li>Implemented features that made learning more immersive and personalized.</li>
+      </ul>
 
-<strong class="block mb-2 ml-4">Presentation & Visual Design</strong>
-<ul class="list-disc ml-10 text-justify">
-  <li>Fully designed and created the entire project presentation.</li>
-  <li>Generated all necessary images and videos using AI tools like Sora Extension and SeaArt.</li>
-  <li>Customized the theme to make the project unique and professional.</li>
-</ul>
-
+      <strong class="block mb-2 ml-4">Presentation & Visual Design</strong>
+      <ul class="list-disc ml-10 text-justify">
+        <li>Fully designed and created the entire project presentation.</li>
+        <li>Generated all necessary images and videos using AI tools like Sora Extension and SeaArt.</li>
+        <li>Customized the theme to make the project unique and professional.</li>
+      </ul>
     `,
-
 
       duration: '7 months',
       teamSize: '4 people',
@@ -320,24 +319,26 @@ export default function ProjectsSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12 items-stretch">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 backdrop-blur-sm group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className="flex flex-col bg-white/60 dark:bg-gray-800/60 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 backdrop-blur-sm group"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="aspect-video relative overflow-hidden">
+              {/* Image Section with Category */}
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {project.category}
                   </span>
                 </div>
+                {/* Hover Overlay with View Details */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <Button
                     onClick={() => setSelectedProject(project)}
@@ -347,17 +348,43 @@ export default function ProjectsSection() {
                   </Button>
                 </div>
               </div>
-              <div className="p-6">
+
+              {/* Content Section */}
+              <div className="p-6 flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+
+                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className="bg-pink-50 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-sm">{tech}</span>
+                  {project.technologies.slice(0, 3).map((tech, i) => (
+                    <span
+                      key={i}
+                      onClick={() => setSelectedProject(project)}
+                      className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded text-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
+                    >
+                      {tech}
+                    </span>
                   ))}
-                  {project.technologies.length > 3 && <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded text-sm">+{project.technologies.length - 3} more</span>}
+                  {project.technologies.length > 3 && (
+                    <span
+                      onClick={() => setSelectedProject(project)}
+                      className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded text-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
+                    >
+                      +{project.technologies.length - 3} more
+                    </span>
+                  )}
                 </div>
 
-                <div className="flex gap-2 mb-4">
+                {/* View Full Details Button */}
+                <Button
+                  onClick={() => setSelectedProject(project)}
+                  className="w-full mb-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg text-lg font-semibold hover:opacity-90"
+                >
+                  View Full Details
+                </Button>
+
+                {/* Links Section */}
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.githubUrl && (
                     <Button
                       variant="outline"
@@ -385,13 +412,12 @@ export default function ProjectsSection() {
                       onClick={() => window.open(project.presentationUrl, '_blank')}
                       className="border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20 bg-transparent"
                     >
-                      {/* You can use a slideshow icon from lucide-react */}
                       <Monitor className="h-4 w-4 mr-1" /> Presentation
                     </Button>
                   )}
                 </div>
 
-                {/* Open Image Modals */}
+                {/* Gallery Buttons */}
                 {project.mobileGallery && (
                   <Button
                     variant="outline"
@@ -414,8 +440,10 @@ export default function ProjectsSection() {
                 )}
               </div>
             </div>
+
           ))}
         </div>
+
 
         <div className={`text-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-gradient-to-r from-pink-500 to-purple-500 text-white">Back to Top</Button>
@@ -468,29 +496,45 @@ export default function ProjectsSection() {
             </div>
 
 
+            {/* Project Overview */}
             <div>
               <div className="text-lg font-bold text-gray-900 dark:text-white mt-4 mb-2">Project Overview</div>
               <div className="text-gray-600 dark:text-gray-300 text-justify" dangerouslySetInnerHTML={{ __html: selectedProject.fullDescription }} />
             </div>
 
+            {/* Full Technologies Used*/}
+            <div>
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white mt-4 mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="bg-pink-50 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-3 py-1 rounded text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
 
             <div>
               <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Features</h4>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-justify">
+              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
                 {selectedProject.features.map((f, i) => <li key={i}>{f}</li>)}
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Challenges</h4>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-justify">
+              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
                 {selectedProject.challenges.map((c, i) => <li key={i}>{c}</li>)}
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Results</h4>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-justify">
+              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
                 {selectedProject.results.map((r, i) => <li key={i}>{r}</li>)}
               </ul>
             </div>
@@ -498,7 +542,7 @@ export default function ProjectsSection() {
             {selectedProject.role && (
               <div>
                 <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">My Role</h4>
-                <div className="text-gray-600 dark:text-gray-300 text-justify" dangerouslySetInnerHTML={{ __html: selectedProject.role }} />
+                <div className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify" dangerouslySetInnerHTML={{ __html: selectedProject.role }} />
               </div>
             )}
 
