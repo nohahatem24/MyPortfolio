@@ -457,7 +457,7 @@ export default function ProjectsSection() {
         title={selectedProject?.title || ''}
       >
         {selectedProject && (
-          <div className="space-y-6">
+          <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
             {/* Main Project Image */}
             <div className="w-full flex justify-center">
               <div className="max-w-full max-h-[80vh]">
