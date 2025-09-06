@@ -10,6 +10,8 @@ import { Modal } from '../ui/modal';
 import { ImageModal } from '../ui/image-modal';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
+//LiteFinance Bank Project - Main Picture
+import LiteFinanceProjectMainPic from '../../assets/images/projects/litefinance/LiteFinance.png';
 
 //Main HieroVision Picture
 import HieroVisionProjectMainPic from '../../assets/images/projects/hierovision/mainpic.png';
@@ -56,6 +58,65 @@ import HieroVisionProjectWeb10 from '../../assets/images/projects/hierovision/we
 import HieroVisionProjectWeb11 from '../../assets/images/projects/hierovision/web11.png';
 import HieroVisionProjectWeb12 from '../../assets/images/projects/hierovision/web12.png';
 
+//--------------------------------------------------------------------------------------------------
+//Dr Basma Mental Care Project - Main Picture
+import DrBasmaMainPicture from '../../assets/images/projects/drbasma/DrBasmaMainPicture.jpg';
+//Dr Basma Mental Care Project Pictures - Light Mode
+import DrBasmaLight1 from '../../assets/images/projects/drbasma/light1.png';
+import DrBasmaLight2 from '../../assets/images/projects/drbasma/light2.png';
+import DrBasmaLight3 from '../../assets/images/projects/drbasma/light3.png';
+import DrBasmaLight4 from '../../assets/images/projects/drbasma/light4.png';
+import DrBasmaLight5 from '../../assets/images/projects/drbasma/light5.png';
+import DrBasmaLight6 from '../../assets/images/projects/drbasma/light6.png';
+import DrBasmaLight7 from '../../assets/images/projects/drbasma/light7.png';
+import DrBasmaLight8 from '../../assets/images/projects/drbasma/light8.png';
+import DrBasmaLight9 from '../../assets/images/projects/drbasma/light9.png';
+import DrBasmaLight10 from '../../assets/images/projects/drbasma/light10.png';
+import DrBasmaLight11 from '../../assets/images/projects/drbasma/light11.png';
+import DrBasmaLight12 from '../../assets/images/projects/drbasma/light12.png';
+import DrBasmaLight13 from '../../assets/images/projects/drbasma/light13.png';
+import DrBasmaLight14 from '../../assets/images/projects/drbasma/light14.png';
+import DrBasmaLight15 from '../../assets/images/projects/drbasma/light15.png';
+import DrBasmaLight16 from '../../assets/images/projects/drbasma/light16.png';
+import DrBasmaLight17 from '../../assets/images/projects/drbasma/light17.png';
+import DrBasmaLight18 from '../../assets/images/projects/drbasma/light18.png';
+import DrBasmaLight19 from '../../assets/images/projects/drbasma/light19.png';
+import DrBasmaLight20 from '../../assets/images/projects/drbasma/light20.png';
+import DrBasmaLight21 from '../../assets/images/projects/drbasma/light21.png';
+import DrBasmaLight22 from '../../assets/images/projects/drbasma/light22.png';
+import DrBasmaLight23 from '../../assets/images/projects/drbasma/light23.png';
+import DrBasmaLight24 from '../../assets/images/projects/drbasma/light24.png';
+import DrBasmaLight25 from '../../assets/images/projects/drbasma/light25.png';
+//Dr Basma Mental Care Project Pictures - Dark Mode
+import DrBasmaDark1 from '../../assets/images/projects/drbasma/dark1.png';
+import DrBasmaDark2 from '../../assets/images/projects/drbasma/dark2.png';
+import DrBasmaDark3 from '../../assets/images/projects/drbasma/dark3.png';
+import DrBasmaDark4 from '../../assets/images/projects/drbasma/dark4.png';
+import DrBasmaDark5 from '../../assets/images/projects/drbasma/dark5.png';
+import DrBasmaDark6 from '../../assets/images/projects/drbasma/dark6.png';
+import DrBasmaDark7 from '../../assets/images/projects/drbasma/dark7.png';
+import DrBasmaDark8 from '../../assets/images/projects/drbasma/dark8.png';
+import DrBasmaDark9 from '../../assets/images/projects/drbasma/dark9.png';
+import DrBasmaDark10 from '../../assets/images/projects/drbasma/dark10.png';
+import DrBasmaDark11 from '../../assets/images/projects/drbasma/dark11.png';
+import DrBasmaDark12 from '../../assets/images/projects/drbasma/dark12.png';
+import DrBasmaDark13 from '../../assets/images/projects/drbasma/dark13.png';
+import DrBasmaDark14 from '../../assets/images/projects/drbasma/dark14.png';
+import DrBasmaDark15 from '../../assets/images/projects/drbasma/dark15.png';
+import DrBasmaDark16 from '../../assets/images/projects/drbasma/dark16.png';
+import DrBasmaDark17 from '../../assets/images/projects/drbasma/dark17.png';
+import DrBasmaDark18 from '../../assets/images/projects/drbasma/dark18.png';
+import DrBasmaDark19 from '../../assets/images/projects/drbasma/dark19.png';
+import DrBasmaDark20 from '../../assets/images/projects/drbasma/dark20.png';
+import DrBasmaDark21 from '../../assets/images/projects/drbasma/dark21.png';
+import DrBasmaDark22 from '../../assets/images/projects/drbasma/dark22.png';
+import DrBasmaDark23 from '../../assets/images/projects/drbasma/dark23.png';
+import DrBasmaDark24 from '../../assets/images/projects/drbasma/dark24.png';
+import DrBasmaDark25 from '../../assets/images/projects/drbasma/dark25.png';
+
+
+
+
 
 
 interface Project {
@@ -86,10 +147,10 @@ export default function ProjectsSection() {
   const projects: Project[] = [
     {
       title: 'HieroVision - Mobile/Web Application',
-      category: 'UI/UX + Flutter + React.js',
+      category: 'UI/UX + Flutter + Mobile App + Web App + AI Integration',
       description: 'An AI-powered mobile & web platform that brings ancient Egyptian language and culture to life through interactive learning, hieroglyph translation, and immersive educational tools.',
       fullDescription: 'HieroVision is an innovative, AI-driven platform that bridges the gap between modern technology and ancient Egyptian culture. Designed as both a mobile and web application, HieroVision allows users of all ages to explore, learn, and interact with the language, history, and heritage of ancient Egypt in a highly engaging way.',
-      technologies: ['Flutter', 'SQLite', 'Figma', 'Dart', 'Canva', 'React.js', 'Node.js', 'RESTful API', 'Flask', 'Python', 'TensorFlow', 'SqueezeNet', 'OpenCV'],
+      technologies: ['Flutter', 'Figma', 'FlutterFlow', 'SQLite', 'Dart', 'Canva', 'React.js', 'Node.js', 'RESTful API', 'Flask', 'Python', 'TensorFlow', 'SqueezeNet', 'OpenCV'],
       image: HieroVisionProjectMainPic,
       mobileGallery: [
         //Mobile Pictuers
@@ -190,78 +251,170 @@ export default function ProjectsSection() {
 
     },
     {
-      title: 'E-Learning Platform',
-      category: 'Web Design',
-      description: 'A comprehensive learning management system with intuitive navigation and engaging UI.',
-      fullDescription: 'A modern e-learning platform designed for universities and educational institutions. The platform supports course management, student progress tracking, interactive content, and real-time collaboration.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'WebRTC'],
-      image: 'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/d8e2cc02-3c78-4c0c-ac8a-197e27b11d8b.jpg',
+      title: 'Dr. Basma Mental Care – Mental Health Platform',
+      category: 'UI/UX + Web Development + AI-Assisted Backend',
+      description: 'A mental health platform that enables patients to book online therapy sessions, access self-care tools, and track their mental well-being in a secure and user-friendly way.',
+      fullDescription: 'Dr. Basma Mental Care is a mental health and therapy platform designed for booking personalized online sessions, tracking mental health progress, and providing self-care tools. This platform was built to offer a secure, user-friendly, and bilingual experience (English & Arabic) for patients seeking mental health support.',
+      technologies: ['Canva', 'Photoroom', 'React.js', 'Vite', 'TailwindCSS', 'Node.js (Partial Backend)', 'AI-Assisted Development', 'Express.js', 'RESTful API', 'Supbase (Authentication & Database)', 'Lovable.dev (Deployment)'],
+      image: DrBasmaMainPicture,
+      //Website Gallery
       webGallery: [
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/7bb35020-3861-46d3-9155-f1d68f438b8b.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/6ae860f0-244b-4e9d-b8e9-7039457e4f9a.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/0e9cc5a8-b83c-4c2a-b9fe-61a71f26dde3.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/c4e0d73e-7fbb-4610-bb06-4d74e03392b1.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/f42436f2-df9d-4e4c-8d3d-9450e5695b71.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/674da1be-49df-40fa-96f4-9f02c469095e.jpg'
+        DrBasmaLight1,
+        DrBasmaDark1,
+        DrBasmaLight2,
+        DrBasmaDark2,
+        DrBasmaLight3,
+        DrBasmaDark3,
+        DrBasmaLight4,
+        DrBasmaDark4,
+        DrBasmaLight5,
+        DrBasmaDark5,
+        DrBasmaLight6,
+        DrBasmaDark6,
+        DrBasmaLight7,
+        DrBasmaDark7,
+        DrBasmaLight8,
+        DrBasmaDark8,
+        DrBasmaLight9,
+        DrBasmaDark9,
+        DrBasmaLight10,
+        DrBasmaDark10,
+        DrBasmaLight11,
+        DrBasmaDark11,
+        DrBasmaLight12,
+        DrBasmaDark12,
+        DrBasmaLight13,
+        DrBasmaDark13,
+        DrBasmaLight14,
+        DrBasmaDark14,
+        DrBasmaLight15,
+        DrBasmaDark15,
+        DrBasmaLight16,
+        DrBasmaDark16,
+        DrBasmaLight17,
+        DrBasmaDark17,
+        DrBasmaLight18,
+        DrBasmaDark18,
+        DrBasmaLight19,
+        DrBasmaDark19,
+        DrBasmaLight20,
+        DrBasmaDark20,
+        DrBasmaLight21,
+        DrBasmaDark21,
+        DrBasmaLight22,
+        DrBasmaDark22,
+        DrBasmaLight23,
+        DrBasmaDark23,
+        DrBasmaLight24,
+        DrBasmaDark24,
+        DrBasmaLight25,
+        DrBasmaDark25
       ],
       features: [
-        'Interactive course content',
-        'Real-time video conferencing',
-        'Assignment submission system',
-        'Grade tracking and analytics',
-        'Discussion forums',
-        'Mobile-responsive design'
+        'Homepage with mental health insights and quick access to sessions',
+        'Doctor profile with biography, certifications, and patient trust indicators',
+        'Appointment booking system with calendar and time slot selection',
+        'Flexible session durations and pricing options',
+        'Patient reviews and feedback system',
+        'MindTrack tool for mood tracking, journaling, and emotional well-being insights',
+        'Guided breathing and self-care exercises for relaxation',
+        'Responsive UI for both desktop and mobile devices',
+        'AI-assisted backend structure for authentication and future scalability'
       ],
       challenges: [
-        'Handling large file uploads efficiently',
-        'Implementing scalable video streaming',
-        'Creating accessible interfaces for diverse users'
+        'Building a professional medical-focused UI/UX with empathy-driven design',
+        'Implementing a functional booking system with dynamic slots',
+        'Partial backend integration – limited to authentication (username and password)',
+        'Database connection for saving patient data and sessions not fully functional',
+        'Payment system flows require secure validation and wallet integration',
+        'User authentication and authorization system needs further development',
+        'Secure payment integration and wallet functionality require further work',
       ],
       results: [
-        '60% increase in student engagement',
-        'Reduced course completion time by 25%',
-        'Adopted by 5 educational institutions'
+        'Delivered a polished and professional website for a practicing therapist',
+        'Implemented a responsive and accessible frontend with React + TailwindCSS',
+        'Created a strong portfolio piece showcasing both frontend and backend integration skills',
+        'Strengthened UI/UX design skills for medical and mental health platforms',
+        'Laid the foundation for future full-stack development and secure healthcare platforms'
       ],
-      duration: '6 months',
-      teamSize: '5 people',
-      websiteUrl: 'https://elearning-platform-demo.com'
+      role: `
+  <strong class="block mb-2 ml-4">Frontend Development</strong>
+  <ul class="list-disc ml-10 mb-4 text-justify">
+    <li>Developed the complete frontend using React.js, Vite, and TailwindCSS.</li>
+    <li>Ensured a clean, accessible, and professional UI aligned with mental health branding.</li>
+    <li>Built responsive layouts for both desktop and mobile experiences.</li>
+  </ul>
+
+  <strong class="block mb-2 ml-4">Backend Setup</strong>
+  <ul class="list-disc ml-10 mb-4 text-justify">
+    <li>Implemented basic user authentication (username and password storage).</li>
+    <li>Structured backend APIs for future booking, review, and payment management.</li>
+    <li>Used AI-assisted tools to accelerate backend development and testing.</li>
+  </ul>
+
+  <strong class="block mb-2 ml-4">UI/UX & Website Design</strong>
+  <ul class="list-disc ml-10 text-justify">
+    <li>Designed the full website layout and flow with a focus on empathy and trustworthiness for mental health users.</li>
+    <li>Created wireframes and prototypes in Figma before implementing with TailwindCSS.</li>
+    <li>Built a professional, modern, and bilingual-friendly (English & Arabic) website design.</li>
+    <li>Focused on user-friendly navigation and call-to-actions tailored for patients and therapists.</li>
+  </ul>
+`,
+      duration: '2 months',
+      teamSize: 'Solo Project',
+      websiteUrl: 'https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37',
+      githubUrl: 'https://github.com/nohahatem24/dr-basma-mentalcare.git',
     },
     {
-      title: 'Recipe Finder',
-      category: 'Mobile App',
-      description: 'A Flutter app that helps users discover recipes based on ingredients they already have.',
-      fullDescription: 'An intelligent recipe discovery app that uses AI to suggest recipes based on available ingredients, dietary preferences, and cooking skill level. Features include meal planning, shopping lists, and nutritional information.',
-      technologies: ['Flutter', 'Firebase', 'TensorFlow', 'Spoonacular API'],
-      image: 'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/e1d1e944-d3d0-4695-bce0-bb57381b5934.jpg',
-      webGallery: [
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/d5454560-7452-4209-baca-be3a9e1474b1.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/2fa20331-bb39-4765-87a7-866f6ca9b8df.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/757c6139-56f1-42eb-b19e-bd34424d68f3.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/518d093f-99d4-4068-8013-fc3c56c269e5.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/3174fee3-33b1-4b3f-a01e-ae7f1dfc0bec.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/ae6b59ae-cf23-47bf-8522-3ea84aeaa2d1.jpg'
-      ],
+      title: 'LiteFinance Bank – Desktop Banking Application',
+      category: 'UI/UX + Java + Desktop App Development',
+      description: 'A desktop banking application built to manage user accounts, securely track transactions, and provide reliable financial operations with a modern, intuitive UI.',
+      fullDescription: 'LiteFinance Bank is a desktop-based banking application developed in Java, aimed at providing users with a secure, efficient, and user-friendly way to manage their financial accounts. The system includes features such as account creation, balance management, money transfers, and transaction history tracking. With a professional interface and practical features, the application serves as a foundation for exploring digital banking solutions in a desktop environment.',
+      technologies: ['Java', 'Java Swing', 'OOP (Object-Oriented Programming)', 'MySQL (Database Planned)', 'NetBeans IDE'],
+      image: LiteFinanceProjectMainPic,
+
       features: [
-        'AI-powered recipe suggestions',
-        'Ingredient-based search',
-        'Meal planning calendar',
-        'Shopping list generation',
-        'Nutritional information',
-        'Recipe reviews and ratings'
+        'Secure user login and account authentication',
+        'Interactive dashboard showing account balance and details',
+        'Support for multiple accounts with different account types',
+        'Transaction history tracking with date and type filters',
+        'Money transfer between accounts with real-time balance updates',
+        'Digital account card display with account number and expiry',
+        'Branch locator and information display',
+        'User profile, privacy, and notification settings',
+        'Responsive desktop design with clean UI layouts'
       ],
       challenges: [
-        'Implementing accurate ingredient recognition',
-        'Optimizing app performance with large recipe databases',
-        'Creating an intuitive recipe filtering system'
+        'Designing a clean and professional UI using Java Swing components',
+        'Managing state and data flow within a desktop environment',
+        'Planning scalable database integration for account and transaction data',
+        'Ensuring usability and security in a finance-focused desktop app',
+        'Coordinating teamwork and distributing tasks across a 3-person team'
       ],
       results: [
-        '10K+ downloads in first month',
-        '4.6/5 app store rating',
-        'Featured in App Store food & drink category'
+        'Successfully developed a functional and professional desktop banking app',
+        'Created a polished and user-friendly design tailored for finance users',
+        'Applied Java OOP principles in a real-world desktop application project',
+        'Strengthened teamwork skills through collaboration on a software project',
+        'Delivered a strong portfolio piece showcasing desktop app development skills'
       ],
-      duration: '3 months',
-      teamSize: '2 people',
-      githubUrl: 'https://github.com/nohahatem24/recipe-finder'
+      role: `
+  <strong class="block mb-2 ml-4">UI/UX & Design</strong>
+  <ul class="list-disc ml-10 mb-4 text-justify">
+    <li>Designed the complete user interface using Java Swing components.</li>
+    <li>Ensured the application had a clean, professional, and finance-oriented look.</li>
+    <li>Focused on creating user-friendly navigation and clear layouts.</li>
+  </ul>
+
+  <strong class="block mb-2 ml-4">Desktop Development</strong>
+  <ul class="list-disc ml-10 mb-4 text-justify">
+    <li>Implemented interactive dashboard and account features in Java.</li>
+    <li>Collaborated with teammates to structure the application logic and data flow.</li>
+    <li>Applied OOP concepts for modular and maintainable code.</li>
+  </ul>
+  `,
+      duration: '3 weeks',
+      teamSize: '3 people',
     },
     {
       title: 'Eco Tracker',
