@@ -60,7 +60,7 @@ import HieroVisionProjectWeb12 from '../../assets/images/projects/hierovision/we
 
 //--------------------------------------------------------------------------------------------------
 //Dr Basma Mental Care Project - Main Picture
-import DrBasmaMainPicture from '../../assets/images/projects/drbasma/DrBasmaMainPicture.jpg';
+import DrBasmaMainPicture from '../../assets/images/projects/drbasma/DrBasmaMainPicture.png';
 //Dr Basma Mental Care Project Pictures - Light Mode
 import DrBasmaLight1 from '../../assets/images/projects/drbasma/light1.png';
 import DrBasmaLight2 from '../../assets/images/projects/drbasma/light2.png';
@@ -370,7 +370,7 @@ export default function ProjectsSection() {
       category: 'UI/UX + Java + Desktop App Development',
       description: 'A desktop banking application built to manage user accounts, securely track transactions, and provide reliable financial operations with a modern, intuitive UI.',
       fullDescription: 'LiteFinance Bank is a desktop-based banking application developed in Java, aimed at providing users with a secure, efficient, and user-friendly way to manage their financial accounts. The system includes features such as account creation, balance management, money transfers, and transaction history tracking. With a professional interface and practical features, the application serves as a foundation for exploring digital banking solutions in a desktop environment.',
-      technologies: ['Java', 'Java Swing', 'OOP (Object-Oriented Programming)', 'MySQL (Database Planned)', 'NetBeans IDE'],
+      technologies: ['Java', 'Java Swing', 'OOP (Object-Oriented Programming)', 'MySQL', 'NetBeans IDE'],
       image: LiteFinanceProjectMainPic,
 
       features: [
@@ -378,7 +378,7 @@ export default function ProjectsSection() {
         'Interactive dashboard showing account balance and details',
         'Support for multiple accounts with different account types',
         'Transaction history tracking with date and type filters',
-        'Money transfer between accounts with real-time balance updates',
+        'Money transfer between accounts with real-time balance updates',  
         'Digital account card display with account number and expiry',
         'Branch locator and information display',
         'User profile, privacy, and notification settings',
@@ -416,45 +416,7 @@ export default function ProjectsSection() {
       duration: '3 weeks',
       teamSize: '3 people',
     },
-    {
-      title: 'Eco Tracker',
-      category: 'Web App',
-      description: 'A dashboard that helps users monitor and reduce their environmental impact through daily habits.',
-      fullDescription: 'An environmental impact tracking application that helps users understand and reduce their carbon footprint through daily habit tracking, personalized recommendations, and community challenges.',
-      technologies: ['React', 'Chart.js', 'Express.js', 'MongoDB'],
-      image: 'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/79cf072e-15f1-4115-9e79-7f8d6eb12037.jpg',
-      webGallery: [
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/e4278bef-f340-485a-b2da-f23b438e41e4.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/3bf7da9e-0e0f-4d1f-997b-6e687b0be09b.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/6dc16ba4-cfaa-496a-8fff-c5fa8b6f6dcb.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/59550143-c117-47e2-8d96-a41f6bf9797f.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/7256bdc6-6e20-4672-9061-f5dd8c8ad320.jpg',
-        'https://pub-cdn.sider.ai/u/U0NWHJ61Y0X/web-coder/688770f38f67a34944cfc801/resource/cdee776c-7981-4a42-8794-5376610ae859.jpg'
-      ],
-      features: [
-        'Carbon footprint calculation',
-        'Daily habit tracking',
-        'Environmental impact visualization',
-        'Community challenges',
-        'Personalized eco-tips',
-        'Progress sharing'
-      ],
-      challenges: [
-        'Accurately calculating carbon footprints',
-        'Creating engaging data visualizations',
-        'Building a motivating user experience'
-      ],
-      results: [
-        '2000+ active users tracking habits',
-        'Average 30% reduction in carbon footprint',
-        'Winner of local sustainability hackathon'
-      ],
-
-      duration: '5 months',
-      teamSize: '4 people',
-      githubUrl: 'https://github.com/nohahatem24/eco-tracker',
-      websiteUrl: 'https://eco-tracker-demo.com'
-    }
+    
   ];
 
   return (

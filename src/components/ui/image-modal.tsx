@@ -10,7 +10,7 @@ import { Button } from './button';
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
-  image: string[];
+  image: string | string[];
   title: string;
   description: string;
   details?: {
@@ -64,12 +64,13 @@ export function ImageModal({
   }, [isOpen]);
 
     const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % image.length);
-  };
+  setCurrentIndex((prev) => (prev + 1) % image.length);
+};
 
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + image.length) % image.length);
-  };
+const prevImage = () => {
+  setCurrentIndex((prev) => (prev - 1 + image.length) % image.length);
+};
+
 
   return (
     <div 

@@ -74,45 +74,43 @@ export default function ArtSection() {
   ];
 
   return (
-    <section 
-      id="art" 
+    <section
+      id="art"
       ref={ref}
       className="py-20 bg-[#fffaf5] dark:bg-gray-900 transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Art & Handmade Work</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Exploring creativity beyond the digital realm through traditional art and handcrafted creations.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4"></div>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {artworks.map((artwork, index) => (
-            <div 
-              key={index} 
-              className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 group backdrop-blur-sm ${
-                isVisible 
-                  ? 'opacity-100 translate-y-0' 
+            <div
+              key={index}
+              className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 group backdrop-blur-sm ${isVisible
+                  ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              }`}
-              style={{ 
-                transitionDelay: `${200 + index * 100}ms` 
+                }`}
+              style={{
+                transitionDelay: `${200 + index * 100}ms`
               }}
             >
               <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src={artwork.image} 
+                <img
+                  src={artwork.image}
                   alt={artwork.title}
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button 
+                  <Button
                     onClick={() => setSelectedArtwork(artwork)}
-                    variant="outline" 
+                    variant="outline"
                     className="bg-white/90 border-white text-gray-900 hover:bg-white transform hover:scale-105 transition-transform"
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
@@ -133,10 +131,9 @@ export default function ArtSection() {
             </div>
           ))}
         </div>
-        
-        <div className={`text-center transition-all duration-1000 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+
+        <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <Button className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 shadow-lg transform hover:scale-105 transition-transform">
             View Full Gallery
           </Button>
@@ -147,7 +144,7 @@ export default function ArtSection() {
       <ImageModal
         isOpen={!!selectedArtwork}
         onClose={() => setSelectedArtwork(null)}
-        image={selectedArtwork?.image || ''}
+        image={selectedArtwork ? [selectedArtwork.image] : []}  // ✅ wrap in array
         title={selectedArtwork?.title || ''}
         description={selectedArtwork?.fullDescription || ''}
         details={{
@@ -155,6 +152,7 @@ export default function ArtSection() {
           year: selectedArtwork?.year
         }}
       />
+
     </section>
   );
 }
