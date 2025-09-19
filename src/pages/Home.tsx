@@ -10,7 +10,6 @@ import EducationSection from '../components/portfolio/EducationSection';
 import ExperienceSection from '../components/portfolio/ExperienceSection';
 import ProjectsSection from '../components/portfolio/ProjectsSection';
 import CertificatesSection from '../components/portfolio/CertificatesSection';
-import ArtSection from '../components/portfolio/ArtSection';
 import ContactSection from '../components/portfolio/ContactSection';
 import Navigation from '../components/portfolio/Navigation';
 
@@ -25,7 +24,6 @@ export default function Home() {
         <ExperienceSection />
         <ProjectsSection />
         <CertificatesSection />
-        <ArtSection />
         <ContactSection />
       </main>
     </div>

@@ -17,7 +17,6 @@ export default function Navigation() {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'certificates', label: 'Certificates' },
-    { id: 'art', label: 'Art' },
     { id: 'contact', label: 'Contact' }
   ];
 
