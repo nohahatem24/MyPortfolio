@@ -3,8 +3,13 @@
  * Showcases portfolio projects with detailed modal views, GitHub and website links
  */
 
+
+
 import React, { useState } from 'react';
-import { ExternalLink, Github, Calendar, Users, Target, Globe, Monitor } from 'lucide-react';
+import {
+  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers,
+  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings
+} from 'lucide-react';
 import { Button } from '../ui/button';
 import { Modal } from '../ui/modal';
 import { ImageModal } from '../ui/image-modal';
@@ -128,7 +133,7 @@ interface Project {
   image: string;
   mobileGallery?: string[];
   webGallery?: string[];
-  features: string[];
+  features: { title: string; icon: React.ElementType }[];
   challenges: string[];
   results: string[];
   duration: string;
@@ -146,9 +151,9 @@ export default function ProjectsSection() {
 
   const projects: Project[] = [
     {
-      title: 'HieroVision - Mobile/Web Application',
-      category: 'UI/UX + Flutter + Mobile App + Web App + AI Integration',
-      description: 'An AI-powered mobile & web platform that brings ancient Egyptian language and culture to life through interactive learning, hieroglyph translation, and immersive educational tools.',
+      title: 'HieroVision',
+      category: 'AI-Powered Ed-Tech Platform',
+      description: 'An immersive mobile & web app bringing ancient Egyptian culture to life with AI-driven translation and interactive learning.',
       fullDescription: 'HieroVision is an innovative, AI-driven platform that bridges the gap between modern technology and ancient Egyptian culture. Designed as both a mobile and web application, HieroVision allows users of all ages to explore, learn, and interact with the language, history, and heritage of ancient Egypt in a highly engaging way.',
       technologies: ['Flutter', 'Figma', 'FlutterFlow', 'SQLite', 'Dart', 'Canva', 'React.js', 'Node.js', 'RESTful API', 'Flask', 'Python', 'TensorFlow', 'SqueezeNet', 'OpenCV'],
       image: HieroVisionProjectMainPic,
@@ -198,28 +203,20 @@ export default function ProjectsSection() {
         HieroVisionProjectWeb9,
       ],
       features: [
-        'Hieroglyph image scanner & translator',
-        'Text-to-hieroglyph and hieroglyph-to-text conversion',
-        'Landmark explorer with real-time cultural information', 'Booking system for museums and historical tours',
-        'Personalized user profiles with activity history',
-        'Engaging "Kids Mode" with coloring, games, and interactive stories',
-        'AnubAI – custom AI-powered chatbot assistant'
+        { title: 'AI Hieroglyph Translator', icon: BrainCircuit },
+        { title: 'Interactive Landmark Explorer', icon: Globe },
+        { title: 'Gamified "Kids Mode"', icon: Users },
+        { title: 'AnubAI Chatbot Assistant', icon: Monitor },
       ],
-
       challenges: [
-        'Designing an intuitive UI/UX for both children and adults',
-        'Integrating AI models for image recognition and translation',
-        'Ensuring accessibility for users with different needs',
-        'Ensuring interactive educational content is engaging and accurate',
-        'Synchronizing mobile and web platforms for consistent user experience',
-        'Balancing cultural accuracy with gamified and fun learning features'
+        'Designing a dual UI/UX for both children and academic users.',
+        'Integrating complex AI models for real-time image recognition.',
+        'Ensuring cultural accuracy while creating an engaging, gamified experience.',
       ],
       results: [
-        'Successfully delivered a fully functional mobile and web platform',
-        'Created an immersive learning experience for users of all ages',
-        'Enhanced cultural engagement through interactive and AI-driven features',
-        'Strengthened UI/UX design skills and AI integration experience',
-        'Project became a showcase of blending technology, AI, education, and heritage'
+        'Delivered a fully functional, dual-platform application that received an A+ grade.',
+        'Created a highly immersive learning tool praised for its innovation and educational value.',
+        'Proved the viability of blending advanced AI with cultural heritage preservation.',
       ],
       role:
         `
@@ -311,31 +308,20 @@ export default function ProjectsSection() {
         DrBasmaDark25
       ],
       features: [
-        'Homepage with mental health insights and quick access to sessions',
-        'Doctor profile with biography, certifications, and patient trust indicators',
-        'Appointment booking system with calendar and time slot selection',
-        'Flexible session durations and pricing options',
-        'Patient reviews and feedback system',
-        'MindTrack tool for mood tracking, journaling, and emotional well-being insights',
-        'Guided breathing and self-care exercises for relaxation',
-        'Responsive UI for both desktop and mobile devices',
-        'AI-assisted backend structure for authentication and future scalability'
+        { title: 'Secure Session Booking', icon: Calendar },
+        { title: 'Empathetic UI/UX Design', icon: Users },
+        { title: 'Bilingual (Ar/En ) Interface', icon: Languages },
+        { title: '"MindTrack" Wellness Tool', icon: ShieldCheck },
       ],
       challenges: [
-        'Building a professional medical-focused UI/UX with empathy-driven design',
-        'Implementing a functional booking system with dynamic slots',
-        'Partial backend integration – limited to authentication (username and password)',
-        'Database connection for saving patient data and sessions not fully functional',
-        'Payment system flows require secure validation and wallet integration',
-        'User authentication and authorization system needs further development',
-        'Secure payment integration and wallet functionality require further work',
+        'Building a UI that conveys trust, safety, and professionalism for a sensitive topic.',
+        'Structuring a scalable backend for future features like payments and secure messaging.',
+        'Ensuring the design was calming and accessible for users in distress.',
       ],
       results: [
-        'Delivered a polished and professional website for a practicing therapist',
-        'Implemented a responsive and accessible frontend with React + TailwindCSS',
-        'Created a strong portfolio piece showcasing both frontend and backend integration skills',
-        'Strengthened UI/UX design skills for medical and mental health platforms',
-        'Laid the foundation for future full-stack development and secure healthcare platforms'
+        'Launched a professional, responsive website that strengthened the therapist\'s digital presence.',
+        'Designed and implemented a complete design system focused on empathy and clarity.',
+        'Built a strong foundation for a full-stack mental health application.',
       ],
       role: `
   <strong class="block mb-2 ml-4">Frontend Development</strong>
@@ -374,29 +360,26 @@ export default function ProjectsSection() {
       image: LiteFinanceProjectMainPic,
 
       features: [
-        'Secure user login and account authentication',
-        'Interactive dashboard showing account balance and details',
-        'Support for multiple accounts with different account types',
-        'Transaction history tracking with date and type filters',
-        'Money transfer between accounts with real-time balance updates',  
-        'Digital account card display with account number and expiry',
-        'Branch locator and information display',
-        'User profile, privacy, and notification settings',
-        'Responsive desktop design with clean UI layouts'
+        { title: 'Secure User Authentication', icon: Lock },
+        { title: 'Interactive Dashboard', icon: BarChart },
+        { title: 'Multi-Account Support', icon: Layers },
+        { title: 'Transaction History Tracking', icon: Calendar },
+        { title: 'Real-time Money Transfer', icon: ArrowRight },
+        { title: 'Digital Account Card Display', icon: CreditCard },
+        { title: 'Branch Locator', icon: MapPin },
+        { title: 'User Profile & Settings', icon: Settings },
       ],
       challenges: [
-        'Designing a clean and professional UI using Java Swing components',
-        'Managing state and data flow within a desktop environment',
-        'Planning scalable database integration for account and transaction data',
-        'Ensuring usability and security in a finance-focused desktop app',
-        'Coordinating teamwork and distributing tasks across a 3-person team'
+        'Designing a clean and professional UI using the limitations of Java Swing.',
+        'Managing application state and data flow within a desktop environment.',
+        'Ensuring usability and security in a finance-focused application.',
+        'Coordinating teamwork and distributing tasks across a 3-person team.',
       ],
       results: [
-        'Successfully developed a functional and professional desktop banking app',
-        'Created a polished and user-friendly design tailored for finance users',
-        'Applied Java OOP principles in a real-world desktop application project',
-        'Strengthened teamwork skills through collaboration on a software project',
-        'Delivered a strong portfolio piece showcasing desktop app development skills'
+        'Successfully developed a functional and professional desktop banking app.',
+        'Applied Java OOP principles in a real-world desktop application project.',
+        'Strengthened teamwork and project management skills.',
+        'Delivered a strong portfolio piece showcasing desktop app development.',
       ],
       role: `
   <strong class="block mb-2 ml-4">UI/UX & Design</strong>
@@ -416,7 +399,7 @@ export default function ProjectsSection() {
       duration: '3 weeks',
       teamSize: '3 people',
     },
-    
+
   ];
 
   return (
@@ -633,10 +616,15 @@ export default function ProjectsSection() {
             </div>
 
 
-            <div>
-              <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Features</h4>
-              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
-                {selectedProject.features.map((f, i) => <li key={i}>{f}</li>)}
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+              <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Key Features</h4>
+              <ul className="space-y-3">
+                {selectedProject.features.map((feature, i) => (
+                  <li key={i} className="flex items-start space-x-3">
+                    <feature.icon className="h-5 w-5 text-pink-500 dark:text-purple-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 dark:text-gray-300">{feature.title}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 

@@ -1,160 +1,118 @@
 /**
- * Hero section component with pink/purple theme and functional links
- * Main introduction section with professional photo and call-to-action buttons
+ * FINAL Bulletproof Responsive Hero Section - With Visible Mobile Skill Bubbles.
+ * The floating skill bubbles are now visible and repositioned on mobile screens for a rich, consistent look across all devices.
  */
 
 import React from 'react';
-import { Github, Mail, Phone } from 'lucide-react';
-import { Button } from '../ui/button';
+import { Github, Mail, Phone, Hand } from 'lucide-react'; 
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import HeroImage from '../../assets/images/optimized/noha1.png';
 
+// Animated Background Component (No changes needed here)
+const AnimatedBackground = () => (
+  <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-purple-50 to-[#fffaf5] dark:from-gray-900 dark:via-purple-900/20 dark:to-gray-900 animate-gradient-xy" />
+  </div>
+);
+
 export default function HeroSection() {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
     <section
       ref={ref}
-      className="min-h-screen flex items-center justify-center relative pt-32 sm:pt-36 md:pt-40 bg-[#fffaf5] dark:bg-gray-900 transition-colors"
+      className="relative flex min-h-screen items-center overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
+      <AnimatedBackground />
 
-          {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left">
-            <h1
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              Hi, I'm{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
-                Noha Hatem
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-32 lg:text-left">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          
+          {/* Left Column: Text Content */}
+          <div className={`transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            
+            <p className="mb-4 text-xl font-semibold text-pink-600 dark:text-purple-400 flex items-center justify-center lg:justify-start">
+              Hello, I'm Noha Hatem.
+              <Hand className="ml-2 h-7 w-7 origin-bottom-right animate-wave" />
+            </p>
+            
+            <h1 className="text-4xl font-extrabold tracking-tighter text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              I Craft Digital Worlds with{' '}
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+                Heart & Code.
               </span>
             </h1>
-
-            <p
-              className={`text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              I design, code, and create 𓆩♡𓆪 <br />
-              from mobile apps to handmade art ⋆˙⟡ <br />
-              blending creativity, empathy, and clean code to craft meaningful digital experiences.
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-700 dark:text-gray-300 lg:mx-0">
+              As a <span className="font-semibold text-gray-800 dark:text-white">Software Engineer</span>, <span className="font-semibold text-gray-800 dark:text-white">Product Designer</span>, and <span className="font-semibold text-gray-800 dark:text-white">Creative Technologist</span>, I transform complex human needs into beautiful and impactful digital experiences. My work is where engineering precision meets artistic soul.
             </p>
 
-            <div
-              className={`flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4 text-sm md:text-base text-gray-600 dark:text-gray-400 mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Product Designer
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Creative Technologist
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                UI/UX Designer
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Flutter Developer
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Software Engineer
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Graphic Designer
-              </span>
-            </div>
-
-            <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              <Button
-                onClick={scrollToAbout}
-                className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 text-lg transform hover:scale-105 transition-transform shadow-lg"
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="transform-gpu rounded-full bg-gradient-to-r from-pink-600 to-purple-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/40"
               >
                 View My Work
-              </Button>
-              <Button
-                onClick={scrollToContact}
-                variant="outline"
-                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 dark:hover:bg-purple-900/20 dark:border-purple-500 dark:text-purple-400 px-8 py-3 text-lg bg-transparent transform hover:scale-105 transition-transform"
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="transform-gpu rounded-full border-2 border-pink-400 bg-white/50 px-8 py-4 text-lg font-bold text-pink-600 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:border-purple-500 dark:bg-gray-800/50 dark:text-purple-300 dark:hover:bg-gray-800/80"
               >
                 Get In Touch
-              </Button>
+              </button>
             </div>
 
-            <div
-              className={`flex justify-center lg:justify-start space-x-6 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-            >
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
-                aria-label="Email"
-              >
-                <Mail className="h-6 w-6" />
+            <div className="mt-10 flex justify-center space-x-6 lg:justify-start">
+              <a href="https://github.com/nohahatem24" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <Github className="h-7 w-7" />
               </a>
-
-              <a
-                href="tel:+201554199143"
-                className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
-                aria-label="Phone"
-              >
-                <Phone className="h-6 w-6" />
+              <a href="mailto:nohahatem.nh@gmail.com" aria-label="Email" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400">
+                <Mail className="h-7 w-7" />
               </a>
-              <a
-                href="https://github.com/nohahatem24"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="h-6 w-6" />
+              <a href="tel:+201554199143" aria-label="Phone" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400">
+                <Phone className="h-7 w-7" />
               </a>
             </div>
-
           </div>
 
-          {/* Right Column - Professional Photo */}
-          <div
-            className={`flex justify-center lg:justify-end mb-12 lg:mb-0 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-              }`}
-          >
-            <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 dark:from-pink-800 dark:to-purple-800 p-2 shadow-2xl">
-                <div className="w-full h-full rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm flex items-center justify-center">
-                  <img
-                    src={HeroImage}
-                    alt="Noha Hatem - UI/UX Designer & Flutter Developer"
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </div>
+          {/* Right Column: Image */}
+          <div className={`relative flex h-full w-full items-center justify-center transition-all duration-1000 ease-in-out delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+            <div className="relative h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96">
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 opacity-60 blur-xl transition duration-1000 animate-pulse-slow"></div>
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-white/60 p-2 shadow-2xl backdrop-blur-lg dark:bg-gray-800/60">
+                <img
+                  src={HeroImage}
+                  alt="Noha Hatem - Product Designer & Creative Technologist"
+                  className="h-full w-full rounded-full object-cover"
+                />
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-pink-500 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
+              
+              {/* --- CHANGE IS HERE: Skill Bubbles are now responsive --- */}
+              <div className="absolute inset-0">
+                {/* Bubble 1: Software Engineer */}
+                <span className="absolute top-0 left-0 lg:-top-4 lg:left-10 animate-float rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
+                  Software Engineer
+                </span>
+                {/* Bubble 2: Creative Tech */}
+                <span className="absolute top-1/4 -right-4 lg:-right-10 animate-float [animation-delay:-2s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
+                  Creative Tech
+                </span>
+                {/* Bubble 3: Art Direction */}
+                <span className="absolute bottom-0 right-1/4 lg:-bottom-4 animate-float [animation-delay:-4s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
+                  Art Direction
+                </span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-  );
+   );
 }
