@@ -60,19 +60,22 @@ export default function HeroSection() {
                 }`}
             >
               <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
+                Product Designer
+              </span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
+                Creative Technologist
+              </span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
                 UI/UX Designer
               </span>
               <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
                 Flutter Developer
               </span>
               <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Graphic Designer
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
-                Creative Technologist
-              </span>
-              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
                 Software Engineer
+              </span>
+              <span className="bg-white/60 dark:bg-gray-800/60 px-3 py-2 rounded-full shadow-sm backdrop-blur-sm text-center">
+                Graphic Designer
               </span>
             </div>
 
