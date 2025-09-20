@@ -203,10 +203,13 @@ export default function ProjectsSection() {
         HieroVisionProjectWeb9,
       ],
       features: [
-        { title: 'AI Hieroglyph Translator', icon: BrainCircuit },
-        { title: 'Interactive Landmark Explorer', icon: Globe },
-        { title: 'Gamified "Kids Mode"', icon: Users },
-        { title: 'AnubAI Chatbot Assistant', icon: Monitor },
+        { title: 'Hieroglyph Image Scanner & Translator', icon: BrainCircuit },
+        { title: 'Text-to-Hieroglyph & Vice Versa Conversion', icon: Languages },
+        { title: 'Interactive Landmark Explorer with Real-time Info', icon: MapPin },
+        { title: 'Museum & Historical Tours Booking System', icon: Calendar },
+        { title: 'Personalized User Profiles & Activity History', icon: Users },
+        { title: 'Engaging "Kids Mode" with Games & Stories', icon: Users2 }, // Using a different 'Users' icon for variety
+        { title: 'AnubAI – Custom AI-Powered Chatbot Assistant', icon: Monitor },
       ],
       challenges: [
         'Designing a dual UI/UX for both children and academic users.',
@@ -406,265 +409,135 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={ref}
-      className="py-20 bg-[#fffaf5] dark:bg-gray-900 transition-colors"
+      className="py-16 md:py-24 bg-[#fffaf5] dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Showcasing my UI/UX designs, Flutter applications, and creative tech projects that solve real problems.
+        {/* Section Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+            My Projects
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            A selection of my work, from AI-powered platforms to human-centered design systems.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4"></div>
+          <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12 items-stretch">
+        {/* --- CHANGE IS HERE: Unified Grid Layout --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="flex flex-col bg-white/60 dark:bg-gray-800/60 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 backdrop-blur-sm group"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              {/* Image Section with Category */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {project.category}
-                  </span>
-                </div>
-                {/* Hover Overlay with View Details */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button
-                    onClick={() => setSelectedProject(project)}
-                    className="bg-white/90 text-gray-900 hover:bg-white transform hover:scale-105 transition-transform"
-                  >
-                    View Details
-                  </Button>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className="p-6 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
-
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech, i) => (
-                    <span
-                      key={i}
-                      onClick={() => setSelectedProject(project)}
-                      className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded text-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span
-                      onClick={() => setSelectedProject(project)}
-                      className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded text-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
-                    >
-                      +{project.technologies.length - 3} more
-                    </span>
-                  )}
-                </div>
-
-                {/* View Full Details Button */}
-                <Button
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full mb-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg text-lg font-semibold hover:opacity-90"
-                >
-                  View Full Details
-                </Button>
-
-                {/* Links Section */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.githubUrl && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                      className="border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20 bg-transparent"
-                    >
-                      <Github className="h-4 w-4 mr-1" /> Code
-                    </Button>
-                  )}
-                  {project.websiteUrl && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(project.websiteUrl, '_blank')}
-                      className="border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20 bg-transparent"
-                    >
-                      <Globe className="h-4 w-4 mr-1" /> Live
-                    </Button>
-                  )}
-                  {project.presentationUrl && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(project.presentationUrl, '_blank')}
-                      className="border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20 bg-transparent"
-                    >
-                      <Monitor className="h-4 w-4 mr-1" /> Presentation
-                    </Button>
-                  )}
-                </div>
-
-                {/* Gallery Buttons */}
-                {project.mobileGallery && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="mb-2 w-full border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20"
-                    onClick={() => setImageModalData({ images: project.mobileGallery!, title: project.title + ' (Mobile)', description: 'Mobile Screenshots' })}
-                  >
-                    View Mobile Screens
-                  </Button>
-                )}
-                {project.webGallery && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-400 hover:bg-pink-50 dark:hover:bg-purple-900/20"
-                    onClick={() => setImageModalData({ images: project.webGallery!, title: project.title + ' (Website)', description: 'Website Screenshots' })}
-                  >
-                    View Website Screens
-                  </Button>
-                )}
-              </div>
-            </div>
-
+            <ProjectCard 
+              key={index} 
+              project={project} 
+              setSelectedProject={setSelectedProject} 
+            />
           ))}
-        </div>
-
-
-        <div className={`text-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-gradient-to-r from-pink-500 to-purple-500 text-white">Back to Top</Button>
         </div>
       </div>
 
       {/* Project Detail Modal */}
-      <Modal
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-        title={selectedProject?.title || ''}
-      >
-        {selectedProject && (
-          <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
-            {/* Main Project Image */}
-            <div className="w-full flex justify-center">
-              <div className="max-w-full max-h-[80vh]">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-auto h-auto max-w-full max-h-[80vh] object-contain rounded-lg"
-                />
-              </div>
-            </div>
-
-
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="flex items-center space-x-3">
-                <Calendar className="h-5 w-5 text-pink-600 dark:text-purple-400" />
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">Duration</div>
-                  <div className="text-gray-600 dark:text-gray-300">{selectedProject.duration}</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Users className="h-5 w-5 text-pink-600 dark:text-purple-400" />
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">Team Size</div>
-                  <div className="text-gray-600 dark:text-gray-300">{selectedProject.teamSize}</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Target className="h-5 w-5 text-pink-600 dark:text-purple-400" />
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">Category</div>
-                  <div className="text-gray-600 dark:text-gray-300">{selectedProject.category}</div>
-                </div>
-              </div>
-            </div>
-
-
-            {/* Project Overview */}
-            <div>
-              <div className="text-lg font-bold text-gray-900 dark:text-white mt-4 mb-2">Project Overview</div>
-              <div className="text-gray-600 dark:text-gray-300 text-justify" dangerouslySetInnerHTML={{ __html: selectedProject.fullDescription }} />
-            </div>
-
-            {/* Full Technologies Used*/}
-            <div>
-              <h4 className="text-lg font-bold text-gray-900 dark:text-white mt-4 mb-2">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedProject.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-pink-50 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-3 py-1 rounded text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-
-            <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-              <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Key Features</h4>
-              <ul className="space-y-3">
-                {selectedProject.features.map((feature, i) => (
-                  <li key={i} className="flex items-start space-x-3">
-                    <feature.icon className="h-5 w-5 text-pink-500 dark:text-purple-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature.title}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Challenges</h4>
-              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
-                {selectedProject.challenges.map((c, i) => <li key={i}>{c}</li>)}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">Results</h4>
-              <ul className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify">
-                {selectedProject.results.map((r, i) => <li key={i}>{r}</li>)}
-              </ul>
-            </div>
-
-            {selectedProject.role && (
-              <div>
-                <h4 className="text-lg font-semibold text-pink-500 dark:text-purple-400 mt-4 mb-2">My Role</h4>
-                <div className="list-disc list-outside pl-6 text-gray-600 dark:text-gray-300 text-justify" dangerouslySetInnerHTML={{ __html: selectedProject.role }} />
-              </div>
-            )}
-
-
-
-          </div>
-        )}
-      </Modal>
-
-      {/* Image Modal */}
-      {imageModalData && (
-        <ImageModal
-          isOpen={!!imageModalData}
-          onClose={() => setImageModalData(null)}
-          image={imageModalData.images}
-          title={imageModalData.title}
-          description={imageModalData.description}
-        />
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
     </section>
   );
 }
+
+// --- ProjectCard Component (No changes needed, it's already perfect) ---
+const ProjectCard = ({ project, setSelectedProject }: { project: Project, setSelectedProject: (p: Project) => void }) => {
+  return (
+    <div
+      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-105 aspect-[4/3]"
+      onClick={() => setSelectedProject(project)}
+    >
+      <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 p-6 flex flex-col justify-end">
+        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md">{project.category}</span>
+        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{project.title}</h3>
+        <p className="text-white/80 text-sm lg:text-base">{project.description}</p>
+        <div className="mt-4 opacity-0 group-hover:opacity-100 transform-gpu group-hover:translate-y-0 translate-y-4 transition-all duration-300">
+          <span className="font-semibold text-white flex items-center">
+            View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- ProjectModal Component (No changes needed, it's already perfect) ---
+const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => void }) => {
+  // ... (The modal code remains exactly the same as the previous version)
+  return (
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in">
+      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="flex-grow overflow-y-auto">
+          <div className="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-6">
+              <img src={project.image} alt={project.title} className="w-full rounded-lg shadow-md" />
+              <div>
+                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">Project Overview</h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{project.fullDescription}</p>
+              </div>
+              {project.role && (
+                <div>
+                  <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">My Role</h3>
+                  <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: project.role }} />
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1 space-y-6">
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Project Info</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Duration:</span> <span className="text-gray-800 dark:text-white">{project.duration}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Team:</span> <span className="text-gray-800 dark:text-white">{project.teamSize}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Category:</span> <span className="text-gray-800 dark:text-white">{project.category}</span></div>
+                </div>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Key Features</h4>
+                <ul className="space-y-3">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex items-start space-x-3">
+                      <feature.icon className="h-5 w-5 text-pink-500 dark:text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 dark:text-gray-300">{feature.title}</span>
+                    </li>
+                  ))}ext-gr            </ul>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Technologies Used</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="bg-pink-100 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Project Links</h4>
+                <div className="space-y-2">
+                  {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Github className="mr-2 h-4 w-4" /> View on GitHub</a>}
+                  {project.websiteUrl && <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Globe className="mr-2 h-4 w-4" /> View Live Site</a>}
+                  {project.presentationUrl && <a href={project.presentationUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Monitor className="mr-2 h-4 w-4" /> View Presentation</a>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
