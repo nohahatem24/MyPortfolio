@@ -89,7 +89,7 @@ export default function ExperienceSection() {
                   {/* Icon and Connector for large screens */}
                   <div className="hidden sm:flex w-1/2"></div>
                   <div className="hidden sm:flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 rounded-full absolute left-1/2 -translate-y-4 -translate-x-1/2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-pulse-slow">
+                    <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                       <Briefcase className="h-5 w-5 text-white" />
                     </div>
                   </div>

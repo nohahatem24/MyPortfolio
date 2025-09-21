@@ -72,7 +72,13 @@ export default function HeroSection() {
               <a href="https://github.com/nohahatem24" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                 <Github className="h-7 w-7" />
               </a>
-              <a href="mailto:nohahatem.nh@gmail.com" aria-label="Email" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400">
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email" 
+                className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400"
+              >
                 <Mail className="h-7 w-7" />
               </a>
               <a href="tel:+201554199143" aria-label="Phone" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400">

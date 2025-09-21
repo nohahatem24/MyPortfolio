@@ -8,6 +8,34 @@ import React from 'react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { useTheme } from '../../hooks/useTheme';
 import ProfileImage from '../../assets/images/optimized/nohaidc.png';
+import { 
+  FileText, 
+  Palette, 
+  Code, 
+  Wrench, 
+  PenTool, 
+  Sparkles, 
+  Bot, 
+  GitBranch,
+  Users,
+  Map
+} from 'lucide-react';
+import { 
+  SiFigma, 
+  SiFlutter, 
+  SiFirebase, 
+  SiGithub, 
+  SiAdobephotoshop, 
+  SiAdobeillustrator, 
+  SiCanva,
+   
+  SiOpenai, 
+  SiDart, 
+  SiHtml5, 
+  SiCss3, 
+  SiJavascript, 
+  SiReact 
+} from 'react-icons/si';
 
 // It's better to use a library like 'react-icons' for SVGs to keep the code clean.
 // Example: import { FaRocket, FaToolbox } from 'react-icons/fa';
@@ -22,11 +50,65 @@ export default function AboutSection() {
     'Design Systems', 'Graphic Design & Branding', 'AI-Powered Design', 'Flutter Development',
   ];
 
-  const toolbox = {
-    'Product Design': ['Figma', 'User Personas', 'Journey Mapping'],
-    'Creative & Visual': ['Photoshop', 'Illustrator', 'Canva', 'Midjourney', 'Generative AI'],
-    'Development & Prototyping': ['Flutter', 'Dart', 'HTML/CSS', 'JavaScript', 'AI Coding Assistants'],
-    'Collaboration & Infrastructure': ['GitHub', 'Firebase', 'Agile Methodology', 'Jira / Trello'],
+  // First, let's add an interface for the toolbox items
+  interface ToolboxItem {
+    category: string;
+    icon: React.ElementType;
+    tools: {
+      name: string;
+      icon: React.ElementType;
+    }[];
+  }
+
+  // Then modify the toolbox constant definition
+  const toolbox: ToolboxItem[] = [
+    {
+      category: 'Product Design',
+      icon: PenTool,
+      tools: [
+        { name: 'Figma', icon: SiFigma },
+        { name: 'User Personas', icon: Users },
+        { name: 'Journey Mapping', icon: Map }
+      ]
+    },
+    {
+      category: 'Creative & Visual',
+      icon: Palette,
+      tools: [
+        { name: 'Photoshop', icon: SiAdobephotoshop },
+        { name: 'Illustrator', icon: SiAdobeillustrator },
+        { name: 'Canva', icon: SiCanva },
+        
+        { name: 'AI Design', icon: Sparkles }
+      ]
+    },
+    {
+      category: 'Development',
+      icon: Code,
+      tools: [
+        { name: 'Flutter', icon: SiFlutter },
+        { name: 'Dart', icon: SiDart },
+        { name: 'HTML/CSS', icon: SiHtml5 },
+        { name: 'JavaScript', icon: SiJavascript },
+        { name: 'React', icon: SiReact }
+      ]
+    },
+    {
+      category: 'General Tools',
+      icon: Wrench,
+      tools: [
+        { name: 'GitHub', icon: SiGithub },
+        { name: 'Firebase', icon: SiFirebase },
+        { name: 'AI Tools', icon: SiOpenai },
+        { name: 'Version Control', icon: GitBranch }
+      ]
+    }
+  ];
+
+
+  const cvLinks = {
+    productDesigner: 'https://drive.google.com/file/d/14JkHFZgyc28iYGs7ujcdcEcl19jyZXhi/view', // Replace with your actual link
+    general: 'https://drive.google.com/file/d/10OUO9ReIalTF6I5j7ehFw8a3hV2CW5ZD/view' // Replace with your actual link
   };
 
   return (
@@ -59,7 +141,7 @@ export default function AboutSection() {
                 {/* Profile Image - better placement for responsiveness */}
                 <div className="flex-shrink-0 mb-6 sm:mb-0 sm:mr-6 float-none sm:float-left">
                   <div className="relative w-32 h-32 mx-auto sm:mx-0">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1 animate-pulse-slow">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1">
                       <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
                         <img
                           src={ProfileImage}
@@ -85,23 +167,38 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* CV Box */}
+            {/* --- UPDATED CV Box --- */}
             <div className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg text-center flex flex-col items-center justify-center transition-all duration-1000 ease-in-out delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-              <svg className="w-16 h-16 text-pink-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">My Résumé</h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">Click below to view my complete professional journey.</p>
-              <a
-                href="https://drive.google.com/file/d/10OUO9ReIalTF6I5j7ehFw8a3hV2CW5ZD/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                View Résumé
-              </a>
+              <FileText className="w-12 h-12 text-pink-500 dark:text-purple-400 mb-4" />
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">My Résumés</h4>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
+                Choose the version that best fits your needs.
+              </p>
+              <div className="w-full space-y-4">
+                {/* Product Designer CV Button */}
+                <a
+                  href={cvLinks.productDesigner} // Replace with your actual link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  <Palette className="w-5 h-5 mr-2" />
+                  Product Designer CV
+                </a>
+                {/* General CV Button */}
+                <a
+                  href={cvLinks.general} // Replace with your actual link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 bg-white/80 dark:bg-gray-700/80 border-2 border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-300 font-bold rounded-full hover:bg-white dark:hover:bg-gray-700 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  <Code className="w-5 h-5 mr-2" />
+                  General/Tech CV
+                </a>
+              </div>
             </div>
           </div>
+
 
           {/* Expertise Section */}
           <div className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -119,16 +216,17 @@ export default function AboutSection() {
           <div className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out delay-400 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">My Toolbox</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-              {Object.entries(toolbox).map(([category, tools]) => (
-                <div key={category} className="transform hover:scale-105 transition-transform duration-300">
-                  <h4 className="text-xl font-semibold text-pink-600 dark:text-purple-400 mb-4 border-b-2 border-pink-200 dark:border-purple-700 pb-2">
-                    {category}
+              {toolbox.map((categoryItem) => (
+                <div key={categoryItem.category} className="transform hover:scale-105 transition-transform duration-300">
+                  <h4 className="text-xl font-semibold text-pink-600 dark:text-purple-400 mb-4 border-b-2 border-pink-200 dark:border-purple-700 pb-2 flex items-center">
+                    <categoryItem.icon className="w-5 h-5 mr-3" />
+                    {categoryItem.category}
                   </h4>
                   <ul className="space-y-3 mt-4">
-                    {tools.map((tool) => (
-                      <li key={tool} className="text-gray-700 dark:text-gray-300 flex items-center">
-                        <span className="text-pink-500 dark:text-purple-500 mr-3 text-lg">◆</span>
-                        <span>{tool}</span>
+                    {categoryItem.tools.map((tool) => (
+                      <li key={tool.name} className="text-gray-700 dark:text-gray-300 flex items-center group">
+                        <tool.icon className="w-5 h-5 mr-3 text-gray-400 group-hover:text-pink-500 dark:group-hover:text-purple-400 transition-colors" />
+                        <span>{tool.name}</span>
                       </li>
                     ))}
                   </ul>
