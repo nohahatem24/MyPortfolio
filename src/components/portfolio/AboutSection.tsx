@@ -135,7 +135,7 @@ export default function AboutSection() {
             {/* About Me Card */}
             <div className={`lg:col-span-2 bg-white/60 dark:bg-gray-800/60 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                Hello there! I'm Noha Hatem <span className="ml-2 text-2xl">࿔*˖˚🎀</span>
+                Hello there! I'm Noha <span className="ml-2 text-2xl">࿔*˖˚🎀</span>
               </h3>
               <div className="sm:flex">
                 {/* Profile Image - better placement for responsiveness */}

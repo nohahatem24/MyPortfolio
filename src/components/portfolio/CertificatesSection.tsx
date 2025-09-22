@@ -22,7 +22,7 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    title: "AICE - AI Career Essentials",
+    title: "AICE | AI Career Essentials",
     description: "Completed an intensive program focused on building future-ready skills in Artificial Intelligence and career development. The course combined hands-on training with leading AI tools (ChatGPT, Claude, Gemini, Copilot, Firefly, Udio, Wix AI, and others) while emphasizing <strong>practical application in real-world scenarios.",
     issuer: "ALX Africa",
     issueDate: "September 24, 2024",
@@ -56,7 +56,7 @@ const certificates: Certificate[] = [
   {
     title: "Financial Accounting: Foundations",
     description: "Successfully completed a foundational course in financial accounting that provided both theoretical knowledge and practical applications of accounting principles.",
-    issuer: "University of Illinois at Urbana-Champaign – Coursera",
+    issuer: "University of Illinois at Urbana-Champaign | Coursera",
     issueDate: "Nov 25, 2022",
     duration: "4 weeks",
     images: [CetrificateAccounting],
@@ -86,7 +86,7 @@ export default function CertificatesSection() {
         {/* Section Header (Enhanced) */}
         <div className={`text-center mb-16 transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
-            Credentials & Learning Journey
+            Certificates & Learning Journey
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A showcase of my commitment to continuous growth and professional development.
@@ -158,13 +158,23 @@ const CertificateCard = ({ certificate, onClick, isVisible, delay }: { certifica
     </div>
   );
 };
-// --- NEW: CertificateModal Child Component ---
+
+//-- UPDATED: CertificateModal Child Component ---
 const CertificateModal = ({ certificate, onClose }: { certificate: Certificate, onClose: () => void }) => {
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div 
+      className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in"
+      onClick={handleBackdropClick}  // Add this click handler
+    >
       <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-start justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-start justify-between p-4 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
           <div className="flex items-center">
             <Award className="h-6 w-6 text-pink-500 dark:text-purple-400 mr-3" />
             <div>
@@ -177,59 +187,53 @@ const CertificateModal = ({ certificate, onClose }: { certificate: Certificate, 
           </button>
         </div>
 
-        {/* Body */}
-        <div className="flex-grow overflow-y-auto p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Left: Image */}
-            <div className="md:col-span-1">
-              <img 
-                src={certificate.images[0]} 
-                alt={certificate.title} 
-                className="w-full rounded-lg shadow-md mb-4"
-              />
-              {certificate.images.length > 1 && (
-                 <img 
-                    src={certificate.images[1]} 
-                    alt={certificate.title} 
-                    className="w-full rounded-lg shadow-md"
-                  />
-              )}
-            </div>
+        {/* Modified Body Section */}
+        <div className="flex-grow overflow-y-auto">
+          {/* Modified Image Section - Removed padding and grid */}
+          <div className="w-full">
+            {certificate.images.map((img, index) => (
+              <div key={index} className="mb-4 last:mb-0">
+                <img 
+                  src={img} 
+                  alt={`${certificate.title} - Page ${index + 1}`} 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
 
-            {/* Right: Details */}
-            <div className="md:col-span-2">
-              <div className="flex flex-wrap gap-4 text-sm mb-6">
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <Calendar className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500"/>
-                  <strong>Issued:</strong><span className="ml-1">{certificate.issueDate}</span>
-                </div>
-                {certificate.duration && (
-                  <div className="flex items-center text-gray-700 dark:text-gray-300">
-                    <Clock className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500"/>
-                    <strong>Duration:</strong><span className="ml-1">{certificate.duration}</span>
-                  </div>
-                )}
+          {/* Details Section - Added padding back for content */}
+          <div className="p-6 space-y-6">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <div className="flex items-center text-gray-700 dark:text-gray-300">
+                <Calendar className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500"/>
+                <strong>Issued:</strong><span className="ml-1.5">{certificate.issueDate}</span>
               </div>
               {certificate.duration && (
-            <div className="flex items-center">
-              <Clock className="h-4 w-4 mr-1.5" />
-              <span>{certificate.duration}</span>
+                <div className="flex items-center text-gray-700 dark:text-gray-300">
+                  <Clock className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500"/>
+                  <strong>Duration:</strong><span className="ml-1.5">{certificate.duration}</span>
+                </div>
+              )}
             </div>
-          )}
-              <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: certificate.description }} />
-              
-              {certificate.certificateUrl && (
+            
+            <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300" 
+              dangerouslySetInnerHTML={{ __html: certificate.description }} 
+            />
+            
+            {certificate.certificateUrl && (
+              <div className="pt-4">
                 <a 
                   href={certificate.certificateUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg hover:shadow-lg transform hover:scale-105"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
+                  <ExternalLink className="h-5 w-5 mr-2" />
                   View Original Certificate
                 </a>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

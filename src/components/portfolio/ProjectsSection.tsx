@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import {
   ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers,
-  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings
+  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings, Smartphone
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Modal } from '../ui/modal';
@@ -147,7 +147,11 @@ interface Project {
 export default function ProjectsSection() {
   const { ref, isVisible } = useScrollAnimation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [imageModalData, setImageModalData] = useState<{ images: string[], title: string, description: string } | null>(null);
+  const [imageModalData, setImageModalData] = useState<{
+    images: string[];
+    title: string;
+    description: string;
+  } | null>(null);
 
   const projects: Project[] = [
     {
@@ -430,6 +434,7 @@ export default function ProjectsSection() {
               key={index} 
               project={project} 
               setSelectedProject={setSelectedProject} 
+              setImageModalData={setImageModalData}
             />
           ))}
         </div>
@@ -439,23 +444,82 @@ export default function ProjectsSection() {
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
+
+      {/* Image Gallery Modal */}
+      {imageModalData && (
+        <ImageModal
+          isOpen={!!imageModalData}
+          onClose={() => setImageModalData(null)}
+          image={imageModalData.images}
+          title={imageModalData.title}
+          description={imageModalData.description}
+        />
+      )}
     </section>
   );
 }
 
 // --- ProjectCard Component (No changes needed, it's already perfect) ---
-const ProjectCard = ({ project, setSelectedProject }: { project: Project, setSelectedProject: (p: Project) => void }) => {
+const ProjectCard = ({ 
+  project, 
+  setSelectedProject,
+  setImageModalData 
+}: { 
+  project: Project, 
+  setSelectedProject: (p: Project) => void,
+  setImageModalData: (data: { images: string[], title: string, description: string } | null) => void 
+}) => {
   return (
-    <div
+    <div 
       className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-105 aspect-[4/3]"
-      onClick={() => setSelectedProject(project)}
+      onClick={() => setSelectedProject(project)} // Add this onClick handler
     >
       <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       <div className="absolute inset-0 p-6 flex flex-col justify-end">
-        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md">{project.category}</span>
+        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md">
+          {project.category}
+        </span>
         <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{project.title}</h3>
         <p className="text-white/80 text-sm lg:text-base">{project.description}</p>
+        
+        {/* Gallery Buttons */}
+        <div className="mt-4 flex gap-2">
+          {project.mobileGallery && project.mobileGallery.length > 0 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // Important: Prevent card click when clicking gallery button
+                setImageModalData({
+                  images: project.mobileGallery!,
+                  title: `${project.title} - Mobile Views`,
+                  description: 'Mobile application interface and features'
+                });
+              }}
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-sm backdrop-blur-sm transition-all"
+            >
+              <Smartphone className="w-4 h-4" />
+              Mobile Gallery
+            </button>
+          )}
+          
+          {project.webGallery && project.webGallery.length > 0 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // Important: Prevent card click when clicking gallery button
+                setImageModalData({
+                  images: project.webGallery!,
+                  title: `${project.title} - Web Views`,
+                  description: 'Website interface and features'
+                });
+              }}
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-sm backdrop-blur-sm transition-all"
+            >
+              <Globe className="w-4 h-4" />
+              Web Gallery
+            </button>
+          )}
+        </div>
+
         <div className="mt-4 opacity-0 group-hover:opacity-100 transform-gpu group-hover:translate-y-0 translate-y-4 transition-all duration-300">
           <span className="font-semibold text-white flex items-center">
             View Case Study <ArrowRight className="ml-2 h-4 w-4" />
@@ -468,9 +532,17 @@ const ProjectCard = ({ project, setSelectedProject }: { project: Project, setSel
 
 // --- ProjectModal Component (No changes needed, it's already perfect) ---
 const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => void }) => {
-  // ... (The modal code remains exactly the same as the previous version)
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div 
+      className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in"
+      onClick={handleBackdropClick} // Add this click handler
+    >
       <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
@@ -505,7 +577,7 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Duration:</span> <span className="text-gray-800 dark:text-white">{project.duration}</span></div>
                   <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Team:</span> <span className="text-gray-800 dark:text-white">{project.teamSize}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Category:</span> <span className="text-gray-800 dark:text-white">{project.category}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400 right-0">Category:</span> <span className="text-gray-800 dark:text-white">{project.category}</span></div>
                 </div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
@@ -516,15 +588,7 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
                       <feature.icon className="h-5 w-5 text-pink-500 dark:text-purple-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 dark:text-gray-300">{feature.title}</span>
                     </li>
-                  ))}ext-gr            </ul>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="bg-pink-100 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium">{tech}</span>
-                  ))}
-                </div>
+                  ))}           </ul>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
                 <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Project Links</h4>
@@ -534,6 +598,15 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
                   {project.presentationUrl && <a href={project.presentationUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Monitor className="mr-2 h-4 w-4" /> View Presentation</a>}
                 </div>
               </div>
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Technologies Used</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="bg-pink-100 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
