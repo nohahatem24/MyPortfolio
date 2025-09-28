@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Github, Mail, Phone, Hand } from 'lucide-react'; 
+import { Github, Mail, Phone, Hand, Linkedin, Shapes } from 'lucide-react'; // Add Shapes for Behance
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import HeroImage from '../../assets/images/optimized/noha1.png';
 
@@ -69,16 +69,31 @@ export default function HeroSection() {
             </div>
 
             <div className="mt-10 flex justify-center space-x-6 lg:justify-start">
-              <a href="https://github.com/nohahatem24" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+              <a href="https://github.com/nohahatem24" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="GitHub" 
+                className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              >
                 <Github className="h-7 w-7" />
               </a>
-              <a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email" 
-                className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400"
+              <a href="https://linkedin.com/in/noha-hatem-192597387" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="LinkedIn" 
+                className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
               >
+                <Linkedin className="h-7 w-7" />
+              </a>
+              <a href="https://behance.net/nohahatem24/appreciated" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Behance" 
+                className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-[#053eff] dark:text-gray-400 dark:hover:text-[#053eff]"
+              >
+                <Shapes className="h-7 w-7" />
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400">
                 <Mail className="h-7 w-7" />
               </a>
               <a href="tel:+201554199143" aria-label="Phone" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400">

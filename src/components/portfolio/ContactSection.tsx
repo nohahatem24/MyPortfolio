@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Github, Linkedin, Shapes } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
@@ -138,6 +138,42 @@ export default function ContactSection() {
                   <h4 className="font-semibold text-gray-900 dark:text-white">GitHub</h4>
                   <a
                     href="https://github.com/nohahatem24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 dark:text-purple-400 hover:text-pink-700 dark:hover:text-purple-300 transition-colors"
+                  >
+                    nohahatem24
+                  </a>
+                </div>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform">
+                <div className="bg-pink-100 dark:bg-purple-900/30 p-3 rounded-full">
+                  <Linkedin className="h-6 w-6 text-pink-600 dark:text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h4>
+                  <a
+                    href="https://linkedin.com/in/noha-hatem-192597387"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 dark:text-purple-400 hover:text-pink-700 dark:hover:text-purple-300 transition-colors"
+                  >
+                    Noha Hatem
+                  </a>
+                </div>
+              </div>
+
+              {/* Behance */}
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform">
+                <div className="bg-pink-100 dark:bg-purple-900/30 p-3 rounded-full">
+                  <Shapes className="h-6 w-6 text-pink-600 dark:text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">Behance</h4>
+                  <a
+                    href="https://behance.net/nohahatem24/appreciated"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-pink-600 dark:text-purple-400 hover:text-pink-700 dark:hover:text-purple-300 transition-colors"

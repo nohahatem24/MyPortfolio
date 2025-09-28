@@ -107,8 +107,8 @@ export default function AboutSection() {
 
 
   const cvLinks = {
-    productDesigner: 'https://drive.google.com/file/d/14JkHFZgyc28iYGs7ujcdcEcl19jyZXhi/view', // Replace with your actual link
-    general: 'https://drive.google.com/file/d/10OUO9ReIalTF6I5j7ehFw8a3hV2CW5ZD/view' // Replace with your actual link
+    productDesigner: 'https://drive.google.com/file/d/1AmpP_CjQeWNtZy8_2U8PXfCN5EqOjKWW/view', // Replace with your actual link
+    general: 'https://drive.google.com/file/d/1vou-GggMXGXpARyTE5OZP195_8MVxeTU/view' // Replace with your actual link
   };
 
   return (
