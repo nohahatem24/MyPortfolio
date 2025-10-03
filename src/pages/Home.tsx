@@ -12,6 +12,7 @@ import ProjectsSection from '../components/portfolio/ProjectsSection';
 import CertificatesSection from '../components/portfolio/CertificatesSection';
 import ContactSection from '../components/portfolio/ContactSection';
 import Navigation from '../components/portfolio/Navigation';
+import ArtSection from '../components/portfolio/ArtSection';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <EducationSection />
         <ExperienceSection />
         <ProjectsSection />
+        <ArtSection />
         <CertificatesSection />
         <ContactSection />
       </main>

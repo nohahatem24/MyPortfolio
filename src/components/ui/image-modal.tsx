@@ -1,177 +1,113 @@
-/**
- * Image modal component for certificates and art pieces
- * Displays full-size images with details
- */
-
-import React, { useState } from 'react';
-import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from './button';
+import React, { useEffect } from 'react';
+import { X, Calendar, Type } from 'lucide-react';
 
 interface ImageModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  image: string | string[];
-  title: string;
-  description: string;
-  details?: {
-    medium?: string;
-    year?: string;
-    issuer?: string;
-    issueDate?: string;
-    duration?: string;
-  };
-  actionButton?: {
-    label: string;
-    onClick: () => void;
-  };
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    description?: string;
+    image: string[]; // Always an array
+    details?: {
+        medium?: string;
+        year?: string;
+    };
 }
 
-export function ImageModal({ 
-  isOpen, 
-  onClose, 
-  image, 
-  title, 
-  description, 
-  details, 
-  actionButton 
-}: ImageModalProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export function ImageModal({ isOpen, onClose, title, description, image, details }: ImageModalProps) {
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') onClose();
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+    if (!isOpen) return null;
 
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  };
-
-  React.useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    }
-    
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+    const handleBackdropClick = (e: React.MouseEvent) => {
+        if (e.target === e.currentTarget) onClose();
     };
-  }, [isOpen]);
 
-    const nextImage = () => {
-  setCurrentIndex((prev) => (prev + 1) % image.length);
-};
+    const hasMultipleImages = image.length > 1;
 
-const prevImage = () => {
-  setCurrentIndex((prev) => (prev - 1 + image.length) % image.length);
-};
-
-
-  return (
-    <div 
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-      onClick={handleBackdropClick}
-    >
-      <div className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h2>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={onClose}
-            className="p-2 h-auto border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 bg-transparent"
-          >
-            <X className="h-5 w-5" />
-          </Button>
-        </div>
-
-        {/* Image Carousel */}
-        <div className="relative w-full flex justify-center items-center bg-gray-100 dark:bg-gray-700">
-          <img
-            src={image[currentIndex]}
-            alt={title}
-            className="w-full max-h-[70vh] object-contain rounded-lg transition-all duration-500"
-          />
-
-          {image.length > 1 && (
-            <>
-              {/* Left Arrow */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prevImage();
-                }}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-
-              {/* Right Arrow */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  nextImage();
-                }}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </>
-          )}
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-6">
-          {details && (
-            <div className="grid grid-cols-3 p-4 bg-pink-50 dark:bg-purple-900/20 rounded-lg">
-              {details.issuer && (
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white text-sm">Issued By</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">{details.issuer}</div>
-                </div>
-              )}
-              {details.issueDate && (
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white text-sm">Issue Date</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">{details.issueDate}</div>
-                </div>
-              )}
-              {details.duration && (
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white text-sm">Duration</div>
-                  <div className="text-gray-600 dark:text-gray-300 text-sm">{details.duration}</div>
-                </div>
-              )}
-            </div>
-          )}
-
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Description</h3>
+    return (
+        <div
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={handleBackdropClick}
+        >
             <div
-              className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
-          </div>
+                className="bg-white dark:bg-gray-800 rounded-2xl w-full max-w-5xl max-h-[90vh] shadow-2xl flex flex-col"
+                onClick={e => e.stopPropagation()}
+            >
+                {/* Header */}
+                <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
+                    <button onClick={onClose} className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <X className="h-5 w-5" />
+                    </button>
+                </div>
 
-          {actionButton && (
-            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-              <Button
-                className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white"
-                onClick={actionButton.onClick}
-              >
-                <ExternalLink className="h-4 w-4 mr-2" />
-                {actionButton.label}
-              </Button>
+                {/* Main Content */}
+                <div className="flex-grow overflow-y-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+                        {/* Left Column: Images */}
+                        <div className={`grid ${hasMultipleImages ? 'grid-cols-2' : 'grid-cols-1'} gap-4 items-center`}>
+                            {image.map((imgSrc, index) => (
+                                <div key={index} className="bg-gray-100 dark:bg-gray-900 rounded-lg p-2">
+                                    <img
+                                        src={imgSrc}
+                                        alt={`${title} - view ${index + 1}`}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Right Column: Details */}
+                        <div className="space-y-6">
+                            {/* Details Section */}
+                            {details && (
+                                <div className="bg-pink-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 tracking-wider uppercase">Details</h3>
+                                    <div className="flex flex-col space-y-2">
+                                        {details.medium && (
+                                            <div className="flex items-center text-gray-700 dark:text-gray-300">
+                                                <Type className="h-4 w-4 mr-3 text-pink-500 dark:text-purple-400" />
+                                                <div>
+                                                    <span className="font-semibold">Medium:</span> {details.medium}
+                                                </div>
+                                            </div>
+                                        )}
+                                        {details.year && (
+                                            <div className="flex items-center text-gray-700 dark:text-gray-300">
+                                                <Calendar className="h-4 w-4 mr-3 text-pink-500 dark:text-purple-400" />
+                                                <div>
+                                                    <span className="font-semibold">Year:</span> {details.year}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Story Section */}
+                            {description && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">The Story</h3>
+                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-wrap">
+                                        {description}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
-          )}
         </div>
-      </div>
-    </div>
-  );
+    );
 }
