@@ -1,10 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { ImageModal } from '../ui/image-modal';
-import PhotoAlbum, { Photo } from 'react-photo-album';
-import 'react-photo-album/styles.css'; // recommended
+import { X, ArrowRight } from 'lucide-react';
 
-// --- 2. استيراد الصور ---
+// --- Image Imports ---
 import mangoColored from '../../assets/images/DigitalArt/DigitalIllustration/MangoFreshSketchColored.png';
 import mangoSketch from '../../assets/images/DigitalArt/DigitalIllustration/MangoFreshSketch.png';
 import logo1 from '../../assets/images/DigitalArt/Logos/TheBridgeLogo.png';
@@ -20,7 +19,7 @@ import invitation1 from '../../assets/images/DigitalArt/Invitations/Invitation1.
 import invitation2 from '../../assets/images/DigitalArt/Invitations/Invitation2.png';
 import invitation3 from '../../assets/images/DigitalArt/Invitations/Invitation3.png';
 
-// --- 3. بنية البيانات النهائية ---
+// --- Data Structure ---
 interface ArtPiece {
     id: number;
     title: string;
@@ -34,9 +33,7 @@ interface ArtPiece {
     height: number;
 }
 
-type CustomPhoto = Photo & { art: ArtPiece };
-
-// --- 4. بيانات الأعمال الفنية ---
+// --- Artwork Data ---
 const allArtworks: ArtPiece[] = [
     { id: 1, title: "'Mango Fresh' Mascot", story: "The goal was to create more than a character; it was to build a personality. 'Mango Fresh' was given a dynamic pose and a confident smile to tell a story without words: this isn't just juice, it's pure, bottled energy. The process started with a simple paper sketch and evolved into a vibrant vector mascot ready for branding.", mainCategory: 'Digital Art', subCategory: 'Digital Illustration', images: [mangoColored, mangoSketch], year: "2025", medium: "Mascot Design", width: 1080, height: 1080 },
     { id: 2, title: "The Bridge - Conceptual App Logo", story: "The Bridge is a conceptual mobile app designed to help individuals and couples rebuild communication. It acts as a 'bridge' to reconnect with oneself and one's partner by providing tools for expressing emotions safely, understanding each other's needs, and navigating conflicts constructively. The logo symbolizes this connection and the path to healing.", mainCategory: 'Digital Art', subCategory: 'Logos', images: [logo1], year: "2024", medium: "Logo Design", width: 1200, height: 900 },
@@ -53,17 +50,57 @@ const allArtworks: ArtPiece[] = [
     { id: 13, title: "Engagement Invitation (With 2 Pictures)", story: "A romantic and elegant digital invitation featuring a soft floral theme and sophisticated typography for a memorable announcement. The design is optimized for mobile viewing, ensuring a beautiful presentation on any device.", mainCategory: 'Digital Art', subCategory: 'Invitations', images: [invitation3], year: "2025", medium: "Digital Invitation", width: 1080, height: 1920 },
 ];
 
-
-// --- 5. تعريف الفئات ---
+// --- Category Definitions ---
 const mainCategories: ('Digital Art' | 'Paper Art')[] = ['Digital Art', 'Paper Art'];
 const subCategories = {
     'Digital Art': ['All', 'Digital Illustration', 'Logos', 'Invitations', 'Posters & Flyers'],
     'Paper Art': ['All', 'Pencil Portrait', 'Watercolor', 'Mandala', 'Sketching', 'Hand Lettering', 'Pastel Colors', 'Art3D', 'CartoonPortrait', 'Handmade', 'OilColors', 'Others', 'PencilColors', 'PixelArt', 'QuickSketches']
 };
 
+// --- ArtCard Component ---
+const ArtCard = ({ art, onClick }: { art: ArtPiece, onClick: () => void }) => {
+    const showTwoImages = art.subCategory === 'Digital Illustration' && art.images.length > 1;
+
+    return (
+        <div
+            className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+            onClick={onClick}
+        >
+            <div className="relative flex-grow overflow-hidden">
+                {showTwoImages ? (
+                    <div className="flex h-full">
+                        <img src={art.images[1]} alt={`${art.title} sketch`} className="w-1/2 h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        <img src={art.images[0]} alt={art.title} className="w-1/2 h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    </div>
+                ) : (
+                    <img
+                        src={art.images[0]}
+                        alt={art.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                    />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg flex items-center">
+                        View Details <ArrowRight className="ml-2 h-5 w-5" />
+                    </span>
+                </div>
+            </div>
+
+            <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
+                    {art.title}
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {art.medium}
+                </p>
+            </div>
+        </div>
+    );
+};
 
 
-// --- 7. المكون الرئيسي للمعرض ---
+// --- Main ArtSection Component ---
 export default function ArtSection() {
     const { ref, isVisible } = useScrollAnimation();
     const [selectedArt, setSelectedArt] = useState<ArtPiece | null>(null);
@@ -80,62 +117,6 @@ export default function ArtSection() {
         if (activeSubCategory === 'All') return mainFiltered;
         return mainFiltered.filter(art => art.subCategory === activeSubCategory);
     }, [activeMainCategory, activeSubCategory]);
-
-    const photos: CustomPhoto[] = filteredArtworks.map(art => ({
-        art: art,
-        src: art.images[0],
-        width: art.width,
-        height: art.height,
-        key: art.id.toString(),
-    }));
-
-    // --- 8. دالة العرض المخصصة (RenderPhoto) ---
-    // هذه هي الطريقة الصحيحة والحديثة
-    const renderPhoto = (
-        // first arg: props (only onClick is documented/commonly used)
-        { onClick }: { onClick?: (e: React.MouseEvent) => void },
-        // second arg: context with photo + layout sizes
-        { photo, width, height, index }: { photo: Photo; width: number; height: number; index: number }
-    ) => {
-        const artPhoto = photo as CustomPhoto;
-        const art = artPhoto.art;
-        const showTwoImages = art.subCategory === 'Digital Illustration' && art.images.length > 1;
-
-        return (
-            <div
-                key={art.id}
-                className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                onClick={(e) => onClick?.(e)}
-                style={{ width, height }}
-            >
-                <div className="flex-grow overflow-hidden">
-                    {showTwoImages ? (
-                        <div className="flex h-full">
-                            <img src={art.images[1]} alt={`${art.title} sketch`} className="w-1/2 h-full object-cover" />
-                            <img src={art.images[0]} alt={art.title} className="w-1/2 h-full object-cover" />
-                        </div>
-                    ) : (
-                        <img
-                            src={artPhoto.src}
-                            alt={art.title}
-                            style={{ width: "100%", height: "100%", objectFit: "cover", padding: 0 }}
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    )}
-                </div>
-
-                <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-                    <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
-                        {art.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                        {art.medium}
-                    </p>
-                </div>
-            </div>
-        );
-    };
 
     return (
         <section id="art" ref={ref} className="py-20 md:py-28 bg-[#fffaf5] dark:bg-gray-900">
@@ -162,30 +143,10 @@ export default function ArtSection() {
                     ))}
                 </div>
 
-                <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                    <PhotoAlbum
-                        layout="masonry"
-                        photos={photos}
-                        render={{
-                            photo: ({ onClick }, { photo, width, height, index }) => (
-                                <img
-                                    src={photo.src}
-                                    alt={photo.alt}
-                                    width={width}
-                                    height={height}
-                                    onClick={onClick}
-                                    style={{ cursor: "pointer", borderRadius: "8px" }}
-                                />
-                            ),
-                        }}
-                        columns={(containerWidth) => {
-                            if (containerWidth < 400) return 1;
-                            if (containerWidth < 800) return 2;
-                            return 3;
-                        }}
-                        spacing={10}
-                        padding={20}
-                    />
+                <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                    {filteredArtworks.map(art => (
+                        <ArtCard key={art.id} art={art} onClick={() => setSelectedArt(art)} />
+                    ))}
                 </div>
             </div>
 
