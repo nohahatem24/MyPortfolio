@@ -419,7 +419,7 @@ const allArtworks: ArtPiece[] = [
     {
         id: 37,
         title: "My Person",
-        story: "A character sketch accompanied by the heartfelt quote, 'My person is someone who makes me a better person.' A simple drawing that conveys a deep emotional message.",
+        story: "A character sketch accompanied by the heartfelt quote. A simple drawing that conveys a deep emotional message.",
         mainCategory: 'Paper Art',
         subCategory: 'Sketching',
         images: [Sketch3],
