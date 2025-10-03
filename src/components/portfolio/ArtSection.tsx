@@ -18,6 +18,7 @@ import poster5 from '../../assets/images/DigitalArt/Posters/Poster5.png';
 import invitation1 from '../../assets/images/DigitalArt/Invitations/invitation1.png';
 import invitation2 from '../../assets/images/DigitalArt/Invitations/invitation2.png';
 import invitation3 from '../../assets/images/DigitalArt/Invitations/invitation3.png';
+import infographic from '../../assets/images/DigitalArt/Infographics/infographics1.png';
 
 // --- Paper Image Imports ---
 // Art3D
@@ -822,12 +823,26 @@ const allArtworks: ArtPiece[] = [
         width: 1200,
         height: 900
     },
+
+    // --- Infographics & Presentations ---
+    {
+        id: 70, // تأكد من أن هذا الرقم فريد
+        title: "Modern Circular Infographic",
+        story: "A clean and modern infographic template designed to present information clearly and effectively. This design uses a central circular element with four color-coded points, making complex data easy to digest and visually appealing for professional presentations.",
+        mainCategory: 'Digital Art',
+        subCategory: 'Infographics & Presentations',
+        images: [infographic],
+        year: "2024",
+        medium: "Presentation Slide Design",
+        width: 1920,
+        height: 1080
+    }
 ];
 
 // --- Category Definitions (No changes needed) ---
 const mainCategories: ('Digital Art' | 'Paper Art')[] = ['Digital Art', 'Paper Art'];
 const subCategories = {
-    'Digital Art': ['All', 'Digital Illustration', 'Logos', 'Invitations', 'Posters & Flyers'],
+    'Digital Art': ['All', 'Digital Illustration', 'Logos', 'Invitations', 'Posters & Flyers', 'Infographics & Presentations'],
     'Paper Art': ['All', 'Pencil Portrait', 'Watercolor', 'Mandala', 'Sketching', 'Hand Lettering', 'Pastel Colors', 'Art3D', 'CartoonPortrait', 'Handmade', 'OilColors', 'PencilColors', 'PixelArt']
 };
 
