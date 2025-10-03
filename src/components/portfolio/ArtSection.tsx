@@ -18,7 +18,7 @@ import poster5 from '../../assets/images/DigitalArt/Posters/Poster5.png';
 import invitation1 from '../../assets/images/DigitalArt/Invitations/invitation1.png';
 import invitation2 from '../../assets/images/DigitalArt/Invitations/invitation2.png';
 import invitation3 from '../../assets/images/DigitalArt/Invitations/invitation3.png';
-import infographic from '../../assets/images/DigitalArt/Infographics/infographics1.png';
+import infographic1 from '../../assets/images/DigitalArt/Infographics/infographics1.png';
 
 // --- Paper Image Imports ---
 // Art3D
@@ -831,7 +831,7 @@ const allArtworks: ArtPiece[] = [
         story: "A clean and modern infographic template designed to present information clearly and effectively. This design uses a central circular element with four color-coded points, making complex data easy to digest and visually appealing for professional presentations.",
         mainCategory: 'Digital Art',
         subCategory: 'Infographics & Presentations',
-        images: [infographic],
+        images: [infographic1],
         year: "2024",
         medium: "Presentation Slide Design",
         width: 1920,
