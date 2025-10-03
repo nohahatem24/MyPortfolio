@@ -11,9 +11,10 @@ interface ImageModalProps {
         medium?: string;
         year?: string;
     };
+    imageClassName?: string; // --- 1. ADD THIS NEW PROP ---
 }
 
-export function ImageModal({ isOpen, onClose, title, description, image, details }: ImageModalProps) {
+export function ImageModal({ isOpen, onClose, title, description, image, details, imageClassName }: ImageModalProps) { // --- AND ADD IT HERE ---
     useEffect(() => {
         if (!isOpen) return;
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -62,7 +63,8 @@ export function ImageModal({ isOpen, onClose, title, description, image, details
                                     <img
                                         src={imgSrc}
                                         alt={`${title} - view ${index + 1}`}
-                                        className="w-full h-full object-contain"
+                                        // --- 2. APPLY THE PROP HERE ---
+                                        className={`w-full h-full object-contain ${imageClassName || ''}`}
                                     />
                                 </div>
                             ))}
@@ -104,6 +106,8 @@ export function ImageModal({ isOpen, onClose, title, description, image, details
                                     </p>
                                 </div>
                             )}
+
+                            
                         </div>
                     </div>
                 </div>

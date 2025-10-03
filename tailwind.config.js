@@ -77,7 +77,7 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-        
+
         // --- NEW KEYFRAMES ADDED ---
         'gradient-xy': {
           '0%, 100%': {
@@ -121,5 +121,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'),
+  require('@tailwindcss/aspect-ratio'),
+  ]
 }
