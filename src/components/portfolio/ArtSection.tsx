@@ -15,9 +15,7 @@ import poster2 from '../../assets/images/DigitalArt/Posters/Poster2.png';
 import poster3 from '../../assets/images/DigitalArt/Posters/Poster3.png';
 import poster4 from '../../assets/images/DigitalArt/Posters/Poster4.png';
 import poster5 from '../../assets/images/DigitalArt/Posters/Poster5.png';
-import invitation1 from '../../assets/images/DigitalArt/Invitations/invitation1.png';
-import invitation2 from '../../assets/images/DigitalArt/Invitations/invitation2.png';
-import invitation3 from '../../assets/images/DigitalArt/Invitations/invitation3.png';
+
 import infographic1 from '../../assets/images/DigitalArt/Infographics/infographics1.png';
 
 // --- Paper Image Imports ---
@@ -128,767 +126,131 @@ const allArtworks: ArtPiece[] = [
     { id: 8, title: "CV Service Social Media Ad", story: "A results-driven social media advertisement for a professional CV writing service. The design is bold and direct, using clear benefit-oriented text, strong visuals, and a prominent QR code to drive immediate customer action and conversions.", mainCategory: 'Digital Art', subCategory: 'Posters & Flyers', images: [poster4], year: "2025", medium: "Digital Poster", width: 1080, height: 1080 },
     { id: 9, title: "Inspirational Social Media Graphic", story: "A calming and spiritually uplifting social media post featuring a Hadith about the Quran. The design employs a soft, watercolor-style background with gentle, flowing lines and elegant Arabic calligraphy to create a peaceful, contemplative, and highly shareable piece of content.", mainCategory: 'Digital Art', subCategory: 'Posters & Flyers', images: [poster5], year: "2025", medium: "Digital Poster", width: 1920, height: 1080 },
     { id: 10, title: "STEAM Educational Banner", story: "A clean and engaging banner illustrating the 'STEAM' (Science, Technology, Engineering, Arts, Mathematics) educational approach. The design uses vibrant 3D icons and a clear, cyclical flow to make the interdisciplinary concept easy to understand and visually appealing.", mainCategory: 'Digital Art', subCategory: 'Posters & Flyers', images: [steamBanner], year: "2025", medium: "Digital Banner", width: 1920, height: 1080 },
-    { id: 11, title: "Elegant Engagement Invitation", story: "An elegant and romantic digital invitation for an engagement celebration. The design features a soft, floral watercolor theme, sophisticated typography, and a personalized photo to create a heartfelt and memorable announcement, optimized for mobile viewing.", mainCategory: 'Digital Art', subCategory: 'Invitations', images: [invitation1], year: "2025", medium: "Digital Invitation", width: 1080, height: 1920 },
-    { id: 12, title: "Floral Engagement Invitation", story: "A romantic and elegant digital invitation featuring a soft floral theme and sophisticated typography for a memorable announcement. The design is optimized for mobile viewing, ensuring a beautiful presentation on any device.", mainCategory: 'Digital Art', subCategory: 'Invitations', images: [invitation2], year: "2025", medium: "Digital Invitation", width: 1080, height: 1920 },
-    { id: 13, title: "Engagement Invitation (With 2 Pictures)", story: "A romantic and elegant digital invitation featuring a soft floral theme and sophisticated typography for a memorable announcement. The design is optimized for mobile viewing, ensuring a beautiful presentation on any device.", mainCategory: 'Digital Art', subCategory: 'Invitations', images: [invitation3], year: "2025", medium: "Digital Invitation", width: 1080, height: 1920 },
-
-
-    // Paper Art
-
+    
+    // --- Paper Artworks ---
     // Pencil Portrait
-    {
-        id: 14,
-        title: "Taylor Swift Portrait",
-        story: "A graphite pencil portrait of the iconic singer-songwriter, Taylor Swift. This piece focuses on capturing her distinct features and expression, using careful shading to create a realistic and recognizable likeness.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pencil Portrait',
-        images: [Portrait1],
-        year: "2019",
-        medium: "Graphite on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 15,
-        title: "Chic Bob Haircut",
-        story: "A portrait study focusing on hair texture and light. This drawing captures the sleek, glossy look of a modern bob haircut, using fine pencil strokes and blending to create a sense of realism and style.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pencil Portrait',
-        images: [Portrait2],
-        year: "2020",
-        medium: "Pencil on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 16,
-        title: "Anime Anguish",
-        story: "A high-contrast, dramatic portrait inspired by anime and manga. This piece uses solid black ink and sharp lines to convey a powerful sense of anguish and inner turmoil, focusing on expression over realism.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pencil Portrait',
-        images: [Portrait4],
-        year: "2021",
-        medium: "Ink and Pencil on Paper",
-        width: 1000,
-        height: 900
-    },
-    {
-        id: 17,
-        title: "Tears of an Anime Girl",
-        story: "An emotional anime-style drawing of a crying girl. The piece uses simple shading and clean lines to capture a moment of sadness and vulnerability, characteristic of the shōjo manga style.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pencil Portrait',
-        images: [Portrait5],
-        year: "2021",
-        medium: "Pencil on Paper",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 18,
-        title: "Girl with Glasses Sketch",
-        story: "A simple and charming line-art sketch of a girl with glasses. This piece has a clean, illustrative style, focusing on capturing character and personality with minimal shading.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pencil Portrait',
-        images: [Portrait3],
-        year: "2019",
-        medium: "Pencil Sketch",
-        width: 900,
-        height: 1000
-    },
+    { id: 14, title: "Portrait of a Young Man", story: "A detailed graphite portrait focusing on capturing the subject's expression and the texture of his hair. The use of light and shadow creates a strong, realistic sense of depth.", mainCategory: 'Paper Art', subCategory: 'Pencil Portrait', images: [Portrait1], year: "2023", medium: "Graphite Pencil on Paper", width: 900, height: 1200 },
+    { id: 15, title: "The Pensive Gaze", story: "A close-up portrait study, emphasizing the eyes and the subtle emotion in the subject's face. The soft blending technique gives the skin a smooth, lifelike quality.", mainCategory: 'Paper Art', subCategory: 'Pencil Portrait', images: [Portrait2], year: "2023", medium: "Graphite Pencil on Paper", width: 900, height: 1200 },
+    { id: 16, title: "Portrait of a Young Woman", story: "A delicate pencil portrait with a focus on the subject's flowing hair and gentle features. The contrast between the dark hair and the light skin highlights the form.", mainCategory: 'Paper Art', subCategory: 'Pencil Portrait', images: [Portrait3], year: "2023", medium: "Graphite Pencil on Paper", width: 900, height: 1200 },
+    { id: 17, title: "Child's Portrait", story: "A charming portrait of a child, capturing their innocence and curiosity. The soft lines and gentle shading are used to convey the delicate nature of the subject.", mainCategory: 'Paper Art', subCategory: 'Pencil Portrait', images: [Portrait4], year: "2023", medium: "Graphite Pencil on Paper", width: 900, height: 1200 },
+    { id: 18, title: "Elderly Man's Portrait", story: "A character study focusing on the texture and lines of an elderly man's face, conveying wisdom and life experience. The detail in the wrinkles and beard adds depth to the portrait.", mainCategory: 'Paper Art', subCategory: 'Pencil Portrait', images: [Portrait5], year: "2023", medium: "Graphite Pencil on Paper", width: 900, height: 1200 },
     // Watercolor
-    {
-        id: 19,
-        title: "30 Days of Color",
-        story: "A color study project, '30 Days of Colors,' where each day is represented by a unique watercolor swatch. This piece is a visual journal of color exploration, showcasing a beautiful spectrum of blended hues.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water1],
-        year: "2022",
-        medium: "Watercolor on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 20,
-        title: "Galaxy Wolf",
-        story: "A surreal watercolor painting where the silhouette of a howling wolf contains a vibrant, cosmic scene. This piece merges the wild spirit of the wolf with the infinite beauty of the galaxy.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water2],
-        year: "2023",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 21,
-        title: "Drinking the Cosmos",
-        story: "A conceptual piece where a person is 'drinking' the universe from a glass. The body is filled with galaxies and planets, symbolizing how we are all made of stardust and connected to the cosmos.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water3],
-        year: "2023",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 22,
-        title: "Forest Mind",
-        story: "A double exposure style painting where a woman's silhouette is filled with a serene, starry forest scene. This artwork explores the deep connection between human nature and the natural world.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water4],
-        year: "2022",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 23,
-        title: "Moonlit Mountains",
-        story: "A dramatic black and white painting of mountains under a full moon. The stark contrast and the reflection on the water create a powerful and serene nocturnal landscape.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water5],
-        year: "2021",
-        medium: "Ink/Gouache on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 24,
-        title: "Up in the Air",
-        story: "A beautiful depiction of a starry night sky contained within a circular frame. The deep blues and sparkling stars evoke a sense of wonder and the infinite beauty of the universe.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water6],
-        year: "2022",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 25,
-        title: "Memory Lane - Watercolor",
-        story: "A heartfelt piece of calligraphy set against a dreamy, watercolor background. The words express a longing to revisit cherished moments, with the soft, blended colors enhancing the emotional depth.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water7],
-        year: "2024",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1200
-    },
-    {
-        id: 26,
-        title: "Watercolor Arabic Calligraphy",
-        story: "A piece that blends the fluidity of watercolor with the elegance of Arabic calligraphy. The quote is written over a vibrant, abstract background, creating a beautiful harmony between words and color.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Watercolor',
-        images: [Water8],
-        year: "2022",
-        medium: "Watercolor and Ink",
-        width: 900,
-        height: 1100
-    },
-
-    // --- Mandala / Zentangle ---
-    {
-        id: 27,
-        title: "Celestial Moon",
-        story: "A crescent moon filled with intricate zentangle patterns, hanging in a starry night sky. This piece combines the serene beauty of the cosmos with the meditative practice of pattern drawing.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela1],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 28,
-        title: "Pattern Patchwork",
-        story: "An exploration of various zentangle patterns contained within geometric shapes. Each section offers a different texture and design, creating a visually engaging patchwork of abstract art.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela2],
-        year: "2020",
-        medium: "Ink on Paper",
-        width: 1200,
-        height: 900
-    },
-    {
-        id: 29,
-        title: "Yin & Yang Abstract",
-        story: "A high-contrast abstract piece inspired by the concept of Yin and Yang. The interplay of solid black and intricate white space creates a sense of balance and dynamic flow.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela3],
-        year: "2020",
-        medium: "Ink on Paper",
-        width: 1000,
-        height: 1000
-    },
-    {
-        id: 30,
-        title: "Zentangle Sampler",
-        story: "A rich composition showcasing a variety of dense and detailed zentangle patterns. This piece serves as a sampler of different techniques, from dots and waves to complex geometric fills.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela4],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 31,
-        title: "Rodina - A Gift of Love",
-        story: "A personalized nameplate for 'Rodina' (رودينا), where each letter is filled with unique mandala patterns. This piece combines lettering, Arabic script, and zentangle art to create a heartfelt and decorative gift.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela5],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 1200,
-        height: 800
-    },
-    {
-        id: 32,
-        title: "Nada - A Gift of Love",
-        story: "A custom-made artwork for 'Nada' (ندى). The letters of the name are intricately decorated with different zentangle designs, making it a unique and personal piece that celebrates an individual.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela6],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 1200,
-        height: 800
-    },
-    {
-        id: 33,
-        title: "Mama - A Gift of Love",
-        story: "A loving tribute to 'Mama'. Each letter is a canvas for detailed and beautiful mandala patterns, with a heart at the center of the message 'Love You'. A piece made with affection and intricate care.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Mandala',
-        images: [Mandela7],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 1200,
-        height: 800
-    },
-
-    // Quick Sketches
-    {
-        id: 34,
-        title: "Mango Fresh - The Original Idea",
-        story: "The very first sketch that sparked the 'Mango Fresh' mascot. A quick, energetic drawing on paper to capture the initial concept and personality before taking it to the digital realm.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [MangoFreshSketch],
-        year: "2024",
-        medium: "Pencil on Toned Paper",
-        width: 900,
-        height: 900
-    },
-    {
-        id: 35,
-        title: "Girl Under the Tree",
-        story: "A simple and serene sketch depicting a girl finding shade under a tree. This piece captures a quiet moment of peace and connection with nature.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch1],
-        year: "2020",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 36,
-        title: "Playful Character Sketch",
-        story: "A quick and expressive sketch of a cartoon character with a playful pose. This drawing focuses on capturing movement and personality through simple, confident lines.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch2],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 37,
-        title: "My Person",
-        story: "A character sketch accompanied by the heartfelt quote. A simple drawing that conveys a deep emotional message.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch3],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 38,
-        title: "If I Could Time Travel",
-        story: "A touching sketch that illustrates the idea of time travel to relive a cherished moment. The drawing and quote work together to evoke a sense of nostalgia and longing.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch4],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 39,
-        title: "Broccoli Character Studies",
-        story: "A fun and imaginative page of sketches where broccoli is turned into different characters. An exercise in creativity, finding personality in everyday objects.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch5],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 40,
-        title: "Rose Sketch",
-        story: "A delicate and simple sketch of a single rose, focusing on the elegant lines and form of the flower. A classic study in botanical drawing.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch6],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 41,
-        title: "You'll Get Through This",
-        story: "An uplifting and supportive sketch of two people together, with a message of encouragement. This drawing conveys a sense of solidarity and hope through a simple, heartfelt illustration.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Sketching',
-        images: [Sketch7],
-        year: "2021",
-        medium: "Pencil on Lined Paper",
-        width: 900,
-        height: 1100
-    },
+    { id: 19, title: "Abstract Floral", story: "A vibrant abstract piece using watercolor washes to create a sense of movement and organic form. The colors blend and bleed into each other, suggesting a bouquet of flowers.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water1], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 20, title: "Seascape Sunset", story: "A tranquil watercolor painting of a sunset over the ocean. The soft, blended colors capture the peaceful transition of light and the reflection on the water.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water2], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 21, title: "Forest Path", story: "A loose, impressionistic watercolor of a path winding through a forest. The light filtering through the trees is captured with bright, dappled colors.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water3], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 22, title: "Cityscape Rain", story: "A moody watercolor of a city street on a rainy day. The reflections on the wet pavement and the blurred lights create a romantic, atmospheric scene.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water4], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 23, title: "Mountain Vista", story: "A majestic watercolor of a mountain range, using cool blues and purples for the distant peaks and warmer greens for the foreground. The layering of washes creates depth.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water5], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 24, title: "Still Life: Fruit Bowl", story: "A traditional still life rendered in watercolor, focusing on the texture and color of various fruits. The transparency of the medium is used to create delicate highlights.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water6], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 25, title: "Bird on a Branch", story: "A detailed study of a small bird perched on a branch, contrasted with a loose, abstract background. The focus is on the bird's vibrant plumage.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water7], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    { id: 26, title: "Abstract Swirls", story: "A dynamic, abstract piece characterized by swirling lines and vibrant, contrasting colors. The wet-on-wet technique creates soft, unpredictable edges.", mainCategory: 'Paper Art', subCategory: 'Watercolor', images: [Water8], year: "2022", medium: "Watercolor on Paper", width: 900, height: 1200 },
+    // Mandala
+    { id: 27, title: "Cosmic Bloom Mandala", story: "An intricate mandala design inspired by celestial patterns and blooming flowers. The fine lines and symmetrical structure create a meditative and harmonious visual experience.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela1], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    { id: 28, title: "Geometric Harmony Mandala", story: "A black and white mandala focusing on complex geometric patterns and radial symmetry. The contrast and precision of the lines draw the viewer into the center.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela2], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    { id: 29, title: "Floral Lace Mandala", story: "A delicate mandala that resembles intricate lace, with floral elements woven into the geometric structure. The design is both detailed and airy.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela3], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    { id: 30, title: "The Eye of the Universe Mandala", story: "A powerful, centralized mandala with an 'eye' motif at its core, surrounded by radiating layers of patterns. It suggests themes of vision and universal consciousness.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela4], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    { id: 31, title: "Layered Depth Mandala", story: "A mandala that uses varying line weights and shading to create an illusion of three-dimensional layers and depth, making the pattern seem to pop off the page.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela5], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    { id: 32, title: "Colored Gem Mandala", story: "A mandala that incorporates color to highlight different sections of the pattern, giving it the appearance of a faceted gemstone or stained glass.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela6], year: "2024", medium: "Ink and Colored Pencil on Paper", width: 900, height: 900 },
+    { id: 33, title: "Intricate Star Mandala", story: "A complex mandala built around a star shape, with each point leading to a new, detailed pattern. The overall effect is one of dazzling complexity and order.", mainCategory: 'Paper Art', subCategory: 'Mandala', images: [Mandela7], year: "2024", medium: "Ink on Paper", width: 900, height: 900 },
+    // Sketching
+    { id: 34, title: "Mango Fresh Sketch", story: "The initial pencil sketch for the 'Mango Fresh' mascot, showing the raw energy and pose before the digital coloring process. It highlights the foundational drawing skills.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [MangoFreshSketch], year: "2025", medium: "Pencil on Paper", width: 900, height: 1200 },
+    { id: 35, title: "Architectural Study", story: "A quick sketch focusing on perspective and form, capturing the essence of a building with minimal lines and shading.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch1], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 36, title: "Hand Study", story: "A challenging study of the human hand in a complex pose, focusing on anatomy, proportion, and the interplay of light and shadow on the skin.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch2], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 37, title: "Still Life: Teacup", story: "A simple, elegant sketch of a teacup, focusing on the curves and reflections of the ceramic material. It's a study in capturing volume with minimal detail.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch3], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 38, title: "Portrait Sketch", story: "A rapid, expressive portrait sketch, capturing the subject's likeness and mood with loose, energetic lines.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch4], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 39, title: "Animal Sketch: Cat", story: "A quick, charming sketch of a cat, focusing on its posture and the texture of its fur. The sketch captures the animal's natural grace.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch5], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 40, title: "Nature Sketch: Tree", story: "A detailed study of a tree, focusing on the bark texture and the branching structure. It's an exercise in capturing the complexity of natural forms.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch6], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
+    { id: 41, title: "Figure Study: Pose", story: "A quick gesture drawing of a human figure, focusing on capturing the movement and balance of the pose rather than anatomical detail.", mainCategory: 'Paper Art', subCategory: 'Sketching', images: [Sketch7], year: "2024", medium: "Pencil on Sketchbook", width: 900, height: 1200 },
     // Hand Lettering
-    {
-        id: 42,
-        title: "Watercolor Arabic Quote",
-        story: "A piece that blends the fluidity of watercolor with the elegance of Arabic calligraphy. The quote by Cathrine Håkon (translated by Noha RUSHDI) is written over a vibrant, abstract background, creating a beautiful harmony between words and color.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Hand Lettering',
-        images: [Writing1],
-        year: "2022",
-        medium: "Ink and Watercolor on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 43,
-        title: "Memory Lane - A Tribute",
-        story: "A heartfelt piece of calligraphy dedicated to a cherished memory. The words, set against a dreamy, galaxy-like background, express a longing to revisit moments with someone special. The feather adds a touch of lightness to the deep emotions.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Hand Lettering',
-        images: [Writing2],
-        year: "2024",
-        medium: "Ink and Watercolor",
-        width: 900,
-        height: 1200
-    },
-    {
-        id: 44,
-        title: "Words I Might Never Say",
-        story: "A raw and honest handwritten letter expressing unspoken feelings. This piece captures the vulnerability of personal thoughts, written neatly on lined paper, making it a relatable and intimate work of art.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Hand Lettering',
-        images: [Writing3],
-        year: "2021",
-        medium: "Ink on Lined Paper",
-        width: 900,
-        height: 1200
-    },
-    {
-        id: 45,
-        title: "A Letter from the Heart",
-        story: "An emotional and personal letter written in beautiful Arabic handwriting. The piece conveys deep feelings and reflections, with the natural flow of the script adding to its authenticity and emotional weight.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Hand Lettering',
-        images: [Writing4],
-        year: "2021",
-        medium: "Ink on Paper",
-        width: 900,
-        height: 1200
-    },
-    {
-        id: 46,
-        title: "The Last Time",
-        story: "A poignant and thought-provoking quote rendered in elegant, classic calligraphy. The message serves as a powerful reminder to cherish every moment, beautifully captured with clean lines and a minimalist aesthetic.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Hand Lettering',
-        images: [Writing5],
-        year: "2021",
-        medium: "Pencil/Ink on Lined Paper",
-        width: 900,
-        height: 1200
-    },
-
-    // --- Pastel Colors ---
-    {
-        id: 47,
-        title: "Four Seasons Tree",
-        story: "A creative depiction of the four seasons, represented by a single tree divided into four colorful panels. Using soft pastels, this artwork captures the essence of spring, summer, autumn, and winter in one cohesive and vibrant image.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pastel Colors',
-        images: [Pastel1],
-        year: "2021",
-        medium: "Soft Pastels on Paper",
-        width: 1200,
-        height: 900
-    },
-    {
-        id: 48,
-        title: "Sunset Sail",
-        story: "A serene seascape at sunset, brought to life with the warm, rich tones of oil pastels. The smooth blending of colors captures the tranquil glow of the sun on the water as a sailboat glides by, creating a peaceful and picturesque scene.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Pastel Colors',
-        images: [Pastel2],
-        year: "2022",
-        medium: "Oil Pastels on Paper",
-        width: 1200,
-        height: 900
-    },
-
+    { id: 42, title: "Arabic Calligraphy: Quote", story: "An elegant piece of Arabic calligraphy featuring an inspirational quote. The script is beautifully rendered, showcasing the fluidity and artistry of the language.", mainCategory: 'Paper Art', subCategory: 'Hand Lettering', images: [Writing1], year: "2021", medium: "Ink on Paper", width: 900, height: 1200 },
+    { id: 43, title: "English Hand Lettering: Dream", story: "A modern hand-lettered piece of the word 'Dream,' using a stylized, flowing script. The design is simple yet impactful, focusing on the beauty of the typography.", mainCategory: 'Paper Art', subCategory: 'Hand Lettering', images: [Writing2], year: "2021", medium: "Ink on Paper", width: 900, height: 1200 },
+    { id: 44, title: "Words I Might Never Say", story: "A raw and honest handwritten letter expressing unspoken feelings. This piece captures the vulnerability of personal thoughts, written neatly on lined paper, making it a relatable and intimate work of art.", mainCategory: 'Paper Art', subCategory: 'Hand Lettering', images: [Writing3], year: "2021", medium: "Ink on Lined Paper", width: 900, height: 1200 },
+    { id: 45, title: "A Letter from the Heart", story: "An emotional and personal letter written in beautiful Arabic handwriting. The piece conveys deep feelings and reflections, with the natural flow of the script adding to its authenticity and emotional weight.", mainCategory: 'Paper Art', subCategory: 'Hand Lettering', images: [Writing4], year: "2021", medium: "Ink on Paper", width: 900, height: 1200 },
+    { id: 46, title: "The Last Time", story: "A poignant and thought-provoking quote rendered in elegant, classic calligraphy. The message serves as a powerful reminder to cherish every moment, beautifully captured with clean lines and a minimalist aesthetic.", mainCategory: 'Paper Art', subCategory: 'Hand Lettering', images: [Writing5], year: "2021", medium: "Pencil/Ink on Lined Paper", width: 900, height: 1200 },
+    // Pastel Colors
+    { id: 47, title: "Four Seasons Tree", story: "A creative depiction of the four seasons, represented by a single tree divided into four colorful panels. Using soft pastels, this artwork captures the essence of spring, summer, autumn, and winter in one cohesive and vibrant image.", mainCategory: 'Paper Art', subCategory: 'Pastel Colors', images: [Pastel1], year: "2021", medium: "Soft Pastels on Paper", width: 1200, height: 900 },
+    { id: 48, title: "Sunset Sail", story: "A serene seascape at sunset, brought to life with the warm, rich tones of oil pastels. The smooth blending of colors captures the tranquil glow of the sun on the water as a sailboat glides by, creating a peaceful and picturesque scene.", mainCategory: 'Paper Art', subCategory: 'Pastel Colors', images: [Pastel2], year: "2022", medium: "Oil Pastels on Paper", width: 1200, height: 900 },
     // Art3D
-    {
-        id: 49,
-        title: "3D Bell Pepper Study",
-        story: "An exercise in photorealism, this piece uses careful shading and highlighting to make a simple bell pepper appear three-dimensional. The focus was on capturing the smooth, reflective texture of the pepper's skin.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D1],
-        year: "2022",
-        medium: "Graphite Pencil on Paper",
-        width: 800,
-        height: 1000
-    },
-    {
-        id: 50,
-        title: "The Perpetual Pour",
-        story: "This drawing captures the dynamic moment of water being poured, creating an illusion of movement and transparency. It's a study in how to represent clear, moving liquids using only graphite.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D2],
-        year: "2023",
-        medium: "Pencil on Paper",
-        width: 800,
-        height: 1000
-    },
-    {
-        id: 51,
-        title: "Impossible Cube",
-        story: "An exploration of optical illusions and impossible geometry. This drawing challenges the viewer's perception of space and dimension, creating a structure that could not exist in the real world.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D3],
-        year: "2023",
-        medium: "Ink and Pencil on Toned Paper",
-        width: 900,
-        height: 900
-    },
-    {
-        id: 52,
-        title: "Floating Pyramid Steps",
-        story: "This piece uses precise perspective and shadow to create the illusion that steps are floating above the paper. It's a playful trick of the eye that demonstrates the power of shading.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D4],
-        year: "2022",
-        medium: "Pencil on Paper",
-        width: 1000,
-        height: 800
-    },
-    {
-        id: 53,
-        title: "Fundamental Shapes in 3D",
-        story: "A foundational study of rendering basic geometric shapes—a cone, cylinder, sphere, and cube—in three dimensions. This exercise is crucial for understanding how light interacts with different forms.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D5],
-        year: "2022",
-        medium: "Graphite Pencil Study",
-        width: 800,
-        height: 1000
-    },
-    {
-        id: 54,
-        title: "Airplane Sketch in Perspective",
-        story: "A technical sketch of an airplane, focusing on creating a sense of depth and three-dimensionality through perspective drawing. The blue highlights add a touch of style to the technical rendering.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Art3D',
-        images: [Art3D6],
-        year: "2023",
-        medium: "Pencil and Pen on Paper",
-        width: 1200,
-        height: 800
-    },
+    { id: 49, title: "3D Bell Pepper Study", story: "An exercise in photorealism, this piece uses careful shading and highlighting to make a simple bell pepper appear three-dimensional. The focus was on capturing the smooth, reflective texture of the pepper's skin.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D1], year: "2022", medium: "Graphite Pencil on Paper", width: 800, height: 1000 },
+    { id: 50, title: "The Perpetual Pour", story: "This drawing captures the dynamic moment of water being poured, creating an illusion of movement and transparency. It's a study in how to represent clear, moving liquids using only graphite.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D2], year: "2023", medium: "Pencil on Paper", width: 800, height: 1000 },
+    { id: 51, title: "Impossible Cube", story: "An exploration of optical illusions and impossible geometry. This drawing challenges the viewer's perception of space and dimension, creating a structure that could not exist in the real world.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D3], year: "2023", medium: "Ink and Pencil on Toned Paper", width: 900, height: 900 },
+    { id: 52, title: "Floating Pyramid Steps", story: "This piece uses precise perspective and shadow to create the illusion that steps are floating above the paper. It's a playful trick of the eye that demonstrates the power of shading.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D4], year: "2022", medium: "Pencil on Paper", width: 1000, height: 800 },
+    { id: 53, title: "Fundamental Shapes in 3D", story: "A foundational study of rendering basic geometric shapes—a cone, cylinder, sphere, and cube—in three dimensions. This exercise is crucial for understanding how light interacts with different forms.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D5], year: "2022", medium: "Graphite Pencil Study", width: 800, height: 1000 },
+    { id: 54, title: "Airplane Sketch in Perspective", story: "A technical sketch of an airplane, focusing on creating a sense of depth and three-dimensionality through perspective drawing. The blue highlights add a touch of style to the technical rendering.", mainCategory: 'Paper Art', subCategory: 'Art3D', images: [Art3D6], year: "2023", medium: "Pencil and Pen on Paper", width: 1200, height: 800 },
     // Cartoon Portrait
-    {
-        id: 55,
-        title: "Friends Selfie Moment",
-        story: "A vibrant cartoon portrait capturing the joy and friendship of a group of friends taking a selfie. This piece uses bright colors and expressive characters to celebrate modern connections and happy memories.",
-        mainCategory: 'Paper Art',
-        subCategory: 'CartoonPortrait',
-        images: [Cartoon1],
-        year: "2022",
-        medium: "Colored Pencils and Ink",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 56,
-        title: "Nostalgic Afternoon",
-        story: "A faceless portrait set in a nostalgic, vintage-inspired room. The scene, with its gramophone and traditional decor, evokes a sense of calm and timeless storytelling, leaving the character's emotions to the viewer's imagination.",
-        mainCategory: 'Paper Art',
-        subCategory: 'CartoonPortrait',
-        images: [Cartoon2],
-        year: "2021",
-        medium: "Markers and Ink on Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 57,
-        title: "Sisters in Style",
-        story: "A minimalist and stylish faceless portrait of two friends or sisters. The focus is on the patterns of their clothing and the bond between them, conveyed through their closeness rather than facial expressions.",
-        mainCategory: 'Paper Art',
-        subCategory: 'CartoonPortrait',
-        images: [Cartoon3],
-        year: "2022",
-        medium: "Colored Pencils and Markers",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 58,
-        title: "Anime Girl: Sketch to Color",
-        story: "A side-by-side comparison showing the artistic process from a clean pencil sketch to a fully colored character. This piece, inspired by anime, highlights the transformation that color and shading bring to a drawing.",
-        mainCategory: 'Paper Art',
-        subCategory: 'CartoonPortrait',
-        images: [Cartoon4],
-        year: "2021",
-        medium: "Pencil, Ink, and Markers",
-        width: 1000,
-        height: 900
-    },
+    { id: 55, title: "Friends Selfie Moment", story: "A vibrant cartoon portrait capturing the joy and friendship of a group of friends taking a selfie. This piece uses bright colors and expressive characters to celebrate modern connections and happy memories.", mainCategory: 'Paper Art', subCategory: 'CartoonPortrait', images: [Cartoon1], year: "2022", medium: "Colored Pencils and Ink", width: 900, height: 1100 },
+    { id: 56, title: "Nostalgic Afternoon", story: "A faceless portrait set in a nostalgic, vintage-inspired room. The scene, with its gramophone and traditional decor, evokes a sense of calm and timeless storytelling, leaving the character's emotions to the viewer's imagination.", mainCategory: 'Paper Art', subCategory: 'CartoonPortrait', images: [Cartoon2], year: "2021", medium: "Markers and Ink on Paper", width: 900, height: 1100 },
+    { id: 57, title: "Sisters in Style", story: "A minimalist and stylish faceless portrait of two friends or sisters. The focus is on the patterns of their clothing and the bond between them, conveyed through their closeness rather than facial expressions.", mainCategory: 'Paper Art', subCategory: 'CartoonPortrait', images: [Cartoon3], year: "2022", medium: "Colored Pencils and Markers", width: 900, height: 1100 },
+    { id: 58, title: "Anime Girl: Sketch to Color", story: "A side-by-side comparison showing the artistic process from a clean pencil sketch to a fully colored character. This piece, inspired by anime, highlights the transformation that color and shading bring to a drawing.", mainCategory: 'Paper Art', subCategory: 'CartoonPortrait', images: [Cartoon4], year: "2021", medium: "Pencil, Ink, and Markers", width: 1000, height: 900 },
     // Handmade
-    {
-        id: 59,
-        title: "Crocheted & Beaded Phone Case",
-        story: "A unique phone case transformed into a piece of wearable art. This cover is hand-crocheted with soft wool yarn and meticulously decorated with beads, sequins, and a charming pom-pom, making it both beautiful and functional.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Handmade',
-        images: [PhoneCover],
-        year: "2023",
-        medium: "Wool Yarn, Beads, and Sequins",
-        width: 700,
-        height: 1400
-    },
-    {
-        id: 60,
-        title: "Embroidered Calligraphy",
-        story: "A beautiful fusion of embroidery and Arabic calligraphy. This piece uses thread to 'write' the uplifting phrase 'إنما هي أيامٌ وتمضي، والموعد الجنة' (They are but days that will pass, and the appointment is Paradise), intertwined with floral embroidery that adds life and color to the words.",
-        mainCategory: 'Paper Art',
-        subCategory: 'Handmade',
-        images: [SewingArt],
-        year: "2022",
-        medium: "Thread Embroidery on Paper",
-        width: 900,
-        height: 900
-    },
+    { id: 59, title: "Crocheted & Beaded Phone Case", story: "A unique phone case transformed into a piece of wearable art. This cover is hand-crocheted with soft wool yarn and meticulously decorated with beads, sequins, and a charming pom-pom, making it both beautiful and functional.", mainCategory: 'Paper Art', subCategory: 'Handmade', images: [PhoneCover], year: "2023", medium: "Wool Yarn, Beads, and Sequins", width: 700, height: 1400 },
+    { id: 60, title: "Embroidered Calligraphy", story: "A beautiful fusion of embroidery and Arabic calligraphy. This piece uses thread to 'write' the uplifting phrase 'إنما هي أيامٌ وتمضي، والموعد الجنة' (They are but days that will pass, and the appointment is Paradise), intertwined with floral embroidery that adds life and color to the words.", mainCategory: 'Paper Art', subCategory: 'Handmade', images: [SewingArt], year: "2022", medium: "Thread Embroidery on Paper", width: 900, height: 900 },
     // Oil Colors
-    {
-        id: 61,
-        title: "Let Flowers Bloom",
-        story: "A vibrant oil painting of a tree in full bloom, created with thick, textured strokes (impasto) that give the flowers a three-dimensional feel. The piece is a celebration of spring and new beginnings.",
-        mainCategory: 'Paper Art',
-        subCategory: 'OilColors',
-        images: [Oil1],
-        year: "2022",
-        medium: "Oil Paint on Paper",
-        width: 900,
-        height: 1200
-    },
-    {
-        id: 62,
-        title: "Cosmic Dreams",
-        story: "A surreal and imaginative painting that combines celestial and human elements. Featuring a girl with a galaxy for a mind and a floral moon, this piece explores themes of dreams, identity, and the universe within us. The dark background makes the vibrant oil colors pop.",
-        mainCategory: 'Paper Art',
-        subCategory: 'OilColors',
-        images: [Oil2],
-        year: "2023",
-        medium: "Oil on Canvas/Board",
-        width: 900,
-        height: 1300
-    },
+    { id: 61, title: "Let Flowers Bloom", story: "A vibrant oil painting of a tree in full bloom, created with thick, textured strokes (impasto) that give the flowers a three-dimensional feel. The piece is a celebration of spring and new beginnings.", mainCategory: 'Paper Art', subCategory: 'OilColors', images: [Oil1], year: "2022", medium: "Oil Paint on Paper", width: 900, height: 1200 },
+    { id: 62, title: "Cosmic Dreams", story: "A surreal and imaginative painting that combines celestial and human elements. Featuring a girl with a galaxy for a mind and a floral moon, this piece explores themes of dreams, identity, and the universe within us. The dark background makes the vibrant oil colors pop.", mainCategory: 'Paper Art', subCategory: 'OilColors', images: [Oil2], year: "2023", medium: "Oil on Canvas/Board", width: 900, height: 1300 },
     // Pencil Colors
-    {
-        id: 63,
-        title: "Geometric Mosaic",
-        story: "An abstract piece inspired by stained glass, created using colored pencils. Each geometric segment is carefully shaded with a different color, creating a vibrant and harmonious mosaic effect.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PencilColors',
-        images: [PencelColors1],
-        year: "2022",
-        medium: "Colored Pencils on Paper",
-        width: 1000,
-        height: 900
-    },
-    {
-        id: 64,
-        title: "Zentangle Leaves",
-        story: "A beautiful illustration that combines nature with intricate art. The leaves are filled with detailed zentangle patterns, and complemented by elegant Arabic calligraphy, creating a rich and meaningful composition.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PencilColors',
-        images: [PencelColors2],
-        year: "2023",
-        medium: "Colored Pencils and Ink",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 65,
-        title: "Two-Faced: Realism and Fantasy",
-        story: "A surreal portrait that is split into two halves. One side shows a realistic eye and face, while the other explodes into a world of colorful zentangle patterns and floral designs, representing the contrast between our outer self and inner creativity.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PencilColors',
-        images: [PencelColors3],
-        year: "2022",
-        medium: "Pencil, Ink, and Colored Pencils",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 66,
-        title: "Bohemian Girl",
-        story: "A portrait of a girl with flowing orange hair and a bohemian-style headband. The use of colored pencils creates a soft, warm texture, especially in the hair, giving the character a gentle and free-spirited look.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PencilColors',
-        images: [PencelColors4],
-        year: "2021",
-        medium: "Colored Pencils on Paper",
-        width: 900,
-        height: 1000
-    },
-    {
-        id: 67,
-        title: "Colorful Dreamcatcher",
-        story: "A vibrant drawing of a dreamcatcher, brought to life with a rainbow of colored pencils. Each feather is uniquely colored, symbolizing a collection of bright and beautiful dreams.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PencilColors',
-        images: [PencelColors5],
-        year: "2023",
-        medium: "Colored Pencils and Ink",
-        width: 900,
-        height: 1100
-    },
+    { id: 63, title: "Geometric Mosaic", story: "An abstract piece inspired by stained glass, created using colored pencils. Each geometric segment is carefully shaded with a different color, creating a vibrant and harmonious mosaic effect.", mainCategory: 'Paper Art', subCategory: 'PencilColors', images: [PencelColors1], year: "2022", medium: "Colored Pencils on Paper", width: 1000, height: 900 },
+    { id: 64, title: "Zentangle Leaves", story: "A beautiful illustration that combines nature with intricate art. The leaves are filled with detailed zentangle patterns, and complemented by elegant Arabic calligraphy, creating a rich and meaningful composition.", mainCategory: 'Paper Art', subCategory: 'PencilColors', images: [PencelColors2], year: "2023", medium: "Colored Pencils and Ink", width: 900, height: 1200 },
+    { id: 65, title: "Two-Faced: Realism and Fantasy", story: "A surreal portrait that is split into two halves. One side shows a realistic eye and face, while the other explodes into a world of colorful zentangle patterns and floral designs, representing the contrast between our outer self and inner creativity.", mainCategory: 'Paper Art', subCategory: 'PencilColors', images: [PencelColors3], year: "2022", medium: "Pencil, Ink, and Colored Pencils", width: 900, height: 1000 },
+    { id: 66, title: "Bohemian Girl", story: "A portrait of a girl with flowing orange hair and a bohemian-style headband. The use of colored pencils creates a soft, warm texture, especially in the hair, giving the character a gentle and free-spirited look.", mainCategory: 'Paper Art', subCategory: 'PencilColors', images: [PencelColors4], year: "2021", medium: "Colored Pencils on Paper", width: 900, height: 1000 },
+    { id: 67, title: "Colorful Dreamcatcher", story: "A vibrant drawing of a dreamcatcher, brought to life with a rainbow of colored pencils. Each feather is uniquely colored, symbolizing a collection of bright and beautiful dreams.", mainCategory: 'Paper Art', subCategory: 'PencilColors', images: [PencelColors5], year: "2023", medium: "Colored Pencils and Ink", width: 900, height: 1100 },
     // Pixel Art
-    {
-        id: 68,
-        title: "Pixel Penguin Love",
-        story: "An adorable pixel art penguin holding a heart, created on grid paper. This piece, dated and signed 'NOHA', combines the charm of retro gaming aesthetics with a sweet, modern character design.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PixelArt',
-        images: [Pixel1],
-        year: "2025",
-        medium: "Markers on Grid Paper",
-        width: 900,
-        height: 1100
-    },
-    {
-        id: 69,
-        title: "Pixel Art Angel",
-        story: "A beautiful and serene angel created in a two-tone pixel art style. This piece, personalized with the name 'NOHA', showcases how simple grids and colors can be used to create an elegant and classic image.",
-        mainCategory: 'Paper Art',
-        subCategory: 'PixelArt',
-        images: [Pixel2],
-        year: "2022",
-        medium: "Ink/Marker on Grid Paper",
-        width: 1200,
-        height: 900
-    },
-
-    // --- Infographics & Presentations ---
-    {
-        id: 70, // تأكد من أن هذا الرقم فريد
-        title: "Modern Circular Infographic",
-        story: "A clean and modern infographic template designed to present information clearly and effectively. This design uses a central circular element with four color-coded points, making complex data easy to digest and visually appealing for professional presentations.",
-        mainCategory: 'Digital Art',
-        subCategory: 'Infographics & Presentations',
-        images: [infographic1],
-        year: "2024",
-        medium: "Presentation Slide Design",
-        width: 1920,
-        height: 1080
-    }
+    { id: 68, title: "Pixel Penguin Love", story: "An adorable pixel art penguin holding a heart, created on grid paper. This piece, dated and signed 'NOHA', combines the charm of retro gaming aesthetics with a sweet, modern character design.", mainCategory: 'Paper Art', subCategory: 'PixelArt', images: [Pixel1], year: "2025", medium: "Markers on Grid Paper", width: 900, height: 1100 },
+    { id: 69, title: "Pixel Art Angel", story: "A beautiful and serene angel created in a two-tone pixel art style. This piece, personalized with the name 'NOHA', showcases how simple grids and colors can be used to create an elegant and classic image.", mainCategory: 'Paper Art', subCategory: 'PixelArt', images: [Pixel2], year: "2022", medium: "Ink/Marker on Grid Paper", width: 1200, height: 900 },
+    // Infographics & Presentations
+    { id: 70, title: "Modern Circular Infographic", story: "A clean and modern infographic template designed to present information clearly and effectively. This design uses a central circular element with four color-coded points, making complex data easy to digest and visually appealing for professional presentations.", mainCategory: 'Digital Art', subCategory: 'Infographics & Presentations', images: [infographic1], year: "2024", medium: "Presentation Slide Design", width: 1920, height: 1080 }
 ];
 
 // --- Category Definitions (No changes needed) ---
 const mainCategories: ('Digital Art' | 'Paper Art')[] = ['Digital Art', 'Paper Art'];
 const subCategories = {
-    'Digital Art': ['All', 'Digital Illustration', 'Logos', 'Invitations', 'Posters & Flyers', 'Infographics & Presentations'],
+    'Digital Art': ['All', 'Digital Illustration', 'Logos', 'Posters & Flyers', 'Infographics & Presentations'],
     'Paper Art': ['All', 'Pencil Portrait', 'Watercolor', 'Mandala', 'Sketching', 'Hand Lettering', 'Pastel Colors', 'Art3D', 'CartoonPortrait', 'Handmade', 'OilColors', 'PencilColors', 'PixelArt']
 };
 
-// --- ArtCard Component (No changes needed) ---
+// --- ArtCard Component (Updated for guaranteed square card) ---
 const ArtCard = React.memo(({ art, onClick }: { art: ArtPiece; onClick: () => void }) => {
     return (
+        // fixed width (responsive) so cards are identical; no outer aspect-square
         <div
             className="group cursor-pointer overflow-hidden rounded-2xl bg-white/60 dark:bg-gray-800/60 
                        backdrop-blur-sm border border-gray-200 dark:border-gray-700 
-                       flex flex-col h-full transition-transform duration-300 hover:scale-[1.02]"
+                       w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] 
+                       flex-shrink-0 flex flex-col
+                       transition-transform duration-200 hover:scale-[1.02]"
             onClick={onClick}
         >
-            {/* The container is now a square using aspect-square */}
-            <div className="w-full h-full aspect-square object-cover overflow-hidden bg-gray-100 dark:bg-gray-700/50 p-3">
+            {/* Image area: always a perfect square */}
+            <div className="relative aspect-square bg-gray-100 dark:bg-gray-700/50 p-3 flex items-center justify-center">
+                {/* use object-contain so whole image fits inside the square without cropping */}
                 <img
                     src={art.images[0]}
                     alt={art.title}
-                    // The image fills the square container, and object-cover prevents distortion
-                    className="w-full h-full aspect-square object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+                    className="w-full object-fill rounded-lg transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
-                    // srcSet and sizes are useful for responsive images
-                    srcSet={`${art.images[0]} 480w, ${art.images[0]} 800w`}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute inset-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 
-                                group-hover:opacity-100 transition-opacity duration-300 flex items-center 
-                                justify-center rounded-lg">
-                    <span className="text-white font-bold text-lg flex items-center">
-                        View Details <ArrowRight className="ml-2 h-5 w-5" />
-                    </span>
+                {/* Hover overlay (optional) */}
+                <div className="absolute inset-3 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end justify-center pointer-events-none">
+                    <span className="text-white font-semibold mb-3 px-3 py-1 rounded-md bg-black/30">View</span>
                 </div>
             </div>
-            <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-                <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
-                    {art.title}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {art.medium}
-                </p>
+
+            {/* Text area: fixed height so titles line up across all cards */}
+            <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 h-[88px]">
+                <div className="h-full flex flex-col justify-center">
+                    <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
+                        {art.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 truncate">
+                        {art.medium}
+                    </p>
+                </div>
             </div>
         </div>
     );
 });
 
-// --- Main ArtSection Component ---
+// --- Main ArtSection Component (Updated for horizontal scrolling) ---
 export default function ArtSection() {
     const { ref, isVisible } = useScrollAnimation();
     const [selectedArt, setSelectedArt] = useState<ArtPiece | null>(null);
@@ -934,17 +296,17 @@ export default function ArtSection() {
                     ))}
                 </div>
 
-                {/* --- FULLY RESPONSIVE GRID --- */}
+                {/* --- HORIZONTAL SCROLLING CONTAINER --- */}
                 <div
                     className={`
-                        grid gap-2 md:gap-8 
-                        grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 
-                        items-start aspect-square
+                        flex space-x-6 pb-4 overflow-x-auto snap-x snap-mandatory 
                         ${isVisible ? 'opacity-100' : 'opacity-100'}
                         `}
                 >
                     {filteredArtworks.map((art) => (
-                        <ArtCard key={art.id} art={art} onClick={() => setSelectedArt(art)} />
+                        <div key={art.id} className="snap-start">
+                            <ArtCard art={art} onClick={() => setSelectedArt(art)} />
+                        </div>
                     ))}
                 </div>
             </div>

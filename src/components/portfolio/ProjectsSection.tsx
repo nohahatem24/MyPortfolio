@@ -139,6 +139,7 @@ interface Project {
   duration: string;
   teamSize: string;
   githubUrl?: string;
+  apkUrl?: string;
   websiteUrl?: string;
   presentationUrl?: string;
   role?: string;
@@ -251,6 +252,7 @@ export default function ProjectsSection() {
       duration: '7 months',
       teamSize: '4 people',
       githubUrl: 'https://github.com/nohahatem24/Final-HieroVision-Graduation-Full-Project.git',
+      apkUrl: 'https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view?usp=drive_link',
       presentationUrl: 'https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54',
 
     },

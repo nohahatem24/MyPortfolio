@@ -124,9 +124,9 @@ export default function HeroSection() {
                 <span className="absolute top-1/4 -right-4 lg:-right-10 animate-float [animation-delay:-2s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
                   Creative Tech
                 </span>
-                {/* Bubble 3: Art Direction */}
+                {/* Bubble 3: Product Designer */}
                 <span className="absolute bottom-0 right-1/4 lg:-bottom-4 animate-float [animation-delay:-4s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
-                  Art Direction
+                  Product Designer
                 </span>
               </div>
             </div>

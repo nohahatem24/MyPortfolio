@@ -28,7 +28,7 @@ import {
   SiAdobephotoshop, 
   SiAdobeillustrator, 
   SiCanva,
-   
+
   SiOpenai, 
   SiDart, 
   SiHtml5, 
@@ -45,9 +45,9 @@ export default function AboutSection() {
   const { isDark } = useTheme();
 
   const expertise = [
-    'Product Strategy & Vision', 'UI/UX Design', 'Creative Technology', 'Art Direction',
-    'Interactive Prototyping', 'User Research & Empathy', 'Mobile App Design', 'Web Design',
-    'Design Systems', 'Graphic Design & Branding', 'AI-Powered Design', 'Flutter Development',
+    'Software Engineering', 'Frontend Development', 'Product Strategy & Vision', 'UI/UX Design', 'Creative Technology',
+    'Interactive Prototyping', 'User Research & Empathy', 'Mobile App Design', 'Web Design', 'Web Development',
+    'Graphic Design & Branding', 'AI-Powered Design', 'Flutter Development', 'Cross-Platform Apps'
   ];
 
   // First, let's add an interface for the toolbox items
@@ -155,13 +155,16 @@ export default function AboutSection() {
                 {/* About Me Text */}
                 <div className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                   <p className="mb-4">
-                    I am a Product Designer and Creative Technologist, passionate about crafting digital experiences that are not only functional and beautiful but also deeply human and impactful. With a foundation in Engineering, I bridge the gap between complex ideas and elegant, user-centric solutions.
+                    I'm a Software Engineer with the heart of a Product Designer. My passion is crafting digital experiences that are not only functional and beautiful but also deeply human and impactful. 
+                  </p>
+                  <p className="mb-4">
+                    My engineering background isn't just a line on my resume; it's the foundation that allows me to turn ambitious visions into elegant, user-centric solutions. I don't just create mockups—I write the code that brings them to life.
                   </p>
                   <p className="mb-2 text-lg font-bold text-pink-600 dark:text-purple-400">
                     My Philosophy:
                   </p>
                   <p className="mb-4">
-                    I believe technology should feel like magic. My work is driven by empathy, a love for visual storytelling, and a curiosity for how emerging technologies like AI can be used to solve real-world problems and enhance our lives.
+                    I believe technology should feel like magic. My work is driven by empathy, a love for visual storytelling, and a deep curiosity for how emerging technologies like AI can be used to solve real-world problems. I'm on a mission to build products that feel intuitive, look beautiful, and genuinely enhance our lives.
                   </p>
                 </div>
               </div>

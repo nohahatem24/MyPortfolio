@@ -20,7 +20,7 @@ export default function ExperienceSection() {
 
   const experiences: ExperienceItem[] = [
     {
-      title: 'Product Designer & Creative Technologist',
+      title: 'Software Engineer',
       period: 'Jan 2025 – Present',
       company: 'Freelance & Personal Projects',
       location: 'Remote',
@@ -32,7 +32,7 @@ export default function ExperienceSection() {
       ]
     },
     {
-      title: 'Flutter & Dart Developer',
+      title: 'Flutter Developer',
       period: 'Jul 2024 – Present',
       company: 'Freelance',
       location: 'Remote',
@@ -43,7 +43,7 @@ export default function ExperienceSection() {
       ]
     },
     {
-      title: 'Visual Branding & Graphic Designer',
+      title: 'Graphic Designer',
       period: 'Jul 2021 – Present',
       company: 'Freelance & Co-Founder',
       location: 'Remote',
@@ -114,7 +114,7 @@ export default function ExperienceSection() {
                         {exp.company} | {exp.location}
                       </p>
                       
-                      {/* --- THE FIX IS HERE --- */}
+                      
                       <div className="space-y-3">
                         {exp.achievements.map((achievement: string, achIndex: number) => (
                           <div key={achIndex} className="flex items-start space-x-3">
