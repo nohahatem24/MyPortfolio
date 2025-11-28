@@ -11,69 +11,35 @@ import ProfileImage from "../../assets/images/optimized/nohaidc.png";
 import { motion, easeOut } from "framer-motion";
 
 import {
-  FileText,
-  Palette,
-  Code,
-  Wrench,
-  PenTool,
-  Sparkles,
-  Bot,
-  GitBranch,
-  Users,
-  Map,
+  FileText, Palette, Code, Wrench, PenTool, Sparkles, Bot, GitBranch, Users, Map,
 } from "lucide-react";
 import {
-  SiFigma,
-  SiFlutter,
-  SiFirebase,
-  SiGithub,
-  SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiCanva,
-  SiOpenai,
-  SiDart,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
+  SiFigma, SiFlutter, SiFirebase, SiGithub, SiAdobephotoshop, SiAdobeillustrator, SiCanva, SiOpenai, SiDart, SiHtml5, SiCss3, SiJavascript, SiReact,
 } from "react-icons/si";
-
-// It's better to use a library like 'react-icons' for SVGs to keep the code clean.
-// Example: import { FaRocket, FaToolbox } from 'react-icons/fa';
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
   const { isDark } = useTheme();
 
-  const expertise = [
-    "Software Engineering",
-    "Frontend Development",
+  // Updated expertise items for the "Skill Cloud" effect
+  const expertiseItems = [
     "Product Strategy & Vision",
-    "UI/UX Design",
-    "Creative Technology",
-    "Interactive Prototyping",
-    "User Research & Empathy",
-    "Mobile App Design",
-    "Web Design",
-    "Web Development",
-    "Graphic Design & Branding",
-    "AI-Powered Design",
-    "Flutter Development",
-    "Cross-Platform Apps",
+    "End-to-End UI/UX Design",
+    "Human-Centered Design",
+    "Creative Concept Development",
+    "Full-Stack Web Development",
+    "Cross-Platform Mobile Apps",
+    "Interactive Frontend",
+    "AI-Powered Workflow",
+    "Rapid Prototyping",
+    "Agile & Client Collaboration",
   ];
 
-  // First, let's add an interface for the toolbox items
-  interface ToolboxItem {
+  const toolbox: {
     category: string;
     icon: React.ElementType;
-    tools: {
-      name: string;
-      icon: React.ElementType;
-    }[];
-  }
-
-  // Then modify the toolbox constant definition
-  const toolbox: ToolboxItem[] = [
+    tools: { name: string; icon: React.ElementType; }[];
+  }[] = [
     {
       category: "Product Design",
       icon: PenTool,
@@ -90,7 +56,6 @@ export default function AboutSection() {
         { name: "Photoshop", icon: SiAdobephotoshop },
         { name: "Illustrator", icon: SiAdobeillustrator },
         { name: "Canva", icon: SiCanva },
-
         { name: "AI Design", icon: Sparkles },
       ],
     },
@@ -119,17 +84,12 @@ export default function AboutSection() {
 
   const cvLinks = {
       general:
-      "https://drive.google.com/file/d/13fHlwSnopLC3VTMxLi0rk9UQhYiUPNov/view?usp=drive_open", // Replace with your actual link
+      "https://drive.google.com/file/d/13fHlwSnopLC3VTMxLi0rk9UQhYiUPNov/view?usp=drive_open",
   };
 
-  // في بداية المكون، قبل الـ return
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 }, // الحالة عندما يكون القسم غير مرئي
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: easeOut },
-    }, // الحالة عندما يصبح مرئياً
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
   };
 
   return (
@@ -139,11 +99,11 @@ export default function AboutSection() {
       className="py-16 md:py-24 bg-[#fffaf5] dark:bg-gray-900 transition-colors duration-500"
     >
       <motion.div 
-      variants={sectionVariants}
-      initial="hidden" // ابدأ بالحالة المخفية
-      animate={isVisible ? "visible" : "hidden"} // استخدم "visible" عندما isVisible=true
-
-      className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        variants={sectionVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         {/* Section Heading */}
         <div
           className={`text-center mb-16 transition-all duration-1000 ease-in-out ${
@@ -173,7 +133,6 @@ export default function AboutSection() {
                 <span className="ml-2 text-2xl">࿔*˖˚🎀</span>
               </h3>
               <div className="sm:flex">
-                {/* Profile Image - better placement for responsiveness */}
                 <div className="flex-shrink-0 mb-6 sm:mb-0 sm:mr-6 float-none sm:float-left">
                   <div className="relative w-32 h-32 mx-auto sm:mx-0">
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1">
@@ -187,7 +146,6 @@ export default function AboutSection() {
                     </div>
                   </div>
                 </div>
-                {/* About Me Text */}
                 <div className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                   <p className="mb-4">
                     I'm a Software Engineer with the heart of a Product
@@ -216,7 +174,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* --- UPDATED CV Box (single general CV) --- */}
+            {/* CV Box */}
             <div
               className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg text-center flex flex-col items-center justify-center transition-all duration-1000 ease-in-out delay-200 ${
                 isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -230,7 +188,6 @@ export default function AboutSection() {
                 Download my general / technical résumé.
               </p>
               <div className="w-full">
-                {/* General CV Button */}
                 <a
                   href={cvLinks.general}
                   target="_blank"
@@ -244,7 +201,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Expertise Section */}
+          {/* --- FINAL ELEGANT Expertise Section with Animation --- */}
           <div
             className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out delay-300 ${
               isVisible ? "opacity-100" : "opacity-0"
@@ -253,18 +210,34 @@ export default function AboutSection() {
             <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
               Areas of Expertise
             </h3>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-              {expertise.map((item) => (
-                <div
+            <motion.div
+              className="flex flex-wrap justify-center items-center gap-4"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+            >
+              {expertiseItems.map((item ) => (
+                <motion.div
                   key={item}
-                  className="bg-pink-50 dark:bg-purple-900/30 px-4 py-2 rounded-full text-center shadow-sm transform hover:-translate-y-1 transition-all duration-200"
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ type: "spring", stiffness: 100, damping: 12 }}
+                  className="bg-pink-50 dark:bg-purple-900/30 px-4 py-2 rounded-full text-center shadow-sm transform transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
                 >
                   <span className="text-pink-700 dark:text-purple-300 font-medium text-sm sm:text-base">
                     {item}
                   </span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* My Toolbox Section */}
