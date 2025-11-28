@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { ImageModal } from '../ui/image-modal';
 import { ArrowRight } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 // Digital Image Imports (No changes needed) ---
 import mangoColored from '../../assets/images/DigitalArt/DigitalIllustration/MangoFreshSketchColored.png';
@@ -210,35 +211,46 @@ const subCategories = {
 
 // --- ArtCard Component (Updated for guaranteed square card) ---
 const ArtCard = React.memo(({ art, onClick }: { art: ArtPiece; onClick: () => void }) => {
-    return (
-        <div
-            className="group cursor-pointer overflow-hidden rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] flex-shrink-0 flex flex-col transition-transform duration-200 hover:scale-[1.02]"
-            onClick={onClick}
-        >
-            <div className="relative aspect-square bg-gray-100 dark:bg-gray-700/50 p-3 flex items-center justify-center">
-                <img
-                    src={art.images[0]}
-                    alt={art.title}
-                    className="w-full object-fill rounded-lg transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                />
-                <div className="absolute inset-3 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end justify-center pointer-events-none">
-                    <span className="text-white font-semibold mb-3 px-3 py-1 rounded-md bg-black/30">View</span>
-                </div>
-            </div>
-            <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 h-[88px]">
-                <div className="h-full flex flex-col justify-center">
-                    <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
-                        {art.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 truncate">
-                        {art.medium}
-                    </p>
-                </div>
-            </div>
+  return (
+    <Tilt
+      className="tilt-card"
+      perspective={1000}
+      glareEnable={true}
+      glareMaxOpacity={0.2}
+      glarePosition="all"
+      scale={1.05}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      transitionSpeed={2000}
+    >
+      <motion.div
+        onClick={onClick}
+        className="group cursor-pointer w-[220px] h-[288px] sm:w-[260px] sm:h-[340px] md:w-[300px] md:h-[388px] 
+                   rounded-2xl shadow-lg bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm 
+                   border border-gray-200 dark:border-gray-700 overflow-hidden"
+      >
+        {/* Image Area */}
+        <div className="w-full h-[200px] sm:h-[252px] md:h-[300px] overflow-hidden">
+          <motion.img
+            src={art.images[0]}
+            alt={art.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-    );
+        {/* Text Area */}
+        <div className="p-4 h-[88px] flex flex-col justify-center border-t border-gray-200 dark:border-gray-700">
+          <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
+            {art.title}
+          </h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 truncate">
+            {art.medium}
+          </p>
+        </div>
+      </motion.div>
+    </Tilt>
+  );
 });
 
 export default function ArtSection() {
