@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { ImageModal } from '../ui/image-modal';
 import { ArrowRight } from 'lucide-react';
@@ -210,18 +211,11 @@ const subCategories = {
 // --- ArtCard Component (Updated for guaranteed square card) ---
 const ArtCard = React.memo(({ art, onClick }: { art: ArtPiece; onClick: () => void }) => {
     return (
-        // fixed width (responsive) so cards are identical; no outer aspect-square
         <div
-            className="group cursor-pointer overflow-hidden rounded-2xl bg-white/60 dark:bg-gray-800/60 
-                       backdrop-blur-sm border border-gray-200 dark:border-gray-700 
-                       w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] 
-                       flex-shrink-0 flex flex-col
-                       transition-transform duration-200 hover:scale-[1.02]"
+            className="group cursor-pointer overflow-hidden rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] flex-shrink-0 flex flex-col transition-transform duration-200 hover:scale-[1.02]"
             onClick={onClick}
         >
-            {/* Image area: always a perfect square */}
             <div className="relative aspect-square bg-gray-100 dark:bg-gray-700/50 p-3 flex items-center justify-center">
-                {/* use object-contain so whole image fits inside the square without cropping */}
                 <img
                     src={art.images[0]}
                     alt={art.title}
@@ -229,13 +223,10 @@ const ArtCard = React.memo(({ art, onClick }: { art: ArtPiece; onClick: () => vo
                     loading="lazy"
                     decoding="async"
                 />
-                {/* Hover overlay (optional) */}
                 <div className="absolute inset-3 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end justify-center pointer-events-none">
                     <span className="text-white font-semibold mb-3 px-3 py-1 rounded-md bg-black/30">View</span>
                 </div>
             </div>
-
-            {/* Text area: fixed height so titles line up across all cards */}
             <div className="flex-shrink-0 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 h-[88px]">
                 <div className="h-full flex flex-col justify-center">
                     <h3 className="font-bold text-gray-800 dark:text-white truncate" title={art.title}>
@@ -250,7 +241,6 @@ const ArtCard = React.memo(({ art, onClick }: { art: ArtPiece; onClick: () => vo
     );
 });
 
-// --- Main ArtSection Component (Updated for horizontal scrolling) ---
 export default function ArtSection() {
     const { ref, isVisible } = useScrollAnimation();
     const [selectedArt, setSelectedArt] = useState<ArtPiece | null>(null);
@@ -270,17 +260,36 @@ export default function ArtSection() {
         return mainFiltered.filter(art => art.subCategory === activeSubCategory);
     }, [activeMainCategory, activeSubCategory]);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
         <section id="art" ref={ref} className="py-10 sm:py-16 md:py-20 bg-[#fffaf5] dark:bg-gray-900">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className={`text-center mb-12 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12"
+                >
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">My Art Gallery</h2>
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">A canvas for my thoughts, where every pixel tells a story.</p>
                     <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
-                </div>
+                </motion.div>
 
-                {/* Filters */}
                 <div className="flex justify-center gap-4 mb-6">
                     {mainCategories.map(cat => (
                         <button key={cat} onClick={() => handleMainCategoryChange(cat)} className={`px-5 py-2 text-base font-bold rounded-lg transition-all ${activeMainCategory === cat ? 'bg-pink-600 text-white scale-105 shadow-lg' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}>
@@ -296,22 +305,20 @@ export default function ArtSection() {
                     ))}
                 </div>
 
-                {/* --- HORIZONTAL SCROLLING CONTAINER --- */}
-                <div
-                    className={`
-                        flex space-x-6 pb-4 overflow-x-auto snap-x snap-mandatory 
-                        ${isVisible ? 'opacity-100' : 'opacity-100'}
-                        `}
+                <motion.div
+                    className="flex space-x-6 pb-4 overflow-x-auto snap-x snap-mandatory"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isVisible ? "visible" : "hidden"}
                 >
                     {filteredArtworks.map((art) => (
-                        <div key={art.id} className="snap-start">
+                        <motion.div key={art.id} className="snap-start" variants={itemVariants}>
                             <ArtCard art={art} onClick={() => setSelectedArt(art)} />
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
 
-            {/* Modal */}
             {selectedArt && (
                 <ImageModal
                     isOpen={!!selectedArt}

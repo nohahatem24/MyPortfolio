@@ -14,6 +14,7 @@ import { Button } from '../ui/button';
 import { Modal } from '../ui/modal';
 import { ImageModal } from '../ui/image-modal';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { motion, easeOut } from "framer-motion";
 
 //LiteFinance Bank Project - Main Picture
 import LiteFinanceProjectMainPic from '../../assets/images/projects/litefinance/LiteFinance.png';
@@ -411,15 +412,30 @@ export default function ProjectsSection() {
 
   ];
 
-  return (
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+return (
     <section
       id="projects"
       ref={ref}
       className="py-16 md:py-24 bg-[#fffaf5] dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
             My Projects
           </h2>
@@ -427,10 +443,14 @@ export default function ProjectsSection() {
             A selection of my work, from AI-powered platforms to human-centered design systems.
           </p>
           <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
-        </div>
+        </motion.div>
 
-        {/* --- CHANGE IS HERE: Unified Grid Layout --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
             <ProjectCard 
               key={index} 
@@ -439,15 +459,13 @@ export default function ProjectsSection() {
               setImageModalData={setImageModalData}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Project Detail Modal */}
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
 
-      {/* Image Gallery Modal */}
       {imageModalData && (
         <ImageModal
           isOpen={!!imageModalData}
@@ -461,7 +479,6 @@ export default function ProjectsSection() {
   );
 }
 
-// --- ProjectCard Component (No changes needed, it's already perfect) ---
 const ProjectCard = ({ 
   project, 
   setSelectedProject,
@@ -471,10 +488,16 @@ const ProjectCard = ({
   setSelectedProject: (p: Project) => void,
   setImageModalData: (data: { images: string[], title: string, description: string } | null) => void 
 }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
+  };
+
   return (
-    <div 
-      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-105 aspect-[4/3]"
-      onClick={() => setSelectedProject(project)} // Add this onClick handler
+    <motion.div 
+      variants={cardVariants}
+      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transform-gpu transition-all duration-300 hover:shadow-2xl hover:scale-105 aspect-[4/3]"
+      onClick={() => setSelectedProject(project)}
     >
       <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -485,12 +508,11 @@ const ProjectCard = ({
         <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{project.title}</h3>
         <p className="text-white/80 text-sm lg:text-base">{project.description}</p>
         
-        {/* Gallery Buttons */}
         <div className="mt-4 flex gap-2">
           {project.mobileGallery && project.mobileGallery.length > 0 && (
             <button
               onClick={(e) => {
-                e.stopPropagation(); // Important: Prevent card click when clicking gallery button
+                e.stopPropagation();
                 setImageModalData({
                   images: project.mobileGallery!,
                   title: `${project.title} - Mobile Views`,
@@ -507,7 +529,7 @@ const ProjectCard = ({
           {project.webGallery && project.webGallery.length > 0 && (
             <button
               onClick={(e) => {
-                e.stopPropagation(); // Important: Prevent card click when clicking gallery button
+                e.stopPropagation();
                 setImageModalData({
                   images: project.webGallery!,
                   title: `${project.title} - Web Views`,
@@ -528,10 +550,9 @@ const ProjectCard = ({
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
-
 // --- ProjectModal Component (No changes needed, it's already perfect) ---
 const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => void }) => {
   const handleBackdropClick = (e: React.MouseEvent) => {
