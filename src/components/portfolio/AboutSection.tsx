@@ -107,8 +107,8 @@ export default function AboutSection() {
 
 
   const cvLinks = {
-    productDesigner: 'https://drive.google.com/file/d/19XCAqAmdZmovfFGBASAQeNBDpRRH4rJl/view', // Replace with your actual link
-    general: 'https://drive.google.com/file/d/193w9Zm_cjFrtnc0eZ2s3fuB8mBGpFD6I/view' // Replace with your actual link
+    //productDesigner: 'https://drive.google.com/file/d/19XCAqAmdZmovfFGBASAQeNBDpRRH4rJl/view', // Replace with your actual link
+    general: 'https://drive.google.com/file/d/13fHlwSnopLC3VTMxLi0rk9UQhYiUPNov/view?usp=drive_open' // Replace with your actual link
   };
 
   return (
@@ -170,33 +170,23 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* --- UPDATED CV Box --- */}
+            {/* --- UPDATED CV Box (single general CV) --- */}
             <div className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg text-center flex flex-col items-center justify-center transition-all duration-1000 ease-in-out delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
               <FileText className="w-12 h-12 text-pink-500 dark:text-purple-400 mb-4" />
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">My Résumés</h4>
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Résumé</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
-                Choose the version that best fits your needs.
+                Download my general / technical résumé.
               </p>
-              <div className="w-full space-y-4">
-                {/* Product Designer CV Button */}
+              <div className="w-full">
+                {/* General CV Button */}
                 <a
-                  href={cvLinks.productDesigner} // Replace with your actual link
+                  href={cvLinks.general}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-purple-500/30 transform hover:-translate-y-1 transition-all duration-300"
                 >
-                  <Palette className="w-5 h-5 mr-2" />
-                  Product Designer CV
-                </a>
-                {/* General CV Button */}
-                <a
-                  href={cvLinks.general} // Replace with your actual link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center px-6 py-3 bg-white/80 dark:bg-gray-700/80 border-2 border-pink-300 dark:border-purple-600 text-pink-600 dark:text-purple-300 font-bold rounded-full hover:bg-white dark:hover:bg-gray-700 transform hover:-translate-y-1 transition-all duration-300"
-                >
                   <Code className="w-5 h-5 mr-2" />
-                  General/Tech CV
+                  Download CV
                 </a>
               </div>
             </div>
