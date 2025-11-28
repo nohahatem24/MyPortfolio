@@ -7,7 +7,7 @@ import React from 'react';
 import HeroSection from '../components/portfolio/HeroSection';
 import AboutSection from '../components/portfolio/AboutSection';
 import EducationSection from '../components/portfolio/EducationSection';
-import ExperienceSection from '../components/portfolio/ExperienceSection';
+//import ExperienceSection from '../components/portfolio/ExperienceSection';
 import ProjectsSection from '../components/portfolio/ProjectsSection';
 import CertificatesSection from '../components/portfolio/CertificatesSection';
 import ContactSection from '../components/portfolio/ContactSection';
@@ -22,7 +22,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <EducationSection />
-        <ExperienceSection />
+        
         <ProjectsSection />
         <ArtSection />
         <CertificatesSection />
