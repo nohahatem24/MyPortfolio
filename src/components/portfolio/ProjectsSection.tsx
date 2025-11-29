@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react';
 import {
-  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers,
+  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers, Link2Icon, HeartHandshake,
   BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings, Smartphone
 } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -15,6 +15,19 @@ import { Modal } from '../ui/modal';
 import { ImageModal } from '../ui/image-modal';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { motion, easeOut } from "framer-motion";
+import Tilt from 'react-parallax-tilt';
+
+//The Bridge - Main Picture
+import TheBridgeMainPic from '../../assets/images/projects/thebridge/thebridgecover.png';
+
+//LingoNest - Main Picture
+import LingoNestMainPic from '../../assets/images/projects/lingonest/lingonestcover.png';
+
+//MindTrack - Main Picture
+import MindTrackMainPic from '../../assets/images/projects/mindtrack/mindtrackcover.png';
+
+//ProFinance Tracker - Main Picture
+import ProFinanceMainPic from '../../assets/images/projects/profinancetracker/profinancecover.png';
 
 //LiteFinance Bank Project - Main Picture
 import LiteFinanceProjectMainPic from '../../assets/images/projects/litefinance/LiteFinance.png';
@@ -156,6 +169,45 @@ export default function ProjectsSection() {
   } | null>(null);
 
   const projects: Project[] = [
+    // --- المشروع الأول: The Bridge (الجديد والمفاهيمي) ---
+    {
+      title: 'The Bridge',
+      category: 'Conceptual Project | AI-Powered Empathy Tool',
+      description: 'An AI-assisted platform to help partners resolve conflicts and increase empathy by understanding each other’s perspectives.',
+      fullDescription: 'The Bridge is a conceptual project born from a personal mission to solve a deep human problem: the breakdown of communication in relationships. It acts as a neutral, AI-powered mediator that helps partners navigate conflicts not by winning arguments, but by fostering empathy. The app analyzes interactions and guides users to rephrase their feelings constructively, understand triggers, and see the perspective of their partner, turning moments of friction into opportunities for connection.',
+      technologies: ['Product Strategy', 'UX Research', 'Human-Centered Design', 'Conceptual AI', 'Figma'],
+      image: TheBridgeMainPic, // تأكدي من إضافة الصورة
+      features: [
+        { title: 'AI-Powered Communication Coach', icon: BrainCircuit },
+        { title: 'Guided Conflict Resolution', icon: HeartHandshake },
+        { title: 'Empathy-Building Exercises', icon: Users2 },
+        { title: 'Shared Emotional Journal', icon: Calendar },
+        { title: 'Secure & Private by Design', icon: ShieldCheck },
+      ],
+      challenges: [
+        'Designing a system that feels deeply human and empathetic, not robotic or clinical.',
+        'Creating a user experience that builds trust and encourages vulnerability in moments of high emotional stress.',
+        'Conceptualizing an AI model that can understand emotional nuance and suggest constructive, rather than generic, feedback.',
+      ],
+      results: [
+        'Developed a powerful product concept that showcases deep empathy and a unique problem-solving approach.',
+        'Created a comprehensive case study including user personas, journey maps, and high-fidelity mockups.',
+        'Demonstrates a strong ability to think like a product owner: identifying a core human need and designing an innovative, tech-driven solution.',
+      ],
+      role: `
+        <strong class="block mb-2 ml-4">Product Visionary & Lead Designer</strong>
+        <ul class="list-disc ml-10 mb-4 text-justify">
+          <li>Conducted initial user research and defined the core problem statement based on real-world communication challenges.</li>
+          <li>Owned the entire product vision, from the initial "what if?" to a fully-fleshed out conceptual design.</li>
+          <li>Designed the complete user flow and high-fidelity UI mockups in Figma, focusing on a calming, safe, and intuitive interface.</li>
+          <li>Developed detailed user personas and journey maps to ensure every design decision was rooted in user empathy.</li>
+        </ul>
+      `,
+      duration: 'Conceptual Personal Project',
+      teamSize: 'Solo Project',
+    },
+
+    //--- HieroVision Project ---
     {
       title: 'HieroVision',
       category: 'AI-Powered Ed-Tech Platform',
@@ -253,14 +305,15 @@ export default function ProjectsSection() {
       duration: '7 months',
       teamSize: '4 people',
       githubUrl: 'https://github.com/nohahatem24/Final-HieroVision-Graduation-Full-Project.git',
-      apkUrl: 'https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view?usp=drive_link',
+      apkUrl: 'https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view',
       presentationUrl: 'https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54',
 
     },
+    // --- المشروع الثالث: Dr. Basma Mental Health Platform ---
     {
-      title: 'Dr. Basma Mental Care – Mental Health Platform',
+      title: 'Mental Health Platform',
       category: 'UI/UX + Web Development + AI-Assisted Backend',
-      description: 'A mental health platform that enables patients to book online therapy sessions, access self-care tools, and track their mental well-being in a secure and user-friendly way.',
+      description: 'A mental health platform that enables patients to book online therapy sessions, access self-care tools, and track their mental well-being.',
       fullDescription: 'Dr. Basma Mental Care is a mental health and therapy platform designed for booking personalized online sessions, tracking mental health progress, and providing self-care tools. This platform was built to offer a secure, user-friendly, and bilingual experience (English & Arabic) for patients seeking mental health support.',
       technologies: ['Canva', 'Photoroom', 'React.js', 'Vite', 'TailwindCSS', 'Node.js (Partial Backend)', 'AI-Assisted Development', 'Express.js', 'RESTful API', 'Supbase (Authentication & Database)', 'Lovable.dev (Deployment)'],
       image: DrBasmaMainPicture,
@@ -361,10 +414,132 @@ export default function ProjectsSection() {
       websiteUrl: 'https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37',
       githubUrl: 'https://github.com/nohahatem24/dr-basma-mentalcare.git',
     },
+    // --- المشروع الرابع: ProFinance Tracker ---
     {
-      title: 'LiteFinance Bank – Desktop Banking Application',
+      title: 'ProFinance Tracker',
+      category: 'Full-Stack Vue.js SPA',
+      description: 'A smart personal finance dashboard built with Vue.js 3, offering advanced transaction management and interactive reporting.',
+      fullDescription: 'ProFinance Tracker is a comprehensive Single Page Application (SPA) built from the ground up using Vue.js 3. It provides users with an intelligent dashboard to manage their personal finances, track income and expenses, and gain insights through dynamic, interactive charts and multi-format data exports.',
+      technologies: ['Vue.js 3', 'Composition API', 'Pinia', 'TypeScript', 'TailwindCSS', 'Chart.js', 'Supabase Auth', 'i18n'],
+      image: ProFinanceMainPic,
+      features: [
+        { title: 'Secure Authentication', icon: Lock },
+        { title: 'Dynamic Transaction Management', icon: Layers },
+        { title: 'Interactive Dashboard & Charts', icon: BarChart },
+        { title: 'Multi-Format Report Export (PDF/Excel)', icon: ExternalLink },
+        { title: 'Scalable Internationalization (i18n)', icon: Languages },
+        { title: 'Modern Responsive UI with Dark Mode', icon: Monitor },
+      ],
+      challenges: [
+        'Rapidly learning and implementing a new major framework (Vue.js) from scratch.',
+        'Managing complex application state with Pinia for real-time updates.',
+        'Implementing a robust, multi-format export system that supports dynamic localization (e.g., Arabic in PDFs).',
+      ],
+      results: [
+        'Demonstrated the ability to master and build with a new technology stack in a very short time.',
+        'Created a production-ready, full-stack application with complex features.',
+        'Built a highly maintainable and scalable codebase using TypeScript and the Composition API.',
+      ],
+      role: `
+        <strong class="block mb-2 ml-4">Sole Creator (Full-Stack Developer & Product Designer)</strong>
+        <ul class="list-disc ml-10 mb-4 text-justify">
+          <li>Architected and developed the entire application using Vue.js 3 and the Composition API.</li>
+          <li>Designed the complete UI/UX, focusing on a clean, data-driven, and responsive interface with TailwindCSS.</li>
+          <li>Implemented secure user authentication and database management using Supabase.</li>
+          <li>Managed the application's state efficiently using Pinia.</li>
+          <li>Engineered a complex data export feature for both PDF (with i18n support) and Excel formats.</li>
+        </ul>
+      `,
+      duration: '5 Days (Intensive)',
+      teamSize: 'Solo Project',
+      githubUrl: 'https://github.com/nohahatem24/ProFinance-Tracker',
+      websiteUrl: 'https://pro-finance-tracker.vercel.app/login',
+    },
+    
+    // --- المشروع الخامس: MindTrack ---
+    {
+      title: 'MindTrack | CBT/DBT Companion',
+      category: 'Mental Health & Wellness Tool',
+      description: 'A web app designed to bridge the gap between therapy sessions by providing practical CBT & DBT exercises.',
+      fullDescription: 'MindTrack is a personal project born from a passion for mental wellness. It addresses a common challenge for therapy patients: applying learned techniques (like Cognitive Behavioral Therapy and Dialectical Behavior Therapy ) in daily life. The app provides a simple, safe, and structured environment to practice exercises, track moods, and maintain a connection to the therapeutic process between sessions.',
+      technologies: ['React', 'TypeScript', 'Figma', 'Styled-Components', 'AI-Assisted Content', 'Lovable AI'],
+      image: MindTrackMainPic,
+      features: [
+        { title: 'Structured CBT/DBT Exercises', icon: BrainCircuit },
+        { title: 'Daily Mood & Thought Journaling', icon: Calendar },
+        { title: 'Goal Setting & Progress Tracking', icon: Target },
+        { title: 'Safe & Private User Environment', icon: ShieldCheck },
+        { title: 'Empathetic & Calming UI/UX', icon: Users },
+      ],
+      challenges: [
+        'Translating complex psychological concepts (CBT/DBT) into simple, actionable UI components.',
+        'Designing an interface that is calming and encouraging, not overwhelming, for users in distress.',
+        'Structuring the application to ensure user data privacy and security from the ground up.',
+      ],
+      results: [
+        'Developed a strong, user-centric concept that demonstrates deep empathy and product thinking.',
+        'Designed a complete, high-fidelity prototype in Figma, ready for development.',
+        'Proved the ability to research and tackle a complex, meaningful problem domain.',
+      ],
+      role: `
+        <strong class="block mb-2 ml-4">Sole Creator (Product Designer & Developer)</strong>
+        <ul class="list-disc ml-10 mb-4 text-justify">
+          <li>Conducted research into CBT/DBT principles to define the core features and user flows.</li>
+          <li>Designed the entire UI/UX in Figma, focusing on creating a safe, calming, and intuitive experience.</li>
+          <li>Prototyped the application to test the feasibility of the designs and user interactions.</li>
+          <li>Wrote clean, modular code for the initial frontend structure using React and TypeScript.</li>
+        </ul>
+      `,
+      duration: 'Ongoing Personal Project',
+      teamSize: 'Solo Project',
+      githubUrl: 'https://github.com/nohahatem24/Mind-Track-Website',
+      websiteUrl: 'https://gratitude-trigger-map.lovable.app/',
+    
+    },
+    //--- LingoNest ---
+    {
+      title: 'LingoNest',
+      category: 'AI-Assisted E-Learning Platform',
+      description: 'An interactive website for English language courses, featuring course purchasing, progress tracking for kids, and gamified learning elements.',
+      fullDescription: 'LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children\'s progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.',
+      technologies: ['Sider Web App Builder', 'AI-Assisted Design', 'Canva', 'JavaScript', 'Gamification Principles', 'User Authentication'],
+      image: LingoNestMainPic,
+      features: [
+        { title: 'E-commerce for Courses', icon: CreditCard },
+        { title: 'Parental Progress Tracking', icon: Users },
+        { title: 'Gamified Learning (Quizzes & Badges)', icon: ShieldCheck },
+        { title: 'Teacher-Student Communication', icon: Monitor },
+        { title: 'Separate User Profiles (Parent, Child, Teacher)', icon: Users2 },
+      ],
+      challenges: [
+        'Taking an AI-generated foundation and heavily customizing it to create a unique and branded user experience.',
+        'Designing a UI that is both playful and engaging for children, yet professional and trustworthy for parents.',
+        'Structuring the user flows for three different user types (parent, child, teacher) with distinct needs and permissions.',
+      ],
+      results: [
+        'Successfully launched a functional e-learning website ready for user registration and course sales.',
+        'Demonstrated expertise in leveraging AI tools for rapid development while maintaining full control over the final UI/UX.',
+        'Created a multi-faceted platform that caters to the distinct needs of learners, parents, and educators.',
+      ],
+      role: `
+        <strong class="block mb-2 ml-4">Lead Product Designer & UI/UX Specialist</strong>
+        <ul class="list-disc ml-10 mb-4 text-justify">
+          <li>Led the entire design process, starting with an AI-generated base from Sider and transforming it into a fully customized, branded platform.</li>
+          <li>Designed the complete user experience (UX) and user interface (UI) for all three user roles: children, parents, and teachers.</li>
+          <li>Focused on creating a gamified and visually engaging learning environment for kids, using badges, vibrant colors, and interactive elements.</li>
+          <li>Ensured the parent dashboard was intuitive, providing clear insights into their child's progress and activities.</li>
+        </ul>
+      `,
+      duration: '2 weeks',
+      teamSize: 'Solo Project',
+      githubUrl: 'https://github.com/nohahatem24/lingotree/tree/main',
+      websiteUrl: 'https://lingotree.vercel.app/',
+    },
+    //--- LiteFinance Bank Desktop Application ---
+    {
+      title: 'LiteFinance Bank – Desktop Application',
       category: 'UI/UX + Java + Desktop App Development',
-      description: 'A desktop banking application built to manage user accounts, securely track transactions, and provide reliable financial operations with a modern, intuitive UI.',
+      description: 'A desktop banking application to manage user accounts, securely track transactions, and provide reliable financial operations with a modern UI.',
       fullDescription: 'LiteFinance Bank is a desktop-based banking application developed in Java, aimed at providing users with a secure, efficient, and user-friendly way to manage their financial accounts. The system includes features such as account creation, balance management, money transfers, and transaction history tracking. With a professional interface and practical features, the application serves as a foundation for exploring digital banking solutions in a desktop environment.',
       technologies: ['Java', 'Java Swing', 'OOP (Object-Oriented Programming)', 'MySQL', 'NetBeans IDE'],
       image: LiteFinanceProjectMainPic,
@@ -413,17 +588,14 @@ export default function ProjectsSection() {
   ];
 
   const containerVariants = {
-    hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2
-      }
-    }
+        staggerChildren: 0.15,
+      },
+    },
   };
 
-return (
+   return (
     <section
       id="projects"
       ref={ref}
@@ -445,27 +617,35 @@ return (
           <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
         </motion.div>
 
+        {/* --- FINAL RESPONSIVE GRID (1-col on mobile, 2-col on tablet, 3-col on desktop) --- */}
         <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
         >
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={index} 
-              project={project} 
-              setSelectedProject={setSelectedProject} 
-              setImageModalData={setImageModalData}
-            />
+          {projects.map((project) => (
+            <motion.div
+              key={project.title}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 15 } }
+              }}
+            >
+              <ProjectCard 
+                project={project} 
+                setSelectedProject={setSelectedProject} 
+                setImageModalData={setImageModalData}
+              />
+            </motion.div>
           ))}
         </motion.div>
       </div>
 
+      {/* Modals remain the same */}
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
-
       {imageModalData && (
         <ImageModal
           isOpen={!!imageModalData}
@@ -479,6 +659,7 @@ return (
   );
 }
 
+// --- CLEANED ProjectCard Component (No 3D Tilt) ---
 const ProjectCard = ({ 
   project, 
   setSelectedProject,
@@ -488,58 +669,41 @@ const ProjectCard = ({
   setSelectedProject: (p: Project) => void,
   setImageModalData: (data: { images: string[], title: string, description: string } | null) => void 
 }) => {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
-  };
-
   return (
-    <motion.div 
-      variants={cardVariants}
-      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transform-gpu transition-all duration-300 hover:shadow-2xl hover:scale-105 aspect-[4/3]"
+    <div 
+      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer w-full h-full bg-gray-900 aspect-[4/3] 
+                 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
       onClick={() => setSelectedProject(project)}
     >
-      <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+      <img 
+        src={project.image} 
+        alt={project.title} 
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 p-6 flex flex-col justify-end">
-        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md">
+      <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
+        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
           {project.category}
         </span>
         <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{project.title}</h3>
-        <p className="text-white/80 text-sm lg:text-base">{project.description}</p>
+        <p className="text-white/80 text-sm lg:text-base line-clamp-2">{project.description}</p>
         
-        <div className="mt-4 flex gap-2">
-          {project.mobileGallery && project.mobileGallery.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.mobileGallery && (
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setImageModalData({
-                  images: project.mobileGallery!,
-                  title: `${project.title} - Mobile Views`,
-                  description: 'Mobile application interface and features'
-                });
-              }}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-sm backdrop-blur-sm transition-all"
+              onClick={(e) => { e.stopPropagation(); setImageModalData({ images: project.mobileGallery!, title: `${project.title} - Mobile`, description: '' }); }}
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
             >
-              <Smartphone className="w-4 h-4" />
-              Mobile Gallery
+              <Smartphone className="w-4 h-4" /> Mobile
             </button>
           )}
-          
-          {project.webGallery && project.webGallery.length > 0 && (
+          {project.webGallery && (
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setImageModalData({
-                  images: project.webGallery!,
-                  title: `${project.title} - Web Views`,
-                  description: 'Website interface and features'
-                });
-              }}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-sm backdrop-blur-sm transition-all"
+              onClick={(e) => { e.stopPropagation(); setImageModalData({ images: project.webGallery!, title: `${project.title} - Web`, description: '' }); }}
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
             >
-              <Globe className="w-4 h-4" />
-              Web Gallery
+              <Globe className="w-4 h-4" /> Web
             </button>
           )}
         </div>
@@ -550,7 +714,7 @@ const ProjectCard = ({
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 // --- ProjectModal Component (No changes needed, it's already perfect) ---
@@ -619,6 +783,8 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
                   {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Github className="mr-2 h-4 w-4" /> View on GitHub</a>}
                   {project.websiteUrl && <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Globe className="mr-2 h-4 w-4" /> View Live Site</a>}
                   {project.presentationUrl && <a href={project.presentationUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Monitor className="mr-2 h-4 w-4" /> View Presentation</a>}
+                {project.apkUrl && <a href={project.apkUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Link2Icon className="mr-2 h-4 w-4" /> Download APK</a>}
+
                 </div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
