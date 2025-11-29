@@ -18,4 +18,4 @@ All fueled by a passion for building things that matter.
 
 ### 📬 Contact Me
 
-📧 Email: nohahatem.nh@gmail.com
+📧 Email: noha.hatem.alsayed@gmail.com

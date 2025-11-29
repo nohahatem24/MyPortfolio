@@ -35,7 +35,7 @@ export default function ContactSection() {
       const body = encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       );
-      window.location.href = `mailto:nohahatem.nh@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:noha.hatem.alsayed@gmail.com?subject=${subject}&body=${body}`;
 
       setFormStatus('success');
       setTimeout(() => {
@@ -119,12 +119,12 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=nohahatem.nh@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=noha.hatem.alsayed@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-pink-600 dark:text-purple-400 hover:text-pink-700 dark:hover:text-purple-300 transition-colors"
                   >
-                    nohahatem.nh@gmail.com
+                    noha.hatem.alsayed@gmail.com
                   </a>
                 </div>
               </div>
