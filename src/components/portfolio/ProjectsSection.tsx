@@ -7,8 +7,8 @@
 
 import React, { useState } from 'react';
 import {
-  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers, Link2Icon, HeartHandshake,
-  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings, Smartphone
+  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers, Link2Icon, HeartHandshake, Map,
+  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings, Smartphone,BookOpenCheck, Paintbrush, Puzzle, Award 
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Modal } from '../ui/modal';
@@ -31,6 +31,25 @@ import ProFinanceMainPic from '../../assets/images/projects/profinancetracker/pr
 
 //LiteFinance Bank Project - Main Picture
 import LiteFinanceProjectMainPic from '../../assets/images/projects/litefinance/LiteFinance.png';
+
+//HieroKids - Main Picture
+import HieroKidsCover from '../../assets/images/projects/hierokids/hierokidscover.png'; 
+
+// --- HieroKids Images ---
+import HieroKidsImg1 from '../../assets/images/projects/hierokids/9(2).png';
+import HieroKidsImg2 from '../../assets/images/projects/hierokids/10(2).png';
+import HieroKidsImg3 from '../../assets/images/projects/hierokids/11.png';
+import HieroKidsImg4 from '../../assets/images/projects/hierokids/12.png';
+import HieroKidsImg5 from '../../assets/images/projects/hierokids/13.png';
+import HieroKidsImg6 from '../../assets/images/projects/hierokids/14.png';
+import HieroKidsImg7 from '../../assets/images/projects/hierokids/15.png';
+import HieroKidsImg8 from '../../assets/images/projects/hierokids/16.png';
+import HieroKidsImg9 from '../../assets/images/projects/hierokids/17.png';
+import HieroKidsImg10 from '../../assets/images/projects/hierokids/18.png';
+import HieroKidsImg11 from '../../assets/images/projects/hierokids/19.png';
+import HieroKidsImg12 from '../../assets/images/projects/hierokids/20.png';
+import HieroKidsImg13 from '../../assets/images/projects/hierokids/21.png';
+
 
 //Main HieroVision Picture
 import HieroVisionProjectMainPic from '../../assets/images/projects/hierovision/mainpic.png';
@@ -169,30 +188,116 @@ export default function ProjectsSection() {
   } | null>(null);
 
   const projects: Project[] = [
+    // --- HieroKids (Conceptual Solo Project) ---
+    {
+      title: "HieroKids",
+      category: "Conceptual Ed-Tech App for Children",
+      description:
+        "A gamified mobile app designed to teach children ancient Egyptian history and language through interactive stories, puzzles, and creative play.",
+      // داخل fullDescription
+      fullDescription:
+        "HieroKids is a conceptual solo project... The app moves away from traditional, passive learning and uses gamification, storytelling, and creative activities to foster curiosity and a genuine love for history and geography. It’s designed to be a child's first and most exciting step into the world of pharaohs, pyramids, hieroglyphs, and the vibrant cities along the Nile.",
+      technologies: [
+        "Product Strategy",
+        "UX/UI Design for Children",
+        "Gamification",
+        "Figma",
+        "Flutter",
+        "Storybook",
+        "Canva",
+        "AI-Generated Art",
+      ],
+      image: HieroKidsCover, // صورة الغلاف
+      mobileGallery: [
+        
+        HieroKidsImg8,
+        HieroKidsImg9,
+        HieroKidsImg10,
+        HieroKidsImg11,
+        HieroKidsImg12,
+        HieroKidsImg13,
+        HieroKidsImg7,
+        HieroKidsImg1,
+        HieroKidsImg2,
+        HieroKidsImg3,
+        HieroKidsImg4,
+        HieroKidsImg5,
+        HieroKidsImg6,
+      ],
+      features: [
+        { title: "Interactive Story Mode", icon: BookOpenCheck },
+        { title: "Gamified Quizzes & Puzzles", icon: Puzzle },
+        { title: "Nile Valley Explorer (Interactive Map)", icon: Map },
+        { title: "Creative Coloring & Drawing", icon: Paintbrush },
+        { title: "Hieroglyph Alphabet Flashcards", icon: Languages },
+        { title: "Progress Tracking with Badges", icon: Award },
+        { title: "Parental Control & Insights", icon: ShieldCheck },
+      ],
+
+      challenges: [
+        "Designing a UI that is extremely intuitive and engaging for children aged 5-10, with minimal text.",
+        "Simplifying the geography of Egypt into a playful, interactive map without losing educational value.",
+        "Balancing educational accuracy with fun, gamified elements to maintain engagement.",
+        "Creating a rewarding progress system (badges, levels) that motivates children to continue learning.",
+        "Ensuring all content is age-appropriate, safe, and culturally sensitive.",
+      ],
+
+      results: [
+        "Developed a comprehensive product concept with a strong, child-centric focus.",
+        "Designed a full suite of high-fidelity mobile screens, character designs, and UI assets in Figma.",
+        "Created a detailed case study that showcases deep understanding of UX for children, gamification, and visual storytelling.",
+        "Highlights the ability to identify a niche market (educational apps for kids) and design a tailored, compelling solution.",
+      ],
+      
+      role: `
+    <strong class="block mb-2 ml-4">Sole Product Designer & Visionary</strong>
+    <ul class="list-disc ml-10 mb-4 text-justify">
+      <li>Owned the entire product concept from ideation to high-fidelity design, focusing exclusively on the children's user experience.</li>
+      
+      <li>Designed the "Nile Valley Explorer," an interactive map allowing kids to tap on governorates to discover famous landmarks, local culture, and fun facts.</li>
+
+      <li>Designed all characters, UI elements, game mechanics, and screen layouts using a vibrant, playful, and child-friendly art style.</li>
+      <li>Developed the core gamification loop, including quizzes, puzzles, coloring activities, and a badge-based reward system to maximize engagement.</li>
+      <li>Utilized AI tools to generate and refine all visual assets, ensuring a consistent and high-quality artistic direction for the entire app.</li>
+    </ul>
+`,
+
+      duration: "Conceptual Solo Project",
+      teamSize: "Solo Project",
+    },
+
     // --- The Bridge (الجديد والمفاهيمي) ---
     {
-      title: 'The Bridge',
-      category: 'Conceptual Project | AI-Powered Empathy Tool',
-      description: 'An AI-assisted platform to help partners resolve conflicts and increase empathy by understanding each other’s perspectives.',
-      fullDescription: 'The Bridge is a conceptual project born from a personal mission to solve a deep human problem: the breakdown of communication in relationships. It acts as a neutral, AI-powered mediator that helps partners navigate conflicts not by winning arguments, but by fostering empathy. The app analyzes interactions and guides users to rephrase their feelings constructively, understand triggers, and see the perspective of their partner, turning moments of friction into opportunities for connection.',
-      technologies: ['Product Strategy', 'UX Research', 'Human-Centered Design', 'Conceptual AI', 'Figma'],
+      title: "The Bridge",
+      category: "Conceptual Project | AI-Powered Empathy Tool",
+      description:
+        "An AI-assisted platform to help partners resolve conflicts and increase empathy by understanding each other’s perspectives.",
+      fullDescription:
+        "The Bridge is a conceptual project born from a personal mission to solve a deep human problem: the breakdown of communication in relationships. It acts as a neutral, AI-powered mediator that helps partners navigate conflicts not by winning arguments, but by fostering empathy. The app analyzes interactions and guides users to rephrase their feelings constructively, understand triggers, and see the perspective of their partner, turning moments of friction into opportunities for connection.",
+      technologies: [
+        "Product Strategy",
+        "UX Research",
+        "Human-Centered Design",
+        "Conceptual AI",
+        "Figma",
+      ],
       image: TheBridgeMainPic, // تأكدي من إضافة الصورة
       features: [
-        { title: 'AI-Powered Communication Coach', icon: BrainCircuit },
-        { title: 'Guided Conflict Resolution', icon: HeartHandshake },
-        { title: 'Empathy-Building Exercises', icon: Users2 },
-        { title: 'Shared Emotional Journal', icon: Calendar },
-        { title: 'Secure & Private by Design', icon: ShieldCheck },
+        { title: "AI-Powered Communication Coach", icon: BrainCircuit },
+        { title: "Guided Conflict Resolution", icon: HeartHandshake },
+        { title: "Empathy-Building Exercises", icon: Users2 },
+        { title: "Shared Emotional Journal", icon: Calendar },
+        { title: "Secure & Private by Design", icon: ShieldCheck },
       ],
       challenges: [
-        'Designing a system that feels deeply human and empathetic, not robotic or clinical.',
-        'Creating a user experience that builds trust and encourages vulnerability in moments of high emotional stress.',
-        'Conceptualizing an AI model that can understand emotional nuance and suggest constructive, rather than generic, feedback.',
+        "Designing a system that feels deeply human and empathetic, not robotic or clinical.",
+        "Creating a user experience that builds trust and encourages vulnerability in moments of high emotional stress.",
+        "Conceptualizing an AI model that can understand emotional nuance and suggest constructive, rather than generic, feedback.",
       ],
       results: [
-        'Developed a powerful product concept that showcases deep empathy and a unique problem-solving approach.',
-        'Created a comprehensive case study including user personas, journey maps, and high-fidelity mockups.',
-        'Demonstrates a strong ability to think like a product owner: identifying a core human need and designing an innovative, tech-driven solution.',
+        "Developed a powerful product concept that showcases deep empathy and a unique problem-solving approach.",
+        "Created a comprehensive case study including user personas, journey maps, and high-fidelity mockups.",
+        "Demonstrates a strong ability to think like a product owner: identifying a core human need and designing an innovative, tech-driven solution.",
       ],
       role: `
         <strong class="block mb-2 ml-4">Product Visionary & Lead Designer</strong>
@@ -203,17 +308,34 @@ export default function ProjectsSection() {
           <li>Developed detailed user personas and journey maps to ensure every design decision was rooted in user empathy.</li>
         </ul>
       `,
-      duration: 'Conceptual Personal Project',
-      teamSize: 'Solo Project',
+      duration: "Conceptual Personal Project",
+      teamSize: "Solo Project",
     },
 
     //--- HieroVision Project ---
     {
-      title: 'HieroVision',
-      category: 'AI-Powered Ed-Tech Platform',
-      description: 'An immersive mobile & web app bringing ancient Egyptian culture to life with AI-driven translation and interactive learning.',
-      fullDescription: 'HieroVision is an innovative, AI-driven platform that bridges the gap between modern technology and ancient Egyptian culture. Designed as both a mobile and web application, HieroVision allows users of all ages to explore, learn, and interact with the language, history, and heritage of ancient Egypt in a highly engaging way.',
-      technologies: ['Flutter', 'Figma', 'FlutterFlow', 'SQLite', 'Dart', 'Canva', 'React.js', 'Node.js', 'RESTful API', 'Flask', 'Python', 'TensorFlow', 'SqueezeNet', 'OpenCV'],
+      title: "HieroVision",
+      category: "AI-Powered Ed-Tech Platform",
+      description:
+        "An immersive mobile & web app bringing ancient Egyptian culture to life with AI-driven translation and interactive learning.",
+      fullDescription:
+        "HieroVision is an innovative, AI-driven platform that bridges the gap between modern technology and ancient Egyptian culture. Designed as both a mobile and web application, HieroVision allows users of all ages to explore, learn, and interact with the language, history, and heritage of ancient Egypt in a highly engaging way.",
+      technologies: [
+        "Flutter",
+        "Figma",
+        "FlutterFlow",
+        "SQLite",
+        "Dart",
+        "Canva",
+        "React.js",
+        "Node.js",
+        "RESTful API",
+        "Flask",
+        "Python",
+        "TensorFlow",
+        "SqueezeNet",
+        "OpenCV",
+      ],
       image: HieroVisionProjectMainPic,
       mobileGallery: [
         //Mobile Pictuers
@@ -243,7 +365,7 @@ export default function ProjectsSection() {
         HieroVisionProjectMobileKids2,
         HieroVisionProjectMobileKids3,
         HieroVisionProjectMobileKids4,
-        HieroVisionProjectMobileKids5
+        HieroVisionProjectMobileKids5,
       ],
       //Website Pictures
       webGallery: [
@@ -261,26 +383,34 @@ export default function ProjectsSection() {
         HieroVisionProjectWeb9,
       ],
       features: [
-        { title: 'Hieroglyph Image Scanner & Translator', icon: BrainCircuit },
-        { title: 'Text-to-Hieroglyph & Vice Versa Conversion', icon: Languages },
-        { title: 'Interactive Landmark Explorer with Real-time Info', icon: MapPin },
-        { title: 'Museum & Historical Tours Booking System', icon: Calendar },
-        { title: 'Personalized User Profiles & Activity History', icon: Users },
+        { title: "Hieroglyph Image Scanner & Translator", icon: BrainCircuit },
+        {
+          title: "Text-to-Hieroglyph & Vice Versa Conversion",
+          icon: Languages,
+        },
+        {
+          title: "Interactive Landmark Explorer with Real-time Info",
+          icon: MapPin,
+        },
+        { title: "Museum & Historical Tours Booking System", icon: Calendar },
+        { title: "Personalized User Profiles & Activity History", icon: Users },
         { title: 'Engaging "Kids Mode" with Games & Stories', icon: Users2 }, // Using a different 'Users' icon for variety
-        { title: 'AnubAI – Custom AI-Powered Chatbot Assistant', icon: Monitor },
+        {
+          title: "AnubAI – Custom AI-Powered Chatbot Assistant",
+          icon: Monitor,
+        },
       ],
       challenges: [
-        'Designing a dual UI/UX for both children and academic users.',
-        'Integrating complex AI models for real-time image recognition.',
-        'Ensuring cultural accuracy while creating an engaging, gamified experience.',
+        "Designing a dual UI/UX for both children and academic users.",
+        "Integrating complex AI models for real-time image recognition.",
+        "Ensuring cultural accuracy while creating an engaging, gamified experience.",
       ],
       results: [
-        'Delivered a fully functional, dual-platform application that received an A+ grade.',
-        'Created a highly immersive learning tool praised for its innovation and educational value.',
-        'Proved the viability of blending advanced AI with cultural heritage preservation.',
+        "Delivered a fully functional, dual-platform application that received an A+ grade.",
+        "Created a highly immersive learning tool praised for its innovation and educational value.",
+        "Proved the viability of blending advanced AI with cultural heritage preservation.",
       ],
-      role:
-        `
+      role: `
       <strong class="block mb-2 ml-4">Mobile & Web Development</strong>
       <ul class="list-disc ml-10 mb-4 text-justify">
         <li>Led the development of the mobile application using Flutter.</li>
@@ -302,20 +432,36 @@ export default function ProjectsSection() {
       </ul>
     `,
 
-      duration: '7 months',
-      teamSize: '4 people',
-      githubUrl: 'https://github.com/nohahatem24/Final-HieroVision-Graduation-Full-Project.git',
-      apkUrl: 'https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view',
-      presentationUrl: 'https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54',
-
+      duration: "7 months",
+      teamSize: "4 people",
+      githubUrl:
+        "https://github.com/nohahatem24/Final-HieroVision-Graduation-Full-Project.git",
+      apkUrl:
+        "https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view",
+      presentationUrl:
+        "https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54",
     },
     // --- Dr. Basma Mental Health Platform ---
     {
-      title: 'Mental Health Platform',
-      category: 'UI/UX + Web Development + AI-Assisted Backend',
-      description: 'A mental health platform that enables patients to book online therapy sessions, access self-care tools, and track their mental well-being.',
-      fullDescription: 'Dr. Basma Mental Care is a mental health and therapy platform designed for booking personalized online sessions, tracking mental health progress, and providing self-care tools. This platform was built to offer a secure, user-friendly, and bilingual experience (English & Arabic) for patients seeking mental health support.',
-      technologies: ['Canva', 'Photoroom', 'React.js', 'Vite', 'TailwindCSS', 'Node.js (Partial Backend)', 'AI-Assisted Development', 'Express.js', 'RESTful API', 'Supbase (Authentication & Database)', 'Lovable.dev (Deployment)'],
+      title: "Mental Health Platform",
+      category: "UI/UX + Web Development + AI-Assisted Backend",
+      description:
+        "A mental health platform that enables patients to book online therapy sessions, access self-care tools, and track their mental well-being.",
+      fullDescription:
+        "Dr. Basma Mental Care is a mental health and therapy platform designed for booking personalized online sessions, tracking mental health progress, and providing self-care tools. This platform was built to offer a secure, user-friendly, and bilingual experience (English & Arabic) for patients seeking mental health support.",
+      technologies: [
+        "Canva",
+        "Photoroom",
+        "React.js",
+        "Vite",
+        "TailwindCSS",
+        "Node.js (Partial Backend)",
+        "AI-Assisted Development",
+        "Express.js",
+        "RESTful API",
+        "Supbase (Authentication & Database)",
+        "Lovable.dev (Deployment)",
+      ],
       image: DrBasmaMainPicture,
       //Website Gallery
       webGallery: [
@@ -368,23 +514,23 @@ export default function ProjectsSection() {
         DrBasmaLight24,
         DrBasmaDark24,
         DrBasmaLight25,
-        DrBasmaDark25
+        DrBasmaDark25,
       ],
       features: [
-        { title: 'Secure Session Booking', icon: Calendar },
-        { title: 'Empathetic UI/UX Design', icon: Users },
-        { title: 'Bilingual (Ar/En ) Interface', icon: Languages },
+        { title: "Secure Session Booking", icon: Calendar },
+        { title: "Empathetic UI/UX Design", icon: Users },
+        { title: "Bilingual (Ar/En ) Interface", icon: Languages },
         { title: '"MindTrack" Wellness Tool', icon: ShieldCheck },
       ],
       challenges: [
-        'Building a UI that conveys trust, safety, and professionalism for a sensitive topic.',
-        'Structuring a scalable backend for future features like payments and secure messaging.',
-        'Ensuring the design was calming and accessible for users in distress.',
+        "Building a UI that conveys trust, safety, and professionalism for a sensitive topic.",
+        "Structuring a scalable backend for future features like payments and secure messaging.",
+        "Ensuring the design was calming and accessible for users in distress.",
       ],
       results: [
-        'Launched a professional, responsive website that strengthened the therapist\'s digital presence.',
-        'Designed and implemented a complete design system focused on empathy and clarity.',
-        'Built a strong foundation for a full-stack mental health application.',
+        "Launched a professional, responsive website that strengthened the therapist's digital presence.",
+        "Designed and implemented a complete design system focused on empathy and clarity.",
+        "Built a strong foundation for a full-stack mental health application.",
       ],
       role: `
   <strong class="block mb-2 ml-4">Frontend Development</strong>
@@ -409,36 +555,48 @@ export default function ProjectsSection() {
     <li>Focused on user-friendly navigation and call-to-actions tailored for patients and therapists.</li>
   </ul>
 `,
-      duration: '2 months',
-      teamSize: 'Solo Project',
-      websiteUrl: 'https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37',
-      githubUrl: 'https://github.com/nohahatem24/dr-basma-mentalcare.git',
+      duration: "2 months",
+      teamSize: "Solo Project",
+      websiteUrl:
+        "https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37",
+      githubUrl: "https://github.com/nohahatem24/dr-basma-mentalcare.git",
     },
     // --- ProFinance Tracker ---
     {
-      title: 'ProFinance Tracker',
-      category: 'Full-Stack Vue.js SPA',
-      description: 'A smart personal finance dashboard built with Vue.js 3, offering advanced transaction management and interactive reporting.',
-      fullDescription: 'ProFinance Tracker is a comprehensive Single Page Application (SPA) built from the ground up using Vue.js 3. It provides users with an intelligent dashboard to manage their personal finances, track income and expenses, and gain insights through dynamic, interactive charts and multi-format data exports.',
-      technologies: ['Vue.js 3', 'Composition API', 'Pinia', 'TypeScript', 'TailwindCSS', 'Chart.js', 'Supabase Auth', 'i18n'],
+      title: "ProFinance Tracker",
+      category: "Full-Stack Vue.js SPA",
+      description:
+        "A smart personal finance dashboard built with Vue.js 3, offering advanced transaction management and interactive reporting.",
+      fullDescription:
+        "ProFinance Tracker is a comprehensive Single Page Application (SPA) built from the ground up using Vue.js 3. It provides users with an intelligent dashboard to manage their personal finances, track income and expenses, and gain insights through dynamic, interactive charts and multi-format data exports.",
+      technologies: [
+        "Vue.js 3",
+        "Composition API",
+        "Pinia",
+        "TypeScript",
+        "TailwindCSS",
+        "Chart.js",
+        "Supabase Auth",
+        "i18n",
+      ],
       image: ProFinanceMainPic,
       features: [
-        { title: 'Secure Authentication', icon: Lock },
-        { title: 'Dynamic Transaction Management', icon: Layers },
-        { title: 'Interactive Dashboard & Charts', icon: BarChart },
-        { title: 'Multi-Format Report Export (PDF/Excel)', icon: ExternalLink },
-        { title: 'Scalable Internationalization (i18n)', icon: Languages },
-        { title: 'Modern Responsive UI with Dark Mode', icon: Monitor },
+        { title: "Secure Authentication", icon: Lock },
+        { title: "Dynamic Transaction Management", icon: Layers },
+        { title: "Interactive Dashboard & Charts", icon: BarChart },
+        { title: "Multi-Format Report Export (PDF/Excel)", icon: ExternalLink },
+        { title: "Scalable Internationalization (i18n)", icon: Languages },
+        { title: "Modern Responsive UI with Dark Mode", icon: Monitor },
       ],
       challenges: [
-        'Rapidly learning and implementing a new major framework (Vue.js) from scratch.',
-        'Managing complex application state with Pinia for real-time updates.',
-        'Implementing a robust, multi-format export system that supports dynamic localization (e.g., Arabic in PDFs).',
+        "Rapidly learning and implementing a new major framework (Vue.js) from scratch.",
+        "Managing complex application state with Pinia for real-time updates.",
+        "Implementing a robust, multi-format export system that supports dynamic localization (e.g., Arabic in PDFs).",
       ],
       results: [
-        'Demonstrated the ability to master and build with a new technology stack in a very short time.',
-        'Created a production-ready, full-stack application with complex features.',
-        'Built a highly maintainable and scalable codebase using TypeScript and the Composition API.',
+        "Demonstrated the ability to master and build with a new technology stack in a very short time.",
+        "Created a production-ready, full-stack application with complex features.",
+        "Built a highly maintainable and scalable codebase using TypeScript and the Composition API.",
       ],
       role: `
         <strong class="block mb-2 ml-4">Sole Creator (Full-Stack Developer & Product Designer)</strong>
@@ -450,36 +608,45 @@ export default function ProjectsSection() {
           <li>Engineered a complex data export feature for both PDF (with i18n support) and Excel formats.</li>
         </ul>
       `,
-      duration: '5 Days (Intensive)',
-      teamSize: 'Solo Project',
-      githubUrl: 'https://github.com/nohahatem24/ProFinance-Tracker',
-      websiteUrl: 'https://pro-finance-tracker.vercel.app/login',
+      duration: "5 Days (Intensive)",
+      teamSize: "Solo Project",
+      githubUrl: "https://github.com/nohahatem24/ProFinance-Tracker",
+      websiteUrl: "https://pro-finance-tracker.vercel.app/login",
     },
-    
+
     // --- MindTrack ---
     {
-      title: 'MindTrack | CBT/DBT Companion',
-      category: 'Mental Health & Wellness Tool',
-      description: 'A web app designed to bridge the gap between therapy sessions by providing practical CBT & DBT exercises.',
-      fullDescription: 'MindTrack is a personal project born from a passion for mental wellness. It addresses a common challenge for therapy patients: applying learned techniques (like Cognitive Behavioral Therapy and Dialectical Behavior Therapy ) in daily life. The app provides a simple, safe, and structured environment to practice exercises, track moods, and maintain a connection to the therapeutic process between sessions.',
-      technologies: ['React', 'TypeScript', 'Figma', 'Styled-Components', 'AI-Assisted Content', 'Lovable AI'],
+      title: "MindTrack | CBT/DBT Companion",
+      category: "Mental Health & Wellness Tool",
+      description:
+        "A web app designed to bridge the gap between therapy sessions by providing practical CBT & DBT exercises.",
+      fullDescription:
+        "MindTrack is a personal project born from a passion for mental wellness. It addresses a common challenge for therapy patients: applying learned techniques (like Cognitive Behavioral Therapy and Dialectical Behavior Therapy ) in daily life. The app provides a simple, safe, and structured environment to practice exercises, track moods, and maintain a connection to the therapeutic process between sessions.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Figma",
+        "Styled-Components",
+        "AI-Assisted Content",
+        "Lovable AI",
+      ],
       image: MindTrackMainPic,
       features: [
-        { title: 'Structured CBT/DBT Exercises', icon: BrainCircuit },
-        { title: 'Daily Mood & Thought Journaling', icon: Calendar },
-        { title: 'Goal Setting & Progress Tracking', icon: Target },
-        { title: 'Safe & Private User Environment', icon: ShieldCheck },
-        { title: 'Empathetic & Calming UI/UX', icon: Users },
+        { title: "Structured CBT/DBT Exercises", icon: BrainCircuit },
+        { title: "Daily Mood & Thought Journaling", icon: Calendar },
+        { title: "Goal Setting & Progress Tracking", icon: Target },
+        { title: "Safe & Private User Environment", icon: ShieldCheck },
+        { title: "Empathetic & Calming UI/UX", icon: Users },
       ],
       challenges: [
-        'Translating complex psychological concepts (CBT/DBT) into simple, actionable UI components.',
-        'Designing an interface that is calming and encouraging, not overwhelming, for users in distress.',
-        'Structuring the application to ensure user data privacy and security from the ground up.',
+        "Translating complex psychological concepts (CBT/DBT) into simple, actionable UI components.",
+        "Designing an interface that is calming and encouraging, not overwhelming, for users in distress.",
+        "Structuring the application to ensure user data privacy and security from the ground up.",
       ],
       results: [
-        'Developed a strong, user-centric concept that demonstrates deep empathy and product thinking.',
-        'Designed a complete, high-fidelity prototype in Figma, ready for development.',
-        'Proved the ability to research and tackle a complex, meaningful problem domain.',
+        "Developed a strong, user-centric concept that demonstrates deep empathy and product thinking.",
+        "Designed a complete, high-fidelity prototype in Figma, ready for development.",
+        "Proved the ability to research and tackle a complex, meaningful problem domain.",
       ],
       role: `
         <strong class="block mb-2 ml-4">Sole Creator (Product Designer & Developer)</strong>
@@ -490,36 +657,47 @@ export default function ProjectsSection() {
           <li>Wrote clean, modular code for the initial frontend structure using React and TypeScript.</li>
         </ul>
       `,
-      duration: 'Ongoing Personal Project',
-      teamSize: 'Solo Project',
-      githubUrl: 'https://github.com/nohahatem24/Mind-Track-Website',
-      websiteUrl: 'https://gratitude-trigger-map.lovable.app/',
-    
+      duration: "Ongoing Personal Project",
+      teamSize: "Solo Project",
+      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
+      websiteUrl: "https://gratitude-trigger-map.lovable.app/",
     },
     //--- LingoNest ---
     {
-      title: 'LingoNest',
-      category: 'AI-Assisted E-Learning Platform',
-      description: 'An interactive website for English language courses, featuring course purchasing, progress tracking for kids, and gamified learning elements.',
-      fullDescription: 'LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children\'s progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.',
-      technologies: ['Sider Web App Builder', 'AI-Assisted Design', 'Canva', 'JavaScript', 'Gamification Principles', 'User Authentication'],
+      title: "LingoNest",
+      category: "AI-Assisted E-Learning Platform",
+      description:
+        "An interactive website for English language courses, featuring course purchasing, progress tracking for kids, and gamified learning elements.",
+      fullDescription:
+        "LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children's progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.",
+      technologies: [
+        "Sider Web App Builder",
+        "AI-Assisted Design",
+        "Canva",
+        "JavaScript",
+        "Gamification Principles",
+        "User Authentication",
+      ],
       image: LingoNestMainPic,
       features: [
-        { title: 'E-commerce for Courses', icon: CreditCard },
-        { title: 'Parental Progress Tracking', icon: Users },
-        { title: 'Gamified Learning (Quizzes & Badges)', icon: ShieldCheck },
-        { title: 'Teacher-Student Communication', icon: Monitor },
-        { title: 'Separate User Profiles (Parent, Child, Teacher)', icon: Users2 },
+        { title: "E-commerce for Courses", icon: CreditCard },
+        { title: "Parental Progress Tracking", icon: Users },
+        { title: "Gamified Learning (Quizzes & Badges)", icon: ShieldCheck },
+        { title: "Teacher-Student Communication", icon: Monitor },
+        {
+          title: "Separate User Profiles (Parent, Child, Teacher)",
+          icon: Users2,
+        },
       ],
       challenges: [
-        'Taking an AI-generated foundation and heavily customizing it to create a unique and branded user experience.',
-        'Designing a UI that is both playful and engaging for children, yet professional and trustworthy for parents.',
-        'Structuring the user flows for three different user types (parent, child, teacher) with distinct needs and permissions.',
+        "Taking an AI-generated foundation and heavily customizing it to create a unique and branded user experience.",
+        "Designing a UI that is both playful and engaging for children, yet professional and trustworthy for parents.",
+        "Structuring the user flows for three different user types (parent, child, teacher) with distinct needs and permissions.",
       ],
       results: [
-        'Successfully launched a functional e-learning website ready for user registration and course sales.',
-        'Demonstrated expertise in leveraging AI tools for rapid development while maintaining full control over the final UI/UX.',
-        'Created a multi-faceted platform that caters to the distinct needs of learners, parents, and educators.',
+        "Successfully launched a functional e-learning website ready for user registration and course sales.",
+        "Demonstrated expertise in leveraging AI tools for rapid development while maintaining full control over the final UI/UX.",
+        "Created a multi-faceted platform that caters to the distinct needs of learners, parents, and educators.",
       ],
       role: `
         <strong class="block mb-2 ml-4">Lead Product Designer & UI/UX Specialist</strong>
@@ -530,41 +708,49 @@ export default function ProjectsSection() {
           <li>Ensured the parent dashboard was intuitive, providing clear insights into their child's progress and activities.</li>
         </ul>
       `,
-      duration: '2 weeks',
-      teamSize: 'Solo Project',
-      githubUrl: 'https://github.com/nohahatem24/lingotree/tree/main',
-      websiteUrl: 'https://lingotree.vercel.app/',
+      duration: "2 weeks",
+      teamSize: "Solo Project",
+      githubUrl: "https://github.com/nohahatem24/lingotree/tree/main",
+      websiteUrl: "https://lingotree.vercel.app/",
     },
     //--- LiteFinance Bank Desktop Application ---
     {
-      title: 'LiteFinance Bank – Desktop Application',
-      category: 'UI/UX + Java + Desktop App Development',
-      description: 'A desktop banking application to manage user accounts, securely track transactions, and provide reliable financial operations with a modern UI.',
-      fullDescription: 'LiteFinance Bank is a desktop-based banking application developed in Java, aimed at providing users with a secure, efficient, and user-friendly way to manage their financial accounts. The system includes features such as account creation, balance management, money transfers, and transaction history tracking. With a professional interface and practical features, the application serves as a foundation for exploring digital banking solutions in a desktop environment.',
-      technologies: ['Java', 'Java Swing', 'OOP (Object-Oriented Programming)', 'MySQL', 'NetBeans IDE'],
+      title: "LiteFinance Bank – Desktop Application",
+      category: "UI/UX + Java + Desktop App Development",
+      description:
+        "A desktop banking application to manage user accounts, securely track transactions, and provide reliable financial operations with a modern UI.",
+      fullDescription:
+        "LiteFinance Bank is a desktop-based banking application developed in Java, aimed at providing users with a secure, efficient, and user-friendly way to manage their financial accounts. The system includes features such as account creation, balance management, money transfers, and transaction history tracking. With a professional interface and practical features, the application serves as a foundation for exploring digital banking solutions in a desktop environment.",
+      technologies: [
+        "Java",
+        "Java Swing",
+        "OOP (Object-Oriented Programming)",
+        "MySQL",
+        "NetBeans IDE",
+      ],
       image: LiteFinanceProjectMainPic,
 
       features: [
-        { title: 'Secure User Authentication', icon: Lock },
-        { title: 'Interactive Dashboard', icon: BarChart },
-        { title: 'Multi-Account Support', icon: Layers },
-        { title: 'Transaction History Tracking', icon: Calendar },
-        { title: 'Real-time Money Transfer', icon: ArrowRight },
-        { title: 'Digital Account Card Display', icon: CreditCard },
-        { title: 'Branch Locator', icon: MapPin },
-        { title: 'User Profile & Settings', icon: Settings },
+        { title: "Secure User Authentication", icon: Lock },
+        { title: "Interactive Dashboard", icon: BarChart },
+        { title: "Multi-Account Support", icon: Layers },
+        { title: "Transaction History Tracking", icon: Calendar },
+        { title: "Real-time Money Transfer", icon: ArrowRight },
+        { title: "Digital Account Card Display", icon: CreditCard },
+        { title: "Branch Locator", icon: MapPin },
+        { title: "User Profile & Settings", icon: Settings },
       ],
       challenges: [
-        'Designing a clean and professional UI using the limitations of Java Swing.',
-        'Managing application state and data flow within a desktop environment.',
-        'Ensuring usability and security in a finance-focused application.',
-        'Coordinating teamwork and distributing tasks across a 3-person team.',
+        "Designing a clean and professional UI using the limitations of Java Swing.",
+        "Managing application state and data flow within a desktop environment.",
+        "Ensuring usability and security in a finance-focused application.",
+        "Coordinating teamwork and distributing tasks across a 3-person team.",
       ],
       results: [
-        'Successfully developed a functional and professional desktop banking app.',
-        'Applied Java OOP principles in a real-world desktop application project.',
-        'Strengthened teamwork and project management skills.',
-        'Delivered a strong portfolio piece showcasing desktop app development.',
+        "Successfully developed a functional and professional desktop banking app.",
+        "Applied Java OOP principles in a real-world desktop application project.",
+        "Strengthened teamwork and project management skills.",
+        "Delivered a strong portfolio piece showcasing desktop app development.",
       ],
       role: `
   <strong class="block mb-2 ml-4">UI/UX & Design</strong>
@@ -581,10 +767,9 @@ export default function ProjectsSection() {
     <li>Applied OOP concepts for modular and maintainable code.</li>
   </ul>
   `,
-      duration: '3 weeks',
-      teamSize: '3 people',
+      duration: "3 weeks",
+      teamSize: "3 people",
     },
-
   ];
 
   const containerVariants = {
