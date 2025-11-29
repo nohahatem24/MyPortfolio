@@ -169,7 +169,7 @@ export default function ProjectsSection() {
   } | null>(null);
 
   const projects: Project[] = [
-    // --- المشروع الأول: The Bridge (الجديد والمفاهيمي) ---
+    // --- The Bridge (الجديد والمفاهيمي) ---
     {
       title: 'The Bridge',
       category: 'Conceptual Project | AI-Powered Empathy Tool',
@@ -309,7 +309,7 @@ export default function ProjectsSection() {
       presentationUrl: 'https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54',
 
     },
-    // --- المشروع الثالث: Dr. Basma Mental Health Platform ---
+    // --- Dr. Basma Mental Health Platform ---
     {
       title: 'Mental Health Platform',
       category: 'UI/UX + Web Development + AI-Assisted Backend',
@@ -414,7 +414,7 @@ export default function ProjectsSection() {
       websiteUrl: 'https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37',
       githubUrl: 'https://github.com/nohahatem24/dr-basma-mentalcare.git',
     },
-    // --- المشروع الرابع: ProFinance Tracker ---
+    // --- ProFinance Tracker ---
     {
       title: 'ProFinance Tracker',
       category: 'Full-Stack Vue.js SPA',
@@ -456,7 +456,7 @@ export default function ProjectsSection() {
       websiteUrl: 'https://pro-finance-tracker.vercel.app/login',
     },
     
-    // --- المشروع الخامس: MindTrack ---
+    // --- MindTrack ---
     {
       title: 'MindTrack | CBT/DBT Companion',
       category: 'Mental Health & Wellness Tool',
