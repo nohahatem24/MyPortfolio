@@ -1,7 +1,6 @@
 /**
- * Fully Responsive and Visually Appealing About Section.
- * Features mobile-first design, interactive hover effects, and enhanced visual hierarchy.
- * Designed to be a stunning showcase for a Product Designer & Creative Technologist.
+ * FINAL - Fully Responsive and Visually Appealing About Section.
+ * Features the CORRECT, AGREED-UPON "Skill Cloud" for Areas of Expertise with staggered animations.
  */
 
 import React from "react";
@@ -11,17 +10,17 @@ import ProfileImage from "../../assets/images/optimized/nohaidc.png";
 import { motion, easeOut } from "framer-motion";
 
 import {
-  FileText, Palette, Code, Wrench, PenTool, Sparkles, Bot, GitBranch, Users, Map,
+  FileText, Palette, Code, Wrench, PenTool, Sparkles, GitBranch, Users, Map,
 } from "lucide-react";
 import {
   SiFigma, SiFlutter, SiFirebase, SiGithub, SiAdobephotoshop, SiAdobeillustrator, SiCanva, SiOpenai, SiDart, SiHtml5, SiCss3, SiJavascript, SiReact,
 } from "react-icons/si";
 
 export default function AboutSection() {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
   const { isDark } = useTheme();
 
-  // Updated expertise items for the "Skill Cloud" effect
+  // --- القائمة الصحيحة والمحدثة التي اتفقنا عليها ---
   const expertiseItems = [
     "Product Strategy & Vision",
     "End-to-End UI/UX Design",
@@ -33,6 +32,8 @@ export default function AboutSection() {
     "AI-Powered Workflow",
     "Rapid Prototyping",
     "Agile & Client Collaboration",
+    "Version Control (Git)",
+    
   ];
 
   const toolbox: {
@@ -105,11 +106,7 @@ export default function AboutSection() {
         className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Heading */}
-        <div
-          className={`text-center mb-16 transition-all duration-1000 ease-in-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
             About Me
           </h2>
@@ -122,12 +119,7 @@ export default function AboutSection() {
         <div className="space-y-12 md:space-y-16">
           {/* Intro + CV */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* About Me Card */}
-            <div
-              className={`lg:col-span-2 bg-white/60 dark:bg-gray-800/60 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out ${
-                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-            >
+            <div className="lg:col-span-2 bg-white/60 dark:bg-gray-800/60 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-lg">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                 Hello there! I'm Noha{" "}
                 <span className="ml-2 text-2xl">࿔*˖˚🎀</span>
@@ -141,6 +133,7 @@ export default function AboutSection() {
                           src={ProfileImage}
                           alt="Noha Hatem"
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -174,12 +167,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* CV Box */}
-            <div
-              className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg text-center flex flex-col items-center justify-center transition-all duration-1000 ease-in-out delay-200 ${
-                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-            >
+            <div className="bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg text-center flex flex-col items-center justify-center">
               <FileText className="w-12 h-12 text-pink-500 dark:text-purple-400 mb-4" />
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Résumé
@@ -201,23 +189,15 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* --- FINAL ELEGANT Expertise Section with Animation --- */}
-          <div
-            className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out delay-300 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
-          >
+          {/* --- FINAL ELEGANT Expertise Section with CORRECTED items --- */}
+          <div className="bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg">
             <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
               Areas of Expertise
             </h3>
             <motion.div
               className="flex flex-wrap justify-center items-center gap-4"
               variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                  },
-                },
+                visible: { transition: { staggerChildren: 0.08 } },
               }}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -241,11 +221,7 @@ export default function AboutSection() {
           </div>
 
           {/* My Toolbox Section */}
-          <div
-            className={`bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg transition-all duration-1000 ease-in-out delay-400 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
-          >
+          <div className="bg-white/60 dark:bg-gray-800/60 rounded-2xl p-8 shadow-xl backdrop-blur-lg">
             <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
               My Toolbox
             </h3>
