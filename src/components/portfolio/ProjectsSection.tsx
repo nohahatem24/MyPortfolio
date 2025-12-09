@@ -258,6 +258,7 @@ export default function ProjectsSection() {
       teamSize: "Solo Project",
       websiteUrl: "https://locarb-restaurant.vercel.app/",
       oldwebsiteUrl: "https://locarbkw.com/en/page/",
+      githubUrl: "https://github.com/nohahatem24/locarb-restaurant.git",
     },
 
     // --- HieroKids (Conceptual Solo Project) ---
@@ -928,78 +929,142 @@ const ProjectCard = ({
   project,
   setSelectedProject,
   setImageModalData,
+  isVisible,
 }: {
   project: Project;
   setSelectedProject: (p: Project) => void;
   setImageModalData: (
     data: { images: string[]; title: string; description: string } | null
   ) => void;
+  isVisible?: boolean;
 }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
-    <div
-      className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer w-full h-full bg-gray-900 aspect-[4/3] 
-                 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-      onClick={() => setSelectedProject(project)}
-    >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
-        <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
-          {project.category}
-        </span>
-        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
-          {project.title}
-        </h3>
-        <p className="text-white/80 text-sm lg:text-base line-clamp-2">
-          {project.description}
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.mobileGallery && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setImageModalData({
-                  images: project.mobileGallery!,
-                  title: `${project.title} - Mobile`,
-                  description: "",
-                });
-              }}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
-              aria-label={`View mobile gallery for ${project.title}`}
-            >
-              <Smartphone className="w-4 h-4" /> Mobile
-            </button>
-          )}
-          {project.webGallery && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setImageModalData({
-                  images: project.webGallery!,
-                  title: `${project.title} - Web`,
-                  description: "",
-                });
-              }}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
-              aria-label={`View web gallery for ${project.title}`}
-            >
-              <Globe className="w-4 h-4" /> Web
-            </button>
-          )}
-        </div>
-
-        <div className="mt-4 opacity-0 group-hover:opacity-100 transform-gpu group-hover:translate-y-0 translate-y-4 transition-all duration-300">
-          <span className="font-semibold text-white flex items-center">
-            View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+    <div className="relative w-full">
+      {/* Main Card */}
+      <div
+        className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer w-full bg-gray-900 aspect-[4/3] 
+                   transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+        onClick={() => setSelectedProject(project)}
+      >
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 animate-pulse z-10" />
+        )}
+        <img
+          src={project.image}
+          alt={project.title}
+          loading={isVisible ? 'eager' : 'lazy'}
+          decoding="async"
+          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
+            imageLoaded ? 'opacity-100' : 'opacity-50'
+          }`}
+          onLoad={() => setImageLoaded(true)}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
+          <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
+            {project.category}
           </span>
+          <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+            {project.title}
+          </h3>
+          <p className="text-white/80 text-sm lg:text-base line-clamp-2">
+            {project.description}
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.mobileGallery && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setImageModalData({
+                    images: project.mobileGallery!,
+                    title: `${project.title} - Mobile`,
+                    description: "",
+                  });
+                }}
+                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
+                aria-label={`View mobile gallery for ${project.title}`}
+              >
+                <Smartphone className="w-4 h-4" /> Mobile
+              </button>
+            )}
+            {project.webGallery && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setImageModalData({
+                    images: project.webGallery!,
+                    title: `${project.title} - Web`,
+                    description: "",
+                  });
+                }}
+                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
+                aria-label={`View web gallery for ${project.title}`}
+              >
+                <Globe className="w-4 h-4" /> Web
+              </button>
+            )}
+          </div>
+
+          <div className="mt-4 opacity-0 group-hover:opacity-100 transform-gpu group-hover:translate-y-0 translate-y-4 transition-all duration-300">
+            <span className="font-semibold text-white flex items-center">
+              View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+            </span>
+          </div>
         </div>
       </div>
+
+      {/* External Links - Always Visible Below Card on All Views */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {project.websiteUrl && (
+          <a
+            href={project.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            aria-label={`Visit ${project.title} website`}
+          >
+            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+            <span className="hidden sm:inline">Live Site</span>
+            <span className="sm:hidden">Live</span>
+          </a>
+        )}
+        {project.apkUrl && (
+          <a
+            href={project.apkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            aria-label={`Download ${project.title} APK`}
+          >
+            <Smartphone className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+            <span className="hidden sm:inline">Download APK</span>
+            <span className="sm:hidden">APK</span>
+          </a>
+        )}
+        {project.presentationUrl && (
+          <a
+            href={project.presentationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            aria-label={`View ${project.title} presentation`}
+          >
+            <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+            <span className="hidden sm:inline">Presentation</span>
+            <span className="sm:hidden">Slides</span>
+          </a>
+        )}
+      </div>
+
+      {/* Fallback message when no links exist */}
+      {!project.websiteUrl && !project.apkUrl && !project.presentationUrl && (
+        <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
+          Conceptual Project
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Calendar, Type } from 'lucide-react';
+import { LazyImage } from './LazyImage';
 
 interface ImageModalProps {
     isOpen: boolean;
@@ -48,14 +49,13 @@ export function ImageModal({ isOpen, onClose, title, description, image, details
                 {/* Header */}
                 <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
-                    // Around line 51:
-<button 
-  onClick={onClose} 
-  className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700"
-  aria-label="Close image modal"
->
-  <X className="h-5 w-5" />
-</button>
+                    <button 
+                      onClick={onClose} 
+                      className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      aria-label="Close image modal"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
                 </div>
 
                 {/* Main Content */}
@@ -65,11 +65,12 @@ export function ImageModal({ isOpen, onClose, title, description, image, details
                         <div className={`grid ${hasMultipleImages ? 'grid-cols-2' : 'grid-cols-1'} gap-4 items-center`}>
                             {image.map((imgSrc, index) => (
                                 <div key={index} className="bg-gray-100 dark:bg-gray-900 rounded-lg p-2">
-                                    <img
-                                        src={imgSrc}
-                                        alt={`${title} - view ${index + 1}`}
-                                        // --- 2. APPLY THE PROP HERE ---
-                                        className={`w-full h-full object-contain ${imageClassName || ''}`}
+                                    <LazyImage
+                                      src={imgSrc}
+                                      alt={`${title} - view ${index + 1}`}
+                                      className={`w-full h-full object-contain ${imageClassName || ''}`}
+                                      blur={true}
+                                      rootMargin="20px"
                                     />
                                 </div>
                             ))}

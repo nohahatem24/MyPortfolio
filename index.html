@@ -3,21 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noha's Portfolio</title>
+    <title>Noha Hatem - Software Engineer & Product Designer</title>
+    <meta name="description" content="Noha Hatem - Software Engineer, Product Designer & Creative Technologist. View my portfolio of projects, art, and certificates." />
+    <meta name="keywords" content="portfolio, software engineer, product designer, ui/ux, frontend, mobile app, flutter, react" />
+    <meta name="author" content="Noha Hatem" />
+    
+    <!-- Performance Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Theme color for browsers that support it (removed to avoid warnings) -->
+    <!-- Chrome, Edge, and Safari will use the favicon colors instead -->
+    
+    <!-- Preconnect for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    
+    <!-- Critical Image Preload -->
+    <link rel="preload" href="/assets/images/optimized/noha1.png" as="image" type="image/png" />
+    
+    <!-- Critical CSS -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background-color: #fffaf5;
+        color: #1f2937;
+      }
+      body.dark {
+        background-color: #111827;
+        color: #f3f4f6;
+      }
+      #app {
+        width: 100%;
+        min-height: 100vh;
+      }
+      /* Prevent layout shift */
+      @supports (font-size-adjust: ex-height) {
+        body {
+          font-size-adjust: 0.5;
+        }
+      }
+    </style>
+    
     <link rel="stylesheet" href="main.css" />
-    <!-- Added Favicon -->
-    <link rel="icon" type="image/png" href="/myicon.png" />
+    <link rel="icon" type="image/png" href="/nohaidc.png" />
+    
+    <!-- Apple specific tags for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
   <script>
+    // Prevent FOUC (Flash of Unstyled Content)
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
     new EventSource('/esbuild').addEventListener('change', () =>
       location.reload()
-    )
+    );
   </script>
   <body>
     <div id="app"></div>
-    <script src="main.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="main.js" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   </body>
 </html>
 

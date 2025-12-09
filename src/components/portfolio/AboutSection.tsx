@@ -33,7 +33,7 @@ export default function AboutSection() {
     "Rapid Prototyping",
     "Agile & Client Collaboration",
     "Version Control (Git)",
-    
+  
   ];
 
   const toolbox: {

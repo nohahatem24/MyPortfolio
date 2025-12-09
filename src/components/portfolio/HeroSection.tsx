@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Mail, Phone, Hand, Linkedin, Shapes } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { OptimizedImage } from '../ui/OptimizedImage';
+import { useImagePreload } from '../../hooks/useImagePreload';
 import HeroImage from '../../assets/images/optimized/noha1.png';
 
 const AnimatedBackground = () => (
@@ -12,6 +14,8 @@ const AnimatedBackground = () => (
 
 export default function HeroSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
+  useImagePreload([HeroImage], true); // Preload critical image
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -110,10 +114,13 @@ export default function HeroSection() {
             <div className="relative h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96">
               <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 opacity-60 blur-xl transition duration-1000 animate-pulse-slow"></div>
               <div className="relative h-full w-full overflow-hidden rounded-full bg-white/60 p-2 shadow-2xl backdrop-blur-lg dark:bg-gray-800/60">
-                <img
+                <OptimizedImage
                   src={HeroImage}
                   alt="Noha Hatem - Product Builder & Creative Technologist"
                   className="h-full w-full rounded-full object-cover"
+                  priority={true}
+                  width={384}
+                  height={384}
                 />
               </div>
               

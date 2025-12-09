@@ -1,6 +1,7 @@
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminWebp from 'imagemin-webp';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs';
@@ -10,54 +11,60 @@ const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
 async function optimizeImages() {
-  console.log('🖼️  Optimizing images...');
+  console.log('🖼️  Optimizing all images...');
   
   try {
-    // Create optimized directory if it doesn't exist
-    const optimizedDir = join(projectRoot, 'src/assets/images/optimized');
+    const assetsDir = join(projectRoot, 'src/assets/images');
+    const optimizedDir = join(projectRoot, 'public/optimized-images');
+    
     if (!fs.existsSync(optimizedDir)) {
       fs.mkdirSync(optimizedDir, { recursive: true });
     }
 
-    // Optimize PNG images
-    const pngFiles = await imagemin([join(projectRoot, 'src/assets/images/*.png')], {
+    // 1. Optimize PNGs
+    console.log('📦 Optimizing PNG files...');
+    const pngFiles = await imagemin([join(assetsDir, '**/*.png')], {
       destination: optimizedDir,
       plugins: [
         imageminPngquant({
-          quality: [0.6, 0.8], // Compress to 60-80% quality
-          strip: true // Remove metadata
-        })
-      ]
+          quality: [0.65, 0.8],
+          strip: true,
+          speed: 4,
+        }),
+      ],
     });
 
-    // Optimize JPG images (if any)
-    const jpgFiles = await imagemin([join(projectRoot, 'src/assets/images/*.{jpg,jpeg}')], {
+    // 2. Optimize JPGs
+    console.log('📦 Optimizing JPG files...');
+    const jpgFiles = await imagemin([join(assetsDir, '**/*.{jpg,jpeg}')], {
       destination: optimizedDir,
       plugins: [
         imageminMozjpeg({
-          quality: 80, // 80% quality for JPEGs
-          progressive: true
-        })
-      ]
+          quality: 75,
+          progressive: true,
+        }),
+      ],
     });
 
-    console.log('✅ Images optimized successfully!');
-    console.log(`📁 Optimized ${pngFiles.length} PNG files`);
-    console.log(`📁 Optimized ${jpgFiles.length} JPG files`);
-    
-    // Show file size comparison
-    for (const file of pngFiles) {
-      const originalPath = join(projectRoot, 'src/assets/images', file.sourcePath.split('/').pop());
-      const optimizedPath = file.destinationPath;
-      
-      if (fs.existsSync(originalPath)) {
-        const originalSize = fs.statSync(originalPath).size;
-        const optimizedSize = fs.statSync(optimizedPath).size;
-        const savings = ((originalSize - optimizedSize) / originalSize * 100).toFixed(1);
-        
-        console.log(`📉 ${file.sourcePath.split('/').pop()}: ${(originalSize/1024/1024).toFixed(2)}MB → ${(optimizedSize/1024/1024).toFixed(2)}MB (${savings}% smaller)`);
+    // 3. Convert to WebP (next-gen format)
+    console.log('📦 Converting to WebP format...');
+    const webpFiles = await imagemin(
+      [join(assetsDir, '**/*.{png,jpg,jpeg}')],
+      {
+        destination: optimizedDir,
+        plugins: [
+          imageminWebp({
+            quality: 75,
+            alphaQuality: 100,
+          }),
+        ],
       }
-    }
+    );
+
+    console.log('✅ Image optimization complete!');
+    console.log(`✨ Optimized ${pngFiles.length} PNG files`);
+    console.log(`✨ Optimized ${jpgFiles.length} JPG files`);
+    console.log(`✨ Converted ${webpFiles.length} WebP files`);
 
   } catch (error) {
     console.error('❌ Error optimizing images:', error);
