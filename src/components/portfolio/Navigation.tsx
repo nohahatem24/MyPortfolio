@@ -129,10 +129,12 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation */}
+      {/* Mobile Navigation */}
       <div
         ref={mobileMenuRef}
-        className="md:hidden bg-[#fffaf5] dark:bg-gray-900 transition-colors overflow-hidden"
-        style={{ height: isOpen ? undefined : 0, opacity: isOpen ? 1 : 0 }}
+        className={`md:hidden bg-[#fffaf5] dark:bg-gray-900 transition-colors overflow-hidden ${
+          isOpen ? 'h-auto opacity-100' : 'h-0 opacity-0'
+        }`}
       >
         {isOpen && (
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-pink-200 dark:border-purple-700">

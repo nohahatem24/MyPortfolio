@@ -141,11 +141,19 @@ const CertificateModal = ({ certificate, onClose }: { certificate: Certificate; 
           <div className="flex items-center">
             <Award className="h-6 w-6 text-pink-500 dark:text-purple-400 mr-3" />
             <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white">{certificate.title}</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{certificate.issuer}</p>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                {certificate.title}
+              </h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {certificate.issuer}
+              </p>
             </div>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            aria-label="Close certificate modal"
+          >
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -154,7 +162,11 @@ const CertificateModal = ({ certificate, onClose }: { certificate: Certificate; 
           <div className="w-full">
             {certificate.images.map((img, index) => (
               <div key={index} className="mb-4 last:mb-0">
-                <img src={img} alt={`${certificate.title} - Page ${index + 1}`} className="w-full h-auto object-contain" />
+                <img
+                  src={img}
+                  alt={`${certificate.title} - Page ${index + 1}`}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             ))}
           </div>
@@ -163,17 +175,20 @@ const CertificateModal = ({ certificate, onClose }: { certificate: Certificate; 
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <Calendar className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500" />
-                <strong>Issued:</strong><span className="ml-1.5">{certificate.issueDate}</span>
+                <strong>Issued:</strong>
+                <span className="ml-1.5">{certificate.issueDate}</span>
               </div>
               {certificate.duration && (
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <Clock className="h-4 w-4 mr-2 text-pink-500 dark:text-purple-500" />
-                  <strong>Duration:</strong><span className="ml-1.5">{certificate.duration}</span>
+                  <strong>Duration:</strong>
+                  <span className="ml-1.5">{certificate.duration}</span>
                 </div>
               )}
             </div>
 
-            <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+            <div
+              className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
               dangerouslySetInnerHTML={{ __html: certificate.description }}
             />
 

@@ -48,9 +48,14 @@ export function ImageModal({ isOpen, onClose, title, description, image, details
                 {/* Header */}
                 <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
-                    <button onClick={onClose} className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <X className="h-5 w-5" />
-                    </button>
+                    // Around line 51:
+<button 
+  onClick={onClose} 
+  className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+  aria-label="Close image modal"
+>
+  <X className="h-5 w-5" />
+</button>
                 </div>
 
                 {/* Main Content */}

@@ -48,6 +48,25 @@ const EducationCard = ({ isVisible }: { isVisible: boolean }) => {
 
 const LanguageItem = ({ name, level, percentage, delay }: { name: string, level: string, percentage: string, delay: number }) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.5 });
+  
+  // Convert percentage to Tailwind width class
+  const getWidthClass = (percent: string) => {
+    const num = parseInt(percent);
+    if (num === 100) return 'w-full';
+    if (num === 90) return 'w-[90%]';
+    if (num === 45) return 'w-[45%]';
+    return 'w-0';
+  };
+  
+  // Convert delay to transition delay class
+  const getDelayClass = (delayMs: number) => {
+    if (delayMs === 0) return 'delay-0';
+    if (delayMs === 100) return 'delay-100';
+    if (delayMs === 200) return 'delay-200';
+    if (delayMs === 300) return 'delay-300';
+    return '';
+  };
+  
   return (
     <div ref={ref} className="space-y-2">
       <div className="flex justify-between items-baseline">
@@ -56,13 +75,15 @@ const LanguageItem = ({ name, level, percentage, delay }: { name: string, level:
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
         <div
-          className="bg-gradient-to-r from-pink-500 to-purple-500 h-full rounded-full transition-all duration-1000 ease-out"
-          style={{ width: isVisible ? percentage : '0%', transitionDelay: `${delay}ms` }}
+          className={`bg-gradient-to-r from-pink-500 to-purple-500 h-full rounded-full transition-all duration-1000 ease-out ${
+            isVisible ? getWidthClass(percentage) : 'w-0'
+          } ${getDelayClass(delay)}`}
         ></div>
       </div>
     </div>
   );
 };
+
 
 const LanguagesCard = ({ isVisible }: { isVisible: boolean }) => {
   const languages = [

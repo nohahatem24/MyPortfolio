@@ -20,7 +20,12 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden" aria-modal="true">
+    <div
+      className="fixed inset-0 z-50 overflow-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cv-modal-title"
+    >
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/50 backdrop-blur-sm"
@@ -32,7 +37,10 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
         <div className="flex h-full flex-col rounded-xl bg-white dark:bg-gray-800 shadow-2xl">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b dark:border-gray-700">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2
+              id="cv-modal-title"
+              className="text-xl font-semibold text-gray-900 dark:text-white"
+            >
               My CV
             </h2>
             <button
@@ -62,6 +70,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               src="https://drive.google.com/file/d/13fHlwSnopLC3VTMxLi0rk9UQhYiUPNov/view"
               className="w-full h-full border-0"
               allow="autoplay"
+              title="CV Document Viewer"
             />
           </div>
 

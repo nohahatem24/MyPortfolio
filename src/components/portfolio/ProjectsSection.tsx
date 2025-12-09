@@ -3,159 +3,188 @@
  * Showcases portfolio projects with detailed modal views, GitHub and website links
  */
 
-
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
-  ExternalLink, Github, Calendar, Users, Target, Globe, Monitor, X, ArrowRight, Layers, Link2Icon, HeartHandshake, Map,
-  BrainCircuit, ShieldCheck, Languages, Lock, BarChart, Landmark, Users2, CreditCard, MapPin, Settings, Smartphone,BookOpenCheck, Paintbrush, Puzzle, Award 
-} from 'lucide-react';
-import { Button } from '../ui/button';
-import { Modal } from '../ui/modal';
-import { ImageModal } from '../ui/image-modal';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+  ExternalLink,
+  Github,
+  Calendar,
+  Users,
+  Target,
+  Globe,
+  Monitor,
+  X,
+  ArrowRight,
+  Layers,
+  Link2Icon,
+  HeartHandshake,
+  Map,
+  BrainCircuit,
+  ShieldCheck,
+  Languages,
+  Lock,
+  BarChart,
+  Landmark,
+  Users2,
+  CreditCard,
+  MapPin,
+  Settings,
+  Smartphone,
+  BookOpenCheck,
+  Paintbrush,
+  Puzzle,
+  Award,
+} from "lucide-react";
+import { Button } from "../ui/button";
+import { Modal } from "../ui/modal";
+import { ImageModal } from "../ui/image-modal";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { motion, easeOut } from "framer-motion";
-import Tilt from 'react-parallax-tilt';
+import Tilt from "react-parallax-tilt";
+
+//LoCarb Restaurant - Main Picture
+import LoCarbMainPic from "../../assets/images/projects/locarb/locarbcover.png";
+
+//LoCarb Before Redesign Picture
+import LoCarbBefore1 from "../../assets/images/projects/locarb/locarbbefore1.png";
+import LoCarbBefore2 from "../../assets/images/projects/locarb/locarbbefore2.png";
+//LoCarb After Redesign Picture
+
+import LoCarbAfter1 from "../../assets/images/projects/locarb/locarbafter1.png";
+
 
 //The Bridge - Main Picture
-import TheBridgeMainPic from '../../assets/images/projects/thebridge/thebridgecover.png';
+import TheBridgeMainPic from "../../assets/images/projects/thebridge/thebridgecover.png";
 
 //LingoNest - Main Picture
-import LingoNestMainPic from '../../assets/images/projects/lingonest/lingonestcover.png';
+import LingoNestMainPic from "../../assets/images/projects/lingonest/lingonestcover.png";
 
 //MindTrack - Main Picture
-import MindTrackMainPic from '../../assets/images/projects/mindtrack/mindtrackcover.png';
+import MindTrackMainPic from "../../assets/images/projects/mindtrack/mindtrackcover.png";
 
 //ProFinance Tracker - Main Picture
-import ProFinanceMainPic from '../../assets/images/projects/profinancetracker/profinancecover.png';
+import ProFinanceMainPic from "../../assets/images/projects/profinancetracker/profinancecover.png";
 
 //LiteFinance Bank Project - Main Picture
-import LiteFinanceProjectMainPic from '../../assets/images/projects/litefinance/LiteFinance.png';
+import LiteFinanceProjectMainPic from "../../assets/images/projects/litefinance/LiteFinance.png";
 
 //HieroKids - Main Picture
-import HieroKidsCover from '../../assets/images/projects/hierokids/hierokidscover.png'; 
+import HieroKidsCover from "../../assets/images/projects/hierokids/hierokidscover.png";
 
 // --- HieroKids Images ---
-import HieroKidsImg1 from '../../assets/images/projects/hierokids/9(2).png';
-import HieroKidsImg2 from '../../assets/images/projects/hierokids/10(2).png';
-import HieroKidsImg3 from '../../assets/images/projects/hierokids/11.png';
-import HieroKidsImg4 from '../../assets/images/projects/hierokids/12.png';
-import HieroKidsImg5 from '../../assets/images/projects/hierokids/13.png';
-import HieroKidsImg6 from '../../assets/images/projects/hierokids/14.png';
-import HieroKidsImg7 from '../../assets/images/projects/hierokids/15.png';
-import HieroKidsImg8 from '../../assets/images/projects/hierokids/16.png';
-import HieroKidsImg9 from '../../assets/images/projects/hierokids/17.png';
-import HieroKidsImg10 from '../../assets/images/projects/hierokids/18.png';
-import HieroKidsImg11 from '../../assets/images/projects/hierokids/19.png';
-import HieroKidsImg12 from '../../assets/images/projects/hierokids/20.png';
-import HieroKidsImg13 from '../../assets/images/projects/hierokids/21.png';
-
+import HieroKidsImg1 from "../../assets/images/projects/hierokids/9(2).png";
+import HieroKidsImg2 from "../../assets/images/projects/hierokids/10(2).png";
+import HieroKidsImg3 from "../../assets/images/projects/hierokids/11.png";
+import HieroKidsImg4 from "../../assets/images/projects/hierokids/12.png";
+import HieroKidsImg5 from "../../assets/images/projects/hierokids/13.png";
+import HieroKidsImg6 from "../../assets/images/projects/hierokids/14.png";
+import HieroKidsImg7 from "../../assets/images/projects/hierokids/15.png";
+import HieroKidsImg8 from "../../assets/images/projects/hierokids/16.png";
+import HieroKidsImg9 from "../../assets/images/projects/hierokids/17.png";
+import HieroKidsImg10 from "../../assets/images/projects/hierokids/18.png";
+import HieroKidsImg11 from "../../assets/images/projects/hierokids/19.png";
+import HieroKidsImg12 from "../../assets/images/projects/hierokids/20.png";
+import HieroKidsImg13 from "../../assets/images/projects/hierokids/21.png";
 
 //Main HieroVision Picture
-import HieroVisionProjectMainPic from '../../assets/images/projects/hierovision/mainpic.png';
+import HieroVisionProjectMainPic from "../../assets/images/projects/hierovision/mainpic.png";
 //HieroVision Mobile Pictures
-import HieroVisionProjectMobile1 from '../../assets/images/projects/hierovision/mobile1.png';
-import HieroVisionProjectMobile2 from '../../assets/images/projects/hierovision/mobile2.png';
-import HieroVisionProjectMobile3 from '../../assets/images/projects/hierovision/mobile3.png';
-import HieroVisionProjectMobile4 from '../../assets/images/projects/hierovision/mobile4.png';
-import HieroVisionProjectMobile5 from '../../assets/images/projects/hierovision/mobile5.png';
-import HieroVisionProjectMobile6 from '../../assets/images/projects/hierovision/mobile6.png';
-import HieroVisionProjectMobile7 from '../../assets/images/projects/hierovision/mobile7.png';
-import HieroVisionProjectMobile8 from '../../assets/images/projects/hierovision/mobile8.png';
-import HieroVisionProjectMobile9 from '../../assets/images/projects/hierovision/mobile9.png';
-import HieroVisionProjectMobile10 from '../../assets/images/projects/hierovision/mobile10.png';
-import HieroVisionProjectMobile11 from '../../assets/images/projects/hierovision/mobile11.png';
-import HieroVisionProjectMobile12 from '../../assets/images/projects/hierovision/mobile12.png';
-import HieroVisionProjectMobile13 from '../../assets/images/projects/hierovision/mobile13.png';
-import HieroVisionProjectMobile14 from '../../assets/images/projects/hierovision/mobile14.png';
-import HieroVisionProjectMobile15 from '../../assets/images/projects/hierovision/mobile15.png';
-import HieroVisionProjectMobile16 from '../../assets/images/projects/hierovision/mobile16.png';
-import HieroVisionProjectMobile17 from '../../assets/images/projects/hierovision/mobile17.png';
-import HieroVisionProjectMobile18 from '../../assets/images/projects/hierovision/mobile18.png';
-import HieroVisionProjectMobile19 from '../../assets/images/projects/hierovision/mobile19.png';
-import HieroVisionProjectMobile20 from '../../assets/images/projects/hierovision/mobile20.png';
-import HieroVisionProjectMobile21 from '../../assets/images/projects/hierovision/mobile21.png';
-import HieroVisionProjectMobile22 from '../../assets/images/projects/hierovision/mobile22.png';
+import HieroVisionProjectMobile1 from "../../assets/images/projects/hierovision/mobile1.png";
+import HieroVisionProjectMobile2 from "../../assets/images/projects/hierovision/mobile2.png";
+import HieroVisionProjectMobile3 from "../../assets/images/projects/hierovision/mobile3.png";
+import HieroVisionProjectMobile4 from "../../assets/images/projects/hierovision/mobile4.png";
+import HieroVisionProjectMobile5 from "../../assets/images/projects/hierovision/mobile5.png";
+import HieroVisionProjectMobile6 from "../../assets/images/projects/hierovision/mobile6.png";
+import HieroVisionProjectMobile7 from "../../assets/images/projects/hierovision/mobile7.png";
+import HieroVisionProjectMobile8 from "../../assets/images/projects/hierovision/mobile8.png";
+import HieroVisionProjectMobile9 from "../../assets/images/projects/hierovision/mobile9.png";
+import HieroVisionProjectMobile10 from "../../assets/images/projects/hierovision/mobile10.png";
+import HieroVisionProjectMobile11 from "../../assets/images/projects/hierovision/mobile11.png";
+import HieroVisionProjectMobile12 from "../../assets/images/projects/hierovision/mobile12.png";
+import HieroVisionProjectMobile13 from "../../assets/images/projects/hierovision/mobile13.png";
+import HieroVisionProjectMobile14 from "../../assets/images/projects/hierovision/mobile14.png";
+import HieroVisionProjectMobile15 from "../../assets/images/projects/hierovision/mobile15.png";
+import HieroVisionProjectMobile16 from "../../assets/images/projects/hierovision/mobile16.png";
+import HieroVisionProjectMobile17 from "../../assets/images/projects/hierovision/mobile17.png";
+import HieroVisionProjectMobile18 from "../../assets/images/projects/hierovision/mobile18.png";
+import HieroVisionProjectMobile19 from "../../assets/images/projects/hierovision/mobile19.png";
+import HieroVisionProjectMobile20 from "../../assets/images/projects/hierovision/mobile20.png";
+import HieroVisionProjectMobile21 from "../../assets/images/projects/hierovision/mobile21.png";
+import HieroVisionProjectMobile22 from "../../assets/images/projects/hierovision/mobile22.png";
 //HieroVision Kids Pictures
-import HieroVisionProjectMobileKids1 from '../../assets/images/projects/hierovision/mobilekids1.png';
-import HieroVisionProjectMobileKids2 from '../../assets/images/projects/hierovision/mobilekids2.png';
-import HieroVisionProjectMobileKids3 from '../../assets/images/projects/hierovision/mobilekids3.png';
-import HieroVisionProjectMobileKids4 from '../../assets/images/projects/hierovision/mobilekids4.png';
-import HieroVisionProjectMobileKids5 from '../../assets/images/projects/hierovision/mobilekids5.png';
+import HieroVisionProjectMobileKids1 from "../../assets/images/projects/hierovision/mobilekids1.png";
+import HieroVisionProjectMobileKids2 from "../../assets/images/projects/hierovision/mobilekids2.png";
+import HieroVisionProjectMobileKids3 from "../../assets/images/projects/hierovision/mobilekids3.png";
+import HieroVisionProjectMobileKids4 from "../../assets/images/projects/hierovision/mobilekids4.png";
+import HieroVisionProjectMobileKids5 from "../../assets/images/projects/hierovision/mobilekids5.png";
 //HieroVision Website Pictures
-import HieroVisionProjectWeb1 from '../../assets/images/projects/hierovision/web1.png';
-import HieroVisionProjectWeb2 from '../../assets/images/projects/hierovision/web2.png';
-import HieroVisionProjectWeb3 from '../../assets/images/projects/hierovision/web3.png';
-import HieroVisionProjectWeb4 from '../../assets/images/projects/hierovision/web4.png';
-import HieroVisionProjectWeb5 from '../../assets/images/projects/hierovision/web5.png';
-import HieroVisionProjectWeb6 from '../../assets/images/projects/hierovision/web6.png';
-import HieroVisionProjectWeb7 from '../../assets/images/projects/hierovision/web7.png';
-import HieroVisionProjectWeb8 from '../../assets/images/projects/hierovision/web8.png';
-import HieroVisionProjectWeb9 from '../../assets/images/projects/hierovision/web9.png';
-import HieroVisionProjectWeb10 from '../../assets/images/projects/hierovision/web10.png';
-import HieroVisionProjectWeb11 from '../../assets/images/projects/hierovision/web11.png';
-import HieroVisionProjectWeb12 from '../../assets/images/projects/hierovision/web12.png';
+import HieroVisionProjectWeb1 from "../../assets/images/projects/hierovision/web1.png";
+import HieroVisionProjectWeb2 from "../../assets/images/projects/hierovision/web2.png";
+import HieroVisionProjectWeb3 from "../../assets/images/projects/hierovision/web3.png";
+import HieroVisionProjectWeb4 from "../../assets/images/projects/hierovision/web4.png";
+import HieroVisionProjectWeb5 from "../../assets/images/projects/hierovision/web5.png";
+import HieroVisionProjectWeb6 from "../../assets/images/projects/hierovision/web6.png";
+import HieroVisionProjectWeb7 from "../../assets/images/projects/hierovision/web7.png";
+import HieroVisionProjectWeb8 from "../../assets/images/projects/hierovision/web8.png";
+import HieroVisionProjectWeb9 from "../../assets/images/projects/hierovision/web9.png";
+import HieroVisionProjectWeb10 from "../../assets/images/projects/hierovision/web10.png";
+import HieroVisionProjectWeb11 from "../../assets/images/projects/hierovision/web11.png";
+import HieroVisionProjectWeb12 from "../../assets/images/projects/hierovision/web12.png";
 
 //--------------------------------------------------------------------------------------------------
 //Dr Basma Mental Care Project - Main Picture
-import DrBasmaMainPicture from '../../assets/images/projects/drbasma/DrBasmaMainPicture.png';
+import DrBasmaMainPicture from "../../assets/images/projects/drbasma/DrBasmaMainPicture.png";
 //Dr Basma Mental Care Project Pictures - Light Mode
-import DrBasmaLight1 from '../../assets/images/projects/drbasma/light1.png';
-import DrBasmaLight2 from '../../assets/images/projects/drbasma/light2.png';
-import DrBasmaLight3 from '../../assets/images/projects/drbasma/light3.png';
-import DrBasmaLight4 from '../../assets/images/projects/drbasma/light4.png';
-import DrBasmaLight5 from '../../assets/images/projects/drbasma/light5.png';
-import DrBasmaLight6 from '../../assets/images/projects/drbasma/light6.png';
-import DrBasmaLight7 from '../../assets/images/projects/drbasma/light7.png';
-import DrBasmaLight8 from '../../assets/images/projects/drbasma/light8.png';
-import DrBasmaLight9 from '../../assets/images/projects/drbasma/light9.png';
-import DrBasmaLight10 from '../../assets/images/projects/drbasma/light10.png';
-import DrBasmaLight11 from '../../assets/images/projects/drbasma/light11.png';
-import DrBasmaLight12 from '../../assets/images/projects/drbasma/light12.png';
-import DrBasmaLight13 from '../../assets/images/projects/drbasma/light13.png';
-import DrBasmaLight14 from '../../assets/images/projects/drbasma/light14.png';
-import DrBasmaLight15 from '../../assets/images/projects/drbasma/light15.png';
-import DrBasmaLight16 from '../../assets/images/projects/drbasma/light16.png';
-import DrBasmaLight17 from '../../assets/images/projects/drbasma/light17.png';
-import DrBasmaLight18 from '../../assets/images/projects/drbasma/light18.png';
-import DrBasmaLight19 from '../../assets/images/projects/drbasma/light19.png';
-import DrBasmaLight20 from '../../assets/images/projects/drbasma/light20.png';
-import DrBasmaLight21 from '../../assets/images/projects/drbasma/light21.png';
-import DrBasmaLight22 from '../../assets/images/projects/drbasma/light22.png';
-import DrBasmaLight23 from '../../assets/images/projects/drbasma/light23.png';
-import DrBasmaLight24 from '../../assets/images/projects/drbasma/light24.png';
-import DrBasmaLight25 from '../../assets/images/projects/drbasma/light25.png';
+import DrBasmaLight1 from "../../assets/images/projects/drbasma/light1.png";
+import DrBasmaLight2 from "../../assets/images/projects/drbasma/light2.png";
+import DrBasmaLight3 from "../../assets/images/projects/drbasma/light3.png";
+import DrBasmaLight4 from "../../assets/images/projects/drbasma/light4.png";
+import DrBasmaLight5 from "../../assets/images/projects/drbasma/light5.png";
+import DrBasmaLight6 from "../../assets/images/projects/drbasma/light6.png";
+import DrBasmaLight7 from "../../assets/images/projects/drbasma/light7.png";
+import DrBasmaLight8 from "../../assets/images/projects/drbasma/light8.png";
+import DrBasmaLight9 from "../../assets/images/projects/drbasma/light9.png";
+import DrBasmaLight10 from "../../assets/images/projects/drbasma/light10.png";
+import DrBasmaLight11 from "../../assets/images/projects/drbasma/light11.png";
+import DrBasmaLight12 from "../../assets/images/projects/drbasma/light12.png";
+import DrBasmaLight13 from "../../assets/images/projects/drbasma/light13.png";
+import DrBasmaLight14 from "../../assets/images/projects/drbasma/light14.png";
+import DrBasmaLight15 from "../../assets/images/projects/drbasma/light15.png";
+import DrBasmaLight16 from "../../assets/images/projects/drbasma/light16.png";
+import DrBasmaLight17 from "../../assets/images/projects/drbasma/light17.png";
+import DrBasmaLight18 from "../../assets/images/projects/drbasma/light18.png";
+import DrBasmaLight19 from "../../assets/images/projects/drbasma/light19.png";
+import DrBasmaLight20 from "../../assets/images/projects/drbasma/light20.png";
+import DrBasmaLight21 from "../../assets/images/projects/drbasma/light21.png";
+import DrBasmaLight22 from "../../assets/images/projects/drbasma/light22.png";
+import DrBasmaLight23 from "../../assets/images/projects/drbasma/light23.png";
+import DrBasmaLight24 from "../../assets/images/projects/drbasma/light24.png";
+import DrBasmaLight25 from "../../assets/images/projects/drbasma/light25.png";
 //Dr Basma Mental Care Project Pictures - Dark Mode
-import DrBasmaDark1 from '../../assets/images/projects/drbasma/dark1.png';
-import DrBasmaDark2 from '../../assets/images/projects/drbasma/dark2.png';
-import DrBasmaDark3 from '../../assets/images/projects/drbasma/dark3.png';
-import DrBasmaDark4 from '../../assets/images/projects/drbasma/dark4.png';
-import DrBasmaDark5 from '../../assets/images/projects/drbasma/dark5.png';
-import DrBasmaDark6 from '../../assets/images/projects/drbasma/dark6.png';
-import DrBasmaDark7 from '../../assets/images/projects/drbasma/dark7.png';
-import DrBasmaDark8 from '../../assets/images/projects/drbasma/dark8.png';
-import DrBasmaDark9 from '../../assets/images/projects/drbasma/dark9.png';
-import DrBasmaDark10 from '../../assets/images/projects/drbasma/dark10.png';
-import DrBasmaDark11 from '../../assets/images/projects/drbasma/dark11.png';
-import DrBasmaDark12 from '../../assets/images/projects/drbasma/dark12.png';
-import DrBasmaDark13 from '../../assets/images/projects/drbasma/dark13.png';
-import DrBasmaDark14 from '../../assets/images/projects/drbasma/dark14.png';
-import DrBasmaDark15 from '../../assets/images/projects/drbasma/dark15.png';
-import DrBasmaDark16 from '../../assets/images/projects/drbasma/dark16.png';
-import DrBasmaDark17 from '../../assets/images/projects/drbasma/dark17.png';
-import DrBasmaDark18 from '../../assets/images/projects/drbasma/dark18.png';
-import DrBasmaDark19 from '../../assets/images/projects/drbasma/dark19.png';
-import DrBasmaDark20 from '../../assets/images/projects/drbasma/dark20.png';
-import DrBasmaDark21 from '../../assets/images/projects/drbasma/dark21.png';
-import DrBasmaDark22 from '../../assets/images/projects/drbasma/dark22.png';
-import DrBasmaDark23 from '../../assets/images/projects/drbasma/dark23.png';
-import DrBasmaDark24 from '../../assets/images/projects/drbasma/dark24.png';
-import DrBasmaDark25 from '../../assets/images/projects/drbasma/dark25.png';
-
-
-
-
-
+import DrBasmaDark1 from "../../assets/images/projects/drbasma/dark1.png";
+import DrBasmaDark2 from "../../assets/images/projects/drbasma/dark2.png";
+import DrBasmaDark3 from "../../assets/images/projects/drbasma/dark3.png";
+import DrBasmaDark4 from "../../assets/images/projects/drbasma/dark4.png";
+import DrBasmaDark5 from "../../assets/images/projects/drbasma/dark5.png";
+import DrBasmaDark6 from "../../assets/images/projects/drbasma/dark6.png";
+import DrBasmaDark7 from "../../assets/images/projects/drbasma/dark7.png";
+import DrBasmaDark8 from "../../assets/images/projects/drbasma/dark8.png";
+import DrBasmaDark9 from "../../assets/images/projects/drbasma/dark9.png";
+import DrBasmaDark10 from "../../assets/images/projects/drbasma/dark10.png";
+import DrBasmaDark11 from "../../assets/images/projects/drbasma/dark11.png";
+import DrBasmaDark12 from "../../assets/images/projects/drbasma/dark12.png";
+import DrBasmaDark13 from "../../assets/images/projects/drbasma/dark13.png";
+import DrBasmaDark14 from "../../assets/images/projects/drbasma/dark14.png";
+import DrBasmaDark15 from "../../assets/images/projects/drbasma/dark15.png";
+import DrBasmaDark16 from "../../assets/images/projects/drbasma/dark16.png";
+import DrBasmaDark17 from "../../assets/images/projects/drbasma/dark17.png";
+import DrBasmaDark18 from "../../assets/images/projects/drbasma/dark18.png";
+import DrBasmaDark19 from "../../assets/images/projects/drbasma/dark19.png";
+import DrBasmaDark20 from "../../assets/images/projects/drbasma/dark20.png";
+import DrBasmaDark21 from "../../assets/images/projects/drbasma/dark21.png";
+import DrBasmaDark22 from "../../assets/images/projects/drbasma/dark22.png";
+import DrBasmaDark23 from "../../assets/images/projects/drbasma/dark23.png";
+import DrBasmaDark24 from "../../assets/images/projects/drbasma/dark24.png";
+import DrBasmaDark25 from "../../assets/images/projects/drbasma/dark25.png";
 
 interface Project {
   title: string;
@@ -174,6 +203,7 @@ interface Project {
   githubUrl?: string;
   apkUrl?: string;
   websiteUrl?: string;
+  oldwebsiteUrl?: string;
   presentationUrl?: string;
   role?: string;
 }
@@ -188,6 +218,48 @@ export default function ProjectsSection() {
   } | null>(null);
 
   const projects: Project[] = [
+    // --- LoCarb Restaurant - Digital Interface Redesign (NEW PROJECT) ---
+    {
+      title: "LoCarb Website Redesign",
+      category: "UI/UX & Front-End Development",
+      description:
+        "A complete redesign and recoding of the public-facing website for LoCarb, a prominent Kuwaiti healthy meal brand, focusing on strategic content and modern UX.",
+      fullDescription:
+        "This project involved transforming the outdated website into a modern, single-page application (SPA). The core focus was on business strategy and user trust, achieved by re-architecting the content to prominently feature key business assets like logistics partners (Talabat, Deliveroo), supplier network, and operational infrastructure (Central Kitchen, Refrigerated Fleet). This significantly improved user experience, mobile responsiveness, and brand credibility.",
+      technologies: [
+        "Product Strategy",
+        "UX/UI Design",
+        "Front-End Development",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Vercel",
+      ],
+      image: LoCarbMainPic,
+      webGallery: [LoCarbBefore1, LoCarbAfter1, LoCarbBefore2],
+      features: [
+        { title: "Digital Interface Redesign", icon: Monitor },
+        { title: "Strategic Content Architecture", icon: Target },
+        { title: "Modern UI/UX & SPA", icon: Monitor },
+        { title: "Business Trust & Credibility", icon: HeartHandshake },
+        { title: "High Performance & Responsiveness", icon: Smartphone },
+      ],
+      challenges: [
+        "Transforming an outdated, text-heavy site into a modern SPA.",
+        "Structuring content to highlight strategic business assets without overwhelming the user.",
+        "Ensuring high performance and mobile responsiveness.",
+      ],
+      results: [
+        "Delivered a modern, high-performance website ready for immediate deployment.",
+        "Significantly improved information architecture and user experience.",
+        "Created a strong foundation for future digital growth by showcasing brand credibility.",
+      ],
+      duration: "3 days",
+      teamSize: "Solo Project",
+      websiteUrl: "https://locarb-restaurant.vercel.app/",
+      oldwebsiteUrl: "https://locarbkw.com/en/page/",
+    },
+
     // --- HieroKids (Conceptual Solo Project) ---
     {
       title: "HieroKids",
@@ -209,7 +281,6 @@ export default function ProjectsSection() {
       ],
       image: HieroKidsCover, // صورة الغلاف
       mobileGallery: [
-        
         HieroKidsImg8,
         HieroKidsImg9,
         HieroKidsImg10,
@@ -248,7 +319,7 @@ export default function ProjectsSection() {
         "Created a detailed case study that showcases deep understanding of UX for children, gamification, and visual storytelling.",
         "Highlights the ability to identify a niche market (educational apps for kids) and design a tailored, compelling solution.",
       ],
-      
+
       role: `
     <strong class="block mb-2 ml-4">Sole Product Designer & Visionary</strong>
     <ul class="list-disc ml-10 mb-4 text-justify">
@@ -780,46 +851,51 @@ export default function ProjectsSection() {
     },
   };
 
-   return (
+  return (
     <section
       id="projects"
       ref={ref}
       className="py-16 md:py-24 bg-[#fffaf5] dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
             My Projects
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A selection of my work, from AI-powered platforms to human-centered design systems.
+            A selection of my work, from AI-powered platforms to human-centered
+            design systems.
           </p>
           <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
         </motion.div>
 
         {/* --- FINAL RESPONSIVE GRID (1-col on mobile, 2-col on tablet, 3-col on desktop) --- */}
-        <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
         >
           {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 15 } }
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { type: "spring", stiffness: 50, damping: 15 },
+                },
               }}
             >
-              <ProjectCard 
-                project={project} 
-                setSelectedProject={setSelectedProject} 
+              <ProjectCard
+                project={project}
+                setSelectedProject={setSelectedProject}
                 setImageModalData={setImageModalData}
               />
             </motion.div>
@@ -829,7 +905,10 @@ export default function ProjectsSection() {
 
       {/* Modals remain the same */}
       {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       )}
       {imageModalData && (
         <ImageModal
@@ -845,24 +924,26 @@ export default function ProjectsSection() {
 }
 
 // --- CLEANED ProjectCard Component (No 3D Tilt) ---
-const ProjectCard = ({ 
-  project, 
+const ProjectCard = ({
+  project,
   setSelectedProject,
-  setImageModalData 
-}: { 
-  project: Project, 
-  setSelectedProject: (p: Project) => void,
-  setImageModalData: (data: { images: string[], title: string, description: string } | null) => void 
+  setImageModalData,
+}: {
+  project: Project;
+  setSelectedProject: (p: Project) => void;
+  setImageModalData: (
+    data: { images: string[]; title: string; description: string } | null
+  ) => void;
 }) => {
   return (
-    <div 
+    <div
       className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer w-full h-full bg-gray-900 aspect-[4/3] 
                  transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
       onClick={() => setSelectedProject(project)}
     >
-      <img 
-        src={project.image} 
-        alt={project.title} 
+      <img
+        src={project.image}
+        alt={project.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
@@ -871,22 +952,42 @@ const ProjectCard = ({
         <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
           {project.category}
         </span>
-        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{project.title}</h3>
-        <p className="text-white/80 text-sm lg:text-base line-clamp-2">{project.description}</p>
-        
+        <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+          {project.title}
+        </h3>
+        <p className="text-white/80 text-sm lg:text-base line-clamp-2">
+          {project.description}
+        </p>
+
         <div className="mt-4 flex flex-wrap gap-2">
           {project.mobileGallery && (
             <button
-              onClick={(e) => { e.stopPropagation(); setImageModalData({ images: project.mobileGallery!, title: `${project.title} - Mobile`, description: '' }); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setImageModalData({
+                  images: project.mobileGallery!,
+                  title: `${project.title} - Mobile`,
+                  description: "",
+                });
+              }}
               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
+              aria-label={`View mobile gallery for ${project.title}`}
             >
               <Smartphone className="w-4 h-4" /> Mobile
             </button>
           )}
           {project.webGallery && (
             <button
-              onClick={(e) => { e.stopPropagation(); setImageModalData({ images: project.webGallery!, title: `${project.title} - Web`, description: '' }); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setImageModalData({
+                  images: project.webGallery!,
+                  title: `${project.title} - Web`,
+                  description: "",
+                });
+              }}
               className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm transition-all"
+              aria-label={`View web gallery for ${project.title}`}
             >
               <Globe className="w-4 h-4" /> Web
             </button>
@@ -903,7 +1004,13 @@ const ProjectCard = ({
   );
 };
 // --- ProjectModal Component (No changes needed, it's already perfect) ---
-const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => void }) => {
+const ProjectModal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) => {
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -911,15 +1018,21 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 animate-fade-in"
       onClick={handleBackdropClick} // Add this click handler
     >
       <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            {project.title}
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            aria-label="Close project details modal"
+          >
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -929,15 +1042,28 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
           <div className="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6">
-              <img src={project.image} alt={project.title} className="w-full rounded-lg shadow-md" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full rounded-lg shadow-md"
+              />
               <div>
-                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">Project Overview</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{project.fullDescription}</p>
+                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">
+                  Project Overview
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {project.fullDescription}
+                </p>
               </div>
               {project.role && (
                 <div>
-                  <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">My Role</h3>
-                  <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: project.role }} />
+                  <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">
+                    My Role
+                  </h3>
+                  <div
+                    className="prose dark:prose-invert text-gray-700 dark:text-gray-300"
+                    dangerouslySetInnerHTML={{ __html: project.role }}
+                  />
                 </div>
               )}
             </div>
@@ -945,42 +1071,123 @@ const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => v
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Project Info</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">
+                  Project Info
+                </h4>
                 <div className="space-y-3 text-sm">
-                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Duration:</span> <span className="text-gray-800 dark:text-white">{project.duration}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400">Team:</span> <span className="text-gray-800 dark:text-white">{project.teamSize}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold text-gray-600 dark:text-gray-400 right-0">Category:</span> <span className="text-gray-800 dark:text-white">{project.category}</span></div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold text-gray-600 dark:text-gray-400">
+                      Duration:
+                    </span>{" "}
+                    <span className="text-gray-800 dark:text-white">
+                      {project.duration}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold text-gray-600 dark:text-gray-400">
+                      Team:
+                    </span>{" "}
+                    <span className="text-gray-800 dark:text-white">
+                      {project.teamSize}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold text-gray-600 dark:text-gray-400 right-0">
+                      Category:
+                    </span>{" "}
+                    <span className="text-gray-800 dark:text-white">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Key Features</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">
+                  Key Features
+                </h4>
                 <ul className="space-y-3">
                   {project.features.map((feature, i) => (
                     <li key={i} className="flex items-start space-x-3">
                       <feature.icon className="h-5 w-5 text-pink-500 dark:text-purple-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 dark:text-gray-300">{feature.title}</span>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {feature.title}
+                      </span>
                     </li>
-                  ))}           </ul>
+                  ))}{" "}
+                </ul>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Project Links</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">
+                  Project Links
+                </h4>
                 <div className="space-y-2">
-                  {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Github className="mr-2 h-4 w-4" /> View on GitHub</a>}
-                  {project.websiteUrl && <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Globe className="mr-2 h-4 w-4" /> View Live Site</a>}
-                  {project.presentationUrl && <a href={project.presentationUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Monitor className="mr-2 h-4 w-4" /> View Presentation</a>}
-                {project.apkUrl && <a href={project.apkUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-pink-600 hover:underline"><Link2Icon className="mr-2 h-4 w-4" /> Download APK</a>}
-
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 hover:underline"
+                    >
+                      <Github className="mr-2 h-4 w-4" /> View on GitHub
+                    </a>
+                  )}
+                  {project.websiteUrl && (
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 hover:underline"
+                    >
+                      <Globe className="mr-2 h-4 w-4" /> View Live Site
+                    </a>
+                  )}
+                  {project.oldwebsiteUrl && (
+                    <a
+                      href={project.oldwebsiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 hover:underline"
+                    >
+                      <Globe className="mr-2 h-4 w-4" /> Original Website Before Redesign
+                    </a>
+                  )}
+                  {project.presentationUrl && (
+                    <a
+                      href={project.presentationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 hover:underline"
+                    >
+                      <Monitor className="mr-2 h-4 w-4" /> View Presentation
+                    </a>
+                  )}
+                  {project.apkUrl && (
+                    <a
+                      href={project.apkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 hover:underline"
+                    >
+                      <Link2Icon className="mr-2 h-4 w-4" /> Download APK
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Technologies Used</h4>
+                <h4 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">
+                  Technologies Used
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
-                    <span key={i} className="bg-pink-100 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium">{tech}</span>
+                    <span
+                      key={i}
+                      className="bg-pink-100 dark:bg-purple-900/30 text-pink-700 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
