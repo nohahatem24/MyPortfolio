@@ -1023,7 +1023,10 @@ const ProjectCard = ({
             href={project.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            style={{
+              background: 'linear-gradient(to right, rgb(236, 72, 153), rgb(147, 51, 234))'
+            }}
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 hover:opacity-90 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
             aria-label={`Visit ${project.title} website`}
           >
             <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
@@ -1036,7 +1039,10 @@ const ProjectCard = ({
             href={project.apkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            style={{
+              background: 'linear-gradient(to right, rgb(34, 197, 94), rgb(5, 150, 105))'
+            }}
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 hover:opacity-90 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
             aria-label={`Download ${project.title} APK`}
           >
             <Smartphone className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
@@ -1049,7 +1055,10 @@ const ProjectCard = ({
             href={project.presentationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
+            style={{
+              background: 'linear-gradient(to right, rgb(59, 130, 246), rgb(8, 145, 178))'
+            }}
+            className="flex-1 min-w-fit flex items-center justify-center gap-1.5 hover:opacity-90 text-white px-3 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95"
             aria-label={`View ${project.title} presentation`}
           >
             <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
@@ -1058,7 +1067,7 @@ const ProjectCard = ({
           </a>
         )}
       </div>
-
+      
       {/* Fallback message when no links exist */}
       {!project.websiteUrl && !project.apkUrl && !project.presentationUrl && (
         <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
