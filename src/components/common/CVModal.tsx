@@ -67,7 +67,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
           {/* Content */}
           <div className="flex-1 overflow-hidden bg-gray-100 dark:bg-gray-900 p-0">
             <iframe
-              src="https://drive.google.com/file/d/1feGiNEND2VzFuSnbwRI0IH3WuI0LoRq-/view"
+              src="https://drive.google.com/file/d/1I1uYvqVjP23utC0RXXgHAbsjzLRtR8Uu/view"
               className="w-full h-full border-0"
               allow="autoplay"
               title="CV Document Viewer"
@@ -83,7 +83,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               Close
             </button>
             <a
-              href="https://drive.google.com/file/d/1feGiNEND2VzFuSnbwRI0IH3WuI0LoRq-/view"
+              href="https://drive.google.com/file/d/1I1uYvqVjP23utC0RXXgHAbsjzLRtR8Uu/view"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg hover:shadow-lg transition-all duration-300"
