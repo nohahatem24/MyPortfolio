@@ -85,7 +85,7 @@ export default function AboutSection() {
 
   const cvLinks = {
       general:
-      "https://drive.google.com/file/d/13fHlwSnopLC3VTMxLi0rk9UQhYiUPNov/view?usp=drive_open",
+      "https://drive.google.com/file/d/1feGiNEND2VzFuSnbwRI0IH3WuI0LoRq-/view",
   };
 
   const sectionVariants = {
