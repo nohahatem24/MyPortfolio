@@ -155,7 +155,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h4>
                   <a
-                    href="www.linkedin.com/in/noha-hatem-26286621a"
+                    href="https://www.linkedin.com/in/noha-hatem-26286621a/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-pink-600 dark:text-purple-400 hover:text-pink-700 dark:hover:text-purple-300 transition-colors"

@@ -95,7 +95,7 @@ export default function HeroSection() {
               <a href="https://github.com/nohahatem24" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                 <Github className="h-7 w-7" />
               </a>
-              <a href="www.linkedin.com/in/noha-hatem-26286621a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+              <a href="https://www.linkedin.com/in/noha-hatem-26286621a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
                 <Linkedin className="h-7 w-7" />
               </a>
               <a href="https://behance.net/nohahatem24" target="_blank" rel="noopener noreferrer" aria-label="Behance" className="transform-gpu text-gray-500 transition-all duration-200 hover:scale-125 hover:text-[#053eff] dark:text-gray-400 dark:hover:text-[#053eff]">
