@@ -116,7 +116,7 @@ export default function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-full bg-white/60 p-2 shadow-2xl backdrop-blur-lg dark:bg-gray-800/60">
                 <OptimizedImage
                   src={HeroImage}
-                  alt="Noha Hatem - Product Builder & Creative Technologist"
+                  alt="Noha Hatem - Product Designer & Creative Technologist"
                   className="h-full w-full rounded-full object-cover"
                   priority={true}
                   width={384}
@@ -129,7 +129,7 @@ export default function HeroSection() {
                   Software Engineer
                 </span>
                 <span className="absolute top-1/4 -right-4 lg:-right-10 animate-float [animation-delay:-2s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
-                  Product Builder
+                  Product Designer
                 </span>
                 <span className="absolute bottom-0 right-1/4 lg:-bottom-4 animate-float [animation-delay:-4s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
                   Creative Technologist
