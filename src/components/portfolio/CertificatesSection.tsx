@@ -45,7 +45,7 @@ const certificates: Certificate[] = [
   {
     title: "Embedded Systems",
     description:
-      "Professional, hands-on diploma focused on embedded systems design, development, and testing, recommended by national universities and industry leaders. The program combined theoretical knowledge with extensive practical labs and concluded with a graduation project evaluated by an industry committee.",
+      "Professional, hands-on diploma focused on embedded systems design based on AVR, development, and testing, recommended by national universities and industry leaders. The program combined theoretical knowledge with extensive practical labs and concluded with a graduation project evaluated by an industry committee.",
     issuer: "IMT Institute",
     issueDate: "September 11, 2024",
     duration: "7 months",
