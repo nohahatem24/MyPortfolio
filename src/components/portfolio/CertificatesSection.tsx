@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Award, ExternalLink, Calendar, Clock, X } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+
+import CertifivateHackerRankFrontEndReact from '../../assets/images/FrontendDeveloperReactCertificate.png'
 import CertificateAICE from '../../assets/images/CertificateAICE.png';
 import CertificateMCSA1 from '../../assets/images/CertificateMCSA1.png';
 import CertificateMCSA2 from '../../assets/images/CertificateMCSA2.png';
@@ -9,6 +11,7 @@ import CertificateEgyptAir from '../../assets/images/CertificateEgyptAirFlightSi
 import CertificateEmbedded from '../../assets/images/CertificateEmbedded.png';
 import CertificatePython from '../../assets/images/CertificatePython.png';
 import CetrificateAccounting from '../../assets/images/CertificateAccounting.png';
+
 
 interface Certificate {
   title: string;
@@ -21,6 +24,15 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Frontend Developer (React)",
+    description:
+    "Successfully passed the HackerRank certification test for Frontend Developer (React).",
+    issuer: "HackerRank",
+    issueDate: "December 21, 2025",
+    duration: "1 hour test",
+    images: [CertifivateHackerRankFrontEndReact],
+  },
   {
     title: "AICE | AI Career Essentials",
     description:
