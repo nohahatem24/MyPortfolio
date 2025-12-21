@@ -64,7 +64,7 @@ const certificates: Certificate[] = [
     title: "Python Programming",
     description:
       "Successfully completed a practical introduction to Python programming through MaharaTech, the e-learning platform of the Information Technology Institute (ITI). The course provided a solid foundation in core programming concepts, focusing on <strong>writing clean, efficient code and applying logical problem-solving techniques.",
-    issuer: "MaharaTech",
+    issuer: "MaharaTech | ITI",
     issueDate: "May 27, 2024",
     duration: "1 hour, 38 minutes | Self-paced",
     images: [CertificatePython],
