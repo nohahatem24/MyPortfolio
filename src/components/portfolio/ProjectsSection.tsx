@@ -666,7 +666,7 @@ export default function Projects() {
       ],
 
       image: HieroVisionProjectMainPic,
-      
+
       mobileGallery: [
         //Mobile Pictuers
         HieroVisionProjectMobile1,
@@ -919,7 +919,6 @@ export default function Projects() {
       ],
 
       results: [
-        
         "Launched a professional, responsive website that strengthened the therapist's digital presence.",
         "Designed and implemented a complete design system focused on empathy and clarity.",
         "Built a strong foundation for a full-stack mental health application.",
@@ -1232,7 +1231,8 @@ export default function Projects() {
         },
       ],
 
-      fullDescription: "LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children's progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.",
+      fullDescription:
+        "LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children's progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.",
       technologies: [
         "React.js",
         "Node.js",
@@ -1379,7 +1379,6 @@ export default function Projects() {
         "Implementing true ACID transactions without corruption",
         "Preventing race conditions in concurrent transfers",
         "Building secure authentication without external libraries",
-        
       ],
 
       results: [
@@ -1516,14 +1515,7 @@ const ProjectCard = ({
           }`}
           onLoad={() => setImageLoaded(true)}
         />
-        <div>
-                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">
-                  Project Overview
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {project.fullDescription}
-                </p>
-              </div>
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
           <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
@@ -1535,7 +1527,6 @@ const ProjectCard = ({
           <p className="text-white/80 text-sm lg:text-base line-clamp-2 mb-2">
             {project.description}
           </p>
-          
 
           {/* NEW: Show problem statement snippet */}
           <p className="text-white/60 text-xs italic line-clamp-2 mb-3">
@@ -1682,7 +1673,16 @@ const ProjectModal = ({
                 alt={project.title}
                 className="w-full rounded-lg shadow-md"
               />
-
+              {/* Project Overview - NEW SECTION */}
+              <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
+                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-3 flex items-center gap-2">
+                  <Layers className="h-5 w-5" />
+                  Project Overview
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {project.fullDescription}
+                </p>
+              </div>
               {/* Problem Statement */}
               <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-l-4 border-red-500">
                 <div className="flex items-start gap-3">
