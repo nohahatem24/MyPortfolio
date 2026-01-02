@@ -777,11 +777,9 @@ export default function Projects() {
         "A secure, empathetic platform for therapy booking and mental wellness tracking.",
 
       problemStatement:
-        "Mental health patients in Egypt struggle to find accessible, trustworthy therapy services. Most therapists lack online booking systems, forcing patients to make uncomfortable phone calls. No platform exists that's culturally appropriate for Arabic-speaking patients.",
-
+        "Dr. Basma, a licensed therapist in Egypt, faced multiple challenges: (1) Online therapy platforms like BetterHelp take 40-60% commission, significantly reducing her income. (2) These global platforms aren't tailored for Egyptian patients—language barriers, payment methods, and cultural context don't fit. (3) Her work was fragmented across multiple tools (WhatsApp for booking, Excel for tracking, Zoom for sessions). She needed one unified platform that she fully controls, designed specifically for her practice and Egyptian patients.",
       thinkingProcess:
-        "I started by interviewing Dr. Basma about her patients' pain points. Many felt anxious just trying to book an appointment. I realized the booking flow itself needed to be therapeutic—calm colors, clear language, no overwhelming forms. The key insight: reduce friction at every step. Auto-fill as much as possible, show progress clearly, and make cancellation easy (trust signal).",
-
+        "After interviewing Dr. Basma, I identified the real pain points: she was losing money to platform fees, patients struggled with English-only interfaces, and session time was wasted on logistical questions. The key insight: build a platform that's 100% hers—no middleman, bilingual by default, and integrated with MindTrack so patients can share mental health summaries before sessions. This way, the 50-minute session focuses on therapy, not catching up.",
       technicalDecisions: [
         {
           decision:
@@ -846,6 +844,8 @@ export default function Projects() {
         "RESTful API",
         "Supbase (Authentication & Database)",
         "Lovable.dev (Deployment)",
+        "Front-End Development (Production-Ready UI)",
+        "Partially Implemented Backend",
       ],
 
       image: DrBasmaMainPicture,
@@ -919,9 +919,10 @@ export default function Projects() {
       ],
 
       results: [
-        "Launched a professional, responsive website that strengthened the therapist's digital presence.",
-        "Designed and implemented a complete design system focused on empathy and clarity.",
-        "Built a strong foundation for a full-stack mental health application.",
+        "Launched a professional, fully-designed front-end with complete UI/UX",
+        "Integrated MindTrack wellness tool for patient self-tracking between sessions",
+        "Built bilingual (Arabic/English) interface tailored for Egyptian patients",
+        "Currently being used by Dr. Basma with plans for backend completion",
       ],
 
       measurableImpact: [
@@ -938,7 +939,7 @@ export default function Projects() {
       githubUrl: "https://github.com/nohahatem24/dr-basma-mentalcare.git",
 
       keyLearning:
-        "Security isn't just encryption—it's also UX. Patients need to *feel* safe, not just *be* safe. Clear privacy policies, visible security badges, and transparent data usage made a bigger difference than any backend optimization.",
+        "Building for a specific user (Dr. Basma) taught me that 'solving a real person's problem' beats 'building for everyone.' Generic platforms fail because they don't fit anyone perfectly. Also learned that sometimes the best MVP is a beautiful, complete front-end—backend can be finished later once the design is validated.",
     },
 
     // --- ProFinance Tracker ---
@@ -1064,11 +1065,9 @@ export default function Projects() {
         "A web app designed to bridge the gap between therapy sessions with mood tracking and CBT tools.",
 
       problemStatement:
-        "Therapy patients struggle to apply CBT/DBT techniques between sessions. Traditional mood journals are too rigid or require internet. Patients need a tool that works offline and adapts to their therapy homework.",
-
+        "As someone who personally needed CBT/DBT tools but found existing apps either too simplistic (just mood logging) or too clinical (felt like homework), I wanted to build something comprehensive yet approachable. Therapy patients need a single place for: mood tracking, trigger identification, gratitude journaling, CBT cognitive restructuring, DBT distress tolerance skills, goal setting, and relationship tracking. Most apps do one or two of these—none do all in a way that feels supportive, not overwhelming.",
       thinkingProcess:
-        "I interviewed 3 people in therapy and learned they forget to log moods because apps are too 'heavy'—require too many clicks. Key insight: make logging take <10 seconds. One tap to record mood, optional notes. Also realized offline-first is non-negotiable—people log during anxiety attacks, when they might not have WiFi.",
-
+        "I approached this as someone who would use this tool myself. I researched CBT/DBT deeply—not just surface-level definitions, but actual worksheets therapists use. Then I translated each technique into a digital format that's easier to use than paper. The key insight: make it feel like a supportive companion, not a clinical tool. Warm colors, encouraging language, and celebrate small wins (like 'You logged your mood 3 days in a row!').",
       technicalDecisions: [
         {
           decision: "Progressive Web App (PWA) instead of native mobile app",
@@ -1116,8 +1115,7 @@ export default function Projects() {
       ],
 
       fullDescription:
-        "MindTrack is an offline-first PWA that provides CBT/DBT tools between therapy sessions. Built with speed and simplicity as the primary design goals.",
-
+        "MindTrack is a comprehensive mental wellness companion that brings together CBT techniques, DBT skills, mood/trigger tracking, gratitude journaling, goal setting, and relationship insights—all in one place. Built from personal need and validated by my psychiatrist, who confirmed these tools would genuinely help patients between therapy sessions.",
       technologies: [
         "React.js",
         "PWA",
@@ -1136,23 +1134,28 @@ export default function Projects() {
       image: MindTrackMainPic,
 
       features: [
-        { title: "Structured CBT/DBT Exercises", icon: BrainCircuit },
-        { title: "Daily Mood & Thought Journaling", icon: Calendar },
+        { title: "Daily Mood & Trigger Tracking", icon: Calendar },
+        { title: "CBT Cognitive Restructuring Tools", icon: BrainCircuit },
+        { title: "DBT Distress Tolerance Skills", icon: ShieldCheck },
+        { title: "Gratitude & Reflection Journal", icon: BookOpenCheck },
         { title: "Goal Setting & Progress Tracking", icon: Target },
-        { title: "Safe & Private User Environment", icon: ShieldCheck },
+        { title: "Relationship Dynamics Tracker", icon: Users },
+        { title: "Safe & Private Environment", icon: Lock },
         { title: "Empathetic & Calming UI/UX", icon: Users },
       ],
 
       challenges: [
-        "Translating complex psychological concepts (CBT/DBT) into simple, actionable UI components.",
-        "Designing an interface that is calming and encouraging, not overwhelming, for users in distress.",
-        "Structuring the application to ensure user data privacy and security from the ground up.",
+        "Translating complex therapeutic concepts (CBT/DBT) into intuitive, non-clinical UI",
+        "Designing an interface that feels supportive and encouraging, not like 'homework'",
+        "Balancing comprehensiveness (many tools) with simplicity (not overwhelming)",
+        "Learning CBT/DBT deeply enough to build accurate, helpful tools",
       ],
 
       results: [
-        "Developed a strong, user-centric concept that demonstrates deep empathy and product thinking.",
-        "Designed a complete, high-fidelity prototype in Figma, ready for development.",
-        "Proved the ability to research and tackle a complex, meaningful problem domain.",
+        "Built comprehensive toolkit covering 7 therapeutic domains",
+        "Validated by psychiatrist as 'genuinely helpful for patients'",
+        "Designed complete UI/UX for all CBT/DBT techniques",
+        "Created from personal experience—solving a problem I personally faced",
       ],
 
       measurableImpact: [
@@ -1167,122 +1170,122 @@ export default function Projects() {
       githubUrl: "https://github.com/nohahatem24/mindtrack-companion",
 
       keyLearning:
-        "Offline-first is a mindset, not a feature. Every component needs to think: 'What if there's no internet right now?' Also learned that for mental health tools, removing friction is more important than adding features.",
+        "Building for yourself is the ultimate user research. I knew exactly what frustrated me about existing mental health apps because I lived it. Also learned that mental health tools need warmth and encouragement built into every interaction—clinical accuracy matters, but so does feeling supported.",
     },
 
     //--- LingoNest ---
     {
       title: "LingoNest",
-      category: "E-Learning Courses Platform",
+      category: "E-Learning Platform for English Teachers",
       description:
-        "An interactive website for English language courses, featuring course purchasing, progress tracking for kids, and gamified learning elements.",
+        "A comprehensive e-learning platform for two English teachers to manage courses, students, and parents—all in one place.",
 
       problemStatement:
-        "Language learners plateau because they lack speaking practice. Traditional courses teach grammar/vocabulary but don't provide conversation partners. Hiring tutors is expensive ($20-50/hour). Students need 24/7 practice but human tutors aren't scalable.",
+        "Two English teachers (my friends) were running their courses through fragmented tools: Zoom for live sessions, WhatsApp for communication, Excel for tracking progress, Google Drive for materials, and manual invoicing for payments. Parents couldn't monitor their kids' progress. Teachers couldn't easily assign homework or give feedback. Everything was scattered and inefficient.",
 
       thinkingProcess:
-        "I realized the core problem isn't course content (YouTube has free lessons)—it's practice. Students know the words but freeze when speaking. So I built an AI conversation partner that never judges, is available 24/7, and costs nothing per session. The key insight: make mistakes low-stakes. Remove the fear.",
+        "I realized they didn't need 'AI conversation practice'—they needed a unified platform to replace 5 different tools. The key insight: teachers need control over their classroom digitally, just like they have in person. So I built a platform where they can upload courses, host live sessions, assign quizzes, track attendance, communicate with parents, and manage everything from one dashboard.",
 
       technicalDecisions: [
         {
-          decision:
-            "Stream AI responses word-by-word instead of waiting for complete response",
+          decision: "Role-based dashboards (Teacher, Parent, Student)",
           reasoning:
-            "Conversation feels more natural when you see words appear as AI 'thinks'. Also reduces perceived latency—users see progress immediately. Mimics how humans speak (we don't wait to finish our thought before starting).",
+            "Each user type has different needs. Teachers need admin controls, parents need progress visibility, students need course access. Separate dashboards prevent overwhelming any user with irrelevant features.",
           tradeoff:
-            "More complex to implement (WebSockets + streaming API). But 'feels fast' > 'is fast'. Perception matters more than reality for UX.",
-          icon: Zap,
+            "More complex routing and authentication logic. But clarity > simplicity. Better to have 3 focused dashboards than 1 confusing one.",
+          icon: Users,
         },
         {
-          decision: "Voice input/output instead of just text chat",
+          decision: "Integrated quiz system with auto-grading",
           reasoning:
-            "Language learning is about speaking, not typing. Needed speech-to-text (Web Speech API) and text-to-speech. Also tracks pronunciation by comparing user audio to expected phonemes.",
+            "Teachers were manually grading quizzes on paper—time-consuming and error-prone. Auto-grading for multiple-choice/true-false saves hours per week. Also gives instant feedback to students.",
           tradeoff:
-            "Voice AI is less accurate than text. About 15% error rate. But speaking practice > perfect transcription. Added 'correct my pronunciation' button if AI misunderstands.",
-          icon: Languages,
+            "Can't auto-grade essay questions. But 80% of quizzes are objective questions, so this still saves massive time.",
+          icon: BookOpenCheck,
         },
         {
-          decision:
-            "Tiered pricing: Free AI practice, paid for structured courses",
+          decision: "Front-end first approach with mock data",
           reasoning:
-            "Hook users with free unlimited AI chats. Once they're engaged, upsell structured curriculum. Freemium model scales better than 'paywall everything'.",
+            "Teachers needed to see and test the UI before committing to backend development. Built complete front-end with realistic mock data so they could provide feedback early.",
           tradeoff:
-            "AI API costs money (~$0.02 per conversation). But free tier drives user acquisition. Plan was to convert 5% to paid—enough to cover API costs.",
-          icon: CreditCard,
+            "Currently not production-ready without backend. But early validation prevents building the wrong thing. Frontend completion proves the concept works.",
+          icon: Monitor,
         },
       ],
 
       problemsSolved: [
         {
           problem:
-            "AI conversations felt robotic and unnatural—'Hello, how may I assist you today?'",
+            "Parents had no visibility into their child's progress—only learned about issues during quarterly calls",
           approach:
-            "Engineered prompts to make AI speak casually. 'Hey! What's up? Want to practice ordering food in English?' Also added personality options (friendly tutor vs strict teacher vs peer). Used few-shot prompting with example dialogues.",
+            "Built parent dashboard showing real-time quiz scores, attendance, completed lessons, and teacher feedback. Parents can log in anytime to check progress.",
           outcome:
-            "User feedback: 'Feels like texting a friend.' Natural conversation > grammar correction mode.",
+            "Designed complete parent monitoring system. Teachers can now share progress instantly instead of scheduling calls.",
         },
         {
           problem:
-            "Students didn't know what to talk about—blank canvas paralysis",
+            "Teachers were spending 3+ hours per week on administrative tasks (tracking payments, attendance, sending reminders)",
           approach:
-            "Created 40+ scenario prompts: 'Job Interview Practice', 'Ordering at Restaurant', 'Making Small Talk'. Each has suggested phrases and vocabulary. Users can start conversations with one tap.",
+            "Automated attendance tracking (students mark present when they join), automated payment reminders, and batch communication tools. Teachers can message all parents at once.",
           outcome:
-            "90% of conversations now start from prompts. Scaffolding reduces anxiety.",
+            "Estimated 70% reduction in admin time once backend is live. UI is ready for these features.",
         },
       ],
 
       fullDescription:
-        "LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children's progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.",
+        "LingoNest is a complete e-learning platform designed specifically for two English teachers to consolidate their entire teaching workflow. It replaces scattered tools with one unified system for courses, live sessions, quizzes, progress tracking, and parent communication.",
+
       technologies: [
         "React.js",
-        "Node.js",
         "TailwindCSS",
-        "Sider Web App Builder",
-        "AI-Assisted Design",
-        "Canva",
         "JavaScript",
-        "Gamification Principles",
-        "User Authentication",
+        "Sider Web App Builder (Initial Scaffold)",
+        "Canva",
+        "Front-End Development",
+        "UI/UX Design",
+        "Role-Based Access Control (RBAC) Design",
       ],
 
       image: LingoNestMainPic,
 
       features: [
-        { title: "E-commerce for Courses", icon: CreditCard },
-        { title: "Parental Progress Tracking", icon: Users },
-        { title: "Gamified Learning (Quizzes & Badges)", icon: ShieldCheck },
-        { title: "Teacher-Student Communication", icon: Monitor },
         {
-          title: "Separate User Profiles (Parent, Child, Teacher)",
-          icon: Users2,
+          title: "Role-Based Dashboards (Teacher/Parent/Student)",
+          icon: Users,
         },
+        { title: "Course Management & Upload System", icon: BookOpenCheck },
+        { title: "Live Session Scheduling", icon: Calendar },
+        { title: "Interactive Quizzes with Auto-Grading", icon: Puzzle },
+        { title: "Parent Progress Monitoring", icon: BarChart },
+        { title: "Teacher-Student-Parent Messaging", icon: Monitor },
+        { title: "Gamification (Badges & Achievements)", icon: Award },
       ],
 
       challenges: [
-        "Making AI conversations feel natural and encouraging",
-        "Handling voice recognition errors gracefully",
-        "Building a sustainable pricing model around expensive AI API calls",
+        "Designing three distinct user experiences (teacher/parent/student) that feel cohesive",
+        "Balancing teacher control with student engagement features",
+        "Creating a system that's simple enough for non-technical users",
       ],
 
       results: [
-        "Achieved 90% conversation start rate from scenario prompts",
-        "Users report AI feels 'more patient than human tutors'",
-        "Built scalable freemium model with 5% conversion target",
+        "Complete UI/UX design for all three user roles",
+        "Validated concept with teachers—received enthusiastic approval",
+        "Built production-ready front-end awaiting backend integration",
       ],
 
       measurableImpact: [
-        "AI response streaming: <500ms time-to-first-word",
-        "Voice recognition accuracy: 85% (industry standard: 80%)",
-        "Conversation completion rate: 78% (vs 45% for text-only)",
+        "Designed 45+ unique screens across 3 user dashboards",
+        "Estimated 70% reduction in teachers' administrative time",
+        "Consolidated 5 fragmented tools into 1 platform",
       ],
 
       duration: "2 months",
-      teamSize: "Solo Project",
+      teamSize: "Solo Project (Clients: 2 English teachers)",
       websiteUrl: "https://lingonest-academy.vercel.app/",
       githubUrl: "https://github.com/nohahatem24/lingonest-academy",
 
       keyLearning:
-        "AI isn't replacing teachers—it's filling gaps teachers can't scale to. The real innovation wasn't the AI tech (OpenAI did that). It was identifying which education problem AI solves better than humans: infinite patience + 24/7 availability.",
+        "Building for specific users (two teachers) instead of 'all teachers' made design decisions 10x easier. When stuck, I just asked them: 'How do you do this now?' Their workarounds revealed what features actually mattered. Also learned that a complete, polished front-end is valuable even without backend—it proves the concept and gets stakeholder buy-in.",
     },
 
     //--- LiteFinance Bank Desktop Application ---
