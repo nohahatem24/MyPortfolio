@@ -1051,8 +1051,8 @@ export default function Projects() {
 
       duration: "5 Days (Intensive)",
       teamSize: "Solo Project",
-      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
-      websiteUrl: "https://gratitude-trigger-map.lovable.app/",
+      githubUrl: "https://github.com/nohahatem24/ProFinance-Tracker",
+      websiteUrl: "https://pro-finance-tracker.vercel.app/",
 
       keyLearning:
         "The best way to learn a framework isn't to read docs cover-to-cover—it's to build something challenging under time pressure. I learned more about Vue in 5 days of shipping than I would in weeks of tutorials.",
