@@ -556,25 +556,34 @@ export default function Projects() {
         "E2E Encryption",
         "Gottman Method Principles",
         "NVC Framework",
+        "Product Strategy",
+        "UX Research",
+        "Human-Centered Design",
+        "Conceptual AI",
+        "Figma",
       ],
 
       image: TheBridgeMainPic,
 
       features: [
-        { title: "Real-Time De-Escalation Suggestions", icon: BrainCircuit },
-        { title: "End-to-End Encrypted Conversations", icon: Lock },
-        { title: "Neutral AI (Never Takes Sides)", icon: HeartHandshake },
-        { title: "Auto-Delete After 24 Hours", icon: ShieldCheck },
+        { title: "AI-Powered Communication Coach", icon: BrainCircuit },
+        { title: "Guided Conflict Resolution", icon: HeartHandshake },
+        { title: "Empathy-Building Exercises", icon: Users2 },
+        { title: "Shared Emotional Journal", icon: Calendar },
+        { title: "Secure & Private by Design", icon: ShieldCheck },
       ],
 
       challenges: [
-        "Designing AI that helps without feeling judgmental",
-        "Preventing misuse (e.g., using app to 'prove' partner wrong)",
-        "Balancing helpful intervention with respecting user autonomy",
+        "Designing a system that feels deeply human and empathetic, not robotic or clinical.",
+        "Creating a user experience that builds trust and encourages vulnerability in moments of high emotional stress.",
+        "Conceptualizing an AI model that can understand emotional nuance and suggest constructive, rather than generic, feedback.",
       ],
 
       results: [
-        "Created complete UX flow with 32 screens in Figma",
+        "Designing a system that feels deeply human and empathetic, not robotic or clinical.",
+        "Creating a user experience that builds trust and encourages vulnerability in moments of high emotional stress.",
+        "Conceptualizing an AI model that can understand emotional nuance and suggest constructive, rather than generic, feedback.",
+        "Created complete UX flow with 32 screens",
         "Researched and applied Gottman Method + NVC frameworks",
         "Designed ethical guardrails to prevent toxic use cases",
       ],
@@ -904,12 +913,16 @@ export default function Projects() {
         "Designing a UI that conveys trust and safety for a highly sensitive topic",
         "Handling secure patient data with row-level security policies",
         "Balancing automation with therapist's need for patient screening",
+        "Building a UI that conveys trust, safety, and professionalism for a sensitive topic.",
+        "Structuring a scalable backend for future features like payments and secure messaging.",
+        "Ensuring the design was calming and accessible for users in distress.",
       ],
 
       results: [
-        "Launched to production with real patients in December 2024",
-        "Zero security incidents or data breaches",
-        "12% booking abandonment rate (industry average is 40%)",
+        
+        "Launched a professional, responsive website that strengthened the therapist's digital presence.",
+        "Designed and implemented a complete design system focused on empathy and clarity.",
+        "Built a strong foundation for a full-stack mental health application.",
       ],
 
       measurableImpact: [
@@ -924,16 +937,6 @@ export default function Projects() {
       websiteUrl:
         "https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37",
       githubUrl: "https://github.com/nohahatem24/dr-basma-mentalcare.git",
-
-      role: `
-        <strong class="block mb-2 ml-4">Full-Stack Developer & UX Designer</strong>
-        <ul class="list-disc ml-10 mb-4 text-justify">
-          <li>Conducted user research with therapist to identify patient pain points</li>
-          <li>Designed entire booking flow with focus on reducing patient anxiety</li>
-          <li>Architected secure backend with row-level security and real-time updates</li>
-          <li>Implemented bilingual support with culturally-sensitive Arabic translations</li>
-        </ul>
-      `,
 
       keyLearning:
         "Security isn't just encryption—it's also UX. Patients need to *feel* safe, not just *be* safe. Clear privacy policies, visible security badges, and transparent data usage made a bigger difference than any backend optimization.",
@@ -1001,30 +1004,42 @@ export default function Projects() {
         "ProFinance Tracker is a comprehensive SPA built from scratch using Vue.js 3, providing an intelligent dashboard for managing personal finances with real-time calculations and multi-format exports.",
 
       technologies: [
-        "Vue.js 3 (Composition API)",
+        "Vue.js 3",
         "Pinia",
         "TypeScript",
         "TailwindCSS",
         "Chart.js",
         "jsPDF",
+        "Chart.js",
+        "Supabase Auth",
+        "i18n",
       ],
 
       image: ProFinanceMainPic,
 
       features: [
-        { title: "Real-time Budget Calculations", icon: BarChart },
-        { title: "Multi-Format Export (PDF/Excel)", icon: ExternalLink },
-        { title: "RTL Arabic Support", icon: Languages },
+        { title: "Secure Authentication", icon: Lock },
+        { title: "Dynamic Transaction Management", icon: Layers },
+        { title: "Interactive Dashboard & Charts", icon: BarChart },
+        { title: "Multi-Format Report Export (PDF/Excel)", icon: ExternalLink },
+        { title: "Scalable Internationalization (i18n)", icon: Languages },
+        { title: "Modern Responsive UI with Dark Mode", icon: Monitor },
       ],
 
       challenges: [
         "Learning Vue 3's Composition API from scratch in days, not weeks",
         "Integrating Chart.js with Vue's reactivity system",
+        "Rapidly learning and implementing a new major framework (Vue.js) from scratch.",
+        "Managing complex application state with Pinia for real-time updates.",
+        "Implementing a robust, multi-format export system that supports dynamic localization (e.g., Arabic in PDFs).",
       ],
 
       results: [
         "Shipped production-ready app in 5 days",
-        "Built custom PDF export with full Arabic language support",
+        "Built custom PDF export with multiple languages support",
+        "Demonstrated the ability to master and build with a new technology stack in a very short time.",
+        "Created a production-ready, full-stack application with complex features.",
+        "Built a highly maintainable and scalable codebase using TypeScript and the Composition API.",
       ],
 
       measurableImpact: [
@@ -1037,14 +1052,6 @@ export default function Projects() {
       teamSize: "Solo Project",
       githubUrl: "https://github.com/nohahatem24/ProFinance-Tracker",
       websiteUrl: "https://pro-finance-tracker.vercel.app/login",
-
-      role: `
-        <strong class="block mb-2 ml-4">Full-Stack Developer</strong>
-        <ul class="list-disc ml-10 mb-4 text-justify">
-          <li>Architected entire application using Vue 3 Composition API</li>
-          <li>Engineered complex PDF/Excel export with full i18n support</li>
-        </ul>
-      `,
 
       keyLearning:
         "The best way to learn a framework isn't to read docs cover-to-cover—it's to build something challenging under time pressure. I learned more about Vue in 5 days of shipping than I would in weeks of tutorials.",
@@ -1120,27 +1127,33 @@ export default function Projects() {
         "TailwindCSS",
         "Framer Motion",
         "Claude API",
+        "TypeScript",
+        "Figma",
+        "Styled-Components",
+        "AI-Assisted Content",
+        "Lovable AI",
       ],
 
       image: MindTrackMainPic,
 
       features: [
-        { title: "10-Second Mood Logging", icon: Zap },
-        { title: "Offline-First Architecture", icon: Lock },
-        { title: "AI Thought Reframing (CBT)", icon: BrainCircuit },
-        { title: "Privacy-Focused (No Cloud Required)", icon: ShieldCheck },
+        { title: "Structured CBT/DBT Exercises", icon: BrainCircuit },
+        { title: "Daily Mood & Thought Journaling", icon: Calendar },
+        { title: "Goal Setting & Progress Tracking", icon: Target },
+        { title: "Safe & Private User Environment", icon: ShieldCheck },
+        { title: "Empathetic & Calming UI/UX", icon: Users },
       ],
 
       challenges: [
-        "Designing a flow simple enough for anxious users to complete",
-        "Handling offline/online sync without data loss",
-        "Making AI suggestions helpful without feeling 'preachy'",
+        "Translating complex psychological concepts (CBT/DBT) into simple, actionable UI components.",
+        "Designing an interface that is calming and encouraging, not overwhelming, for users in distress.",
+        "Structuring the application to ensure user data privacy and security from the ground up.",
       ],
 
       results: [
-        "61% user retention after 2 weeks (therapy apps average 30%)",
-        "Zero reported data loss incidents",
-        "PWA installed by 40% of users who tried it",
+        "Developed a strong, user-centric concept that demonstrates deep empathy and product thinking.",
+        "Designed a complete, high-fidelity prototype in Figma, ready for development.",
+        "Proved the ability to research and tackle a complex, meaningful problem domain.",
       ],
 
       measurableImpact: [
@@ -1161,9 +1174,9 @@ export default function Projects() {
     //--- LingoNest ---
     {
       title: "LingoNest",
-      category: "AI-Powered E-Learning Platform",
+      category: "E-Learning Courses Platform",
       description:
-        "An interactive platform for English language courses featuring AI-powered conversation practice.",
+        "An interactive website for English language courses, featuring course purchasing, progress tracking for kids, and gamified learning elements.",
 
       problemStatement:
         "Language learners plateau because they lack speaking practice. Traditional courses teach grammar/vocabulary but don't provide conversation partners. Hiring tutors is expensive ($20-50/hour). Students need 24/7 practice but human tutors aren't scalable.",
@@ -1219,25 +1232,30 @@ export default function Projects() {
         },
       ],
 
-      fullDescription:
-        "LingoNest combines traditional video courses with an AI conversation partner, creating a complete language learning ecosystem. Built to solve the 'practice gap' in online education.",
-
+      fullDescription: "LingoNest is a comprehensive e-learning platform built to provide engaging English courses for children. Developed using AI-assisted tools like Sider Web App Builder, the platform was then heavily customized to create a unique user experience. It allows parents to sign up, purchase courses, and monitor their children's progress, while kids can enjoy interactive quizzes, earn badges, and communicate directly with their teachers in a safe, moderated environment.",
       technologies: [
         "React.js",
         "Node.js",
-        "OpenAI API (GPT-4)",
-        "Web Speech API",
-        "Stripe",
         "TailwindCSS",
+        "Sider Web App Builder",
+        "AI-Assisted Design",
+        "Canva",
+        "JavaScript",
+        "Gamification Principles",
+        "User Authentication",
       ],
 
       image: LingoNestMainPic,
 
       features: [
-        { title: "AI Conversation Partner (24/7)", icon: BrainCircuit },
-        { title: "Voice Input/Output", icon: Languages },
-        { title: "40+ Practice Scenarios", icon: BookOpenCheck },
-        { title: "Progress Tracking Dashboard", icon: TrendingUp },
+        { title: "E-commerce for Courses", icon: CreditCard },
+        { title: "Parental Progress Tracking", icon: Users },
+        { title: "Gamified Learning (Quizzes & Badges)", icon: ShieldCheck },
+        { title: "Teacher-Student Communication", icon: Monitor },
+        {
+          title: "Separate User Profiles (Parent, Child, Teacher)",
+          icon: Users2,
+        },
       ],
 
       challenges: [
@@ -1336,21 +1354,32 @@ export default function Projects() {
         "BCrypt",
         "JDBC",
         "OOP Design Patterns",
+        "Java Swing",
+        "NetBeans IDE",
       ],
 
       image: LiteFinanceProjectMainPic,
 
       features: [
-        { title: "ACID-Compliant Transactions", icon: Lock },
-        { title: "Encrypted Password Storage", icon: ShieldCheck },
-        { title: "Double-Entry Bookkeeping", icon: BarChart },
-        { title: "Comprehensive Audit Logging", icon: Settings },
+        { title: "Secure User Authentication", icon: Lock },
+        { title: "Interactive Dashboard", icon: BarChart },
+        { title: "Multi-Account Support", icon: Layers },
+        { title: "Transaction History Tracking", icon: Calendar },
+        { title: "Real-time Money Transfer", icon: ArrowRight },
+        { title: "Digital Account Card Display", icon: CreditCard },
+        { title: "Branch Locator", icon: MapPin },
+        { title: "User Profile & Settings", icon: Settings },
       ],
 
       challenges: [
+        "Designing a clean and professional UI using the limitations of Java Swing.",
+        "Managing application state and data flow within a desktop environment.",
+        "Ensuring usability and security in a finance-focused application.",
+        "Coordinating teamwork and distributing tasks across a 3-person team.",
         "Implementing true ACID transactions without corruption",
         "Preventing race conditions in concurrent transfers",
         "Building secure authentication without external libraries",
+        
       ],
 
       results: [
@@ -1368,16 +1397,6 @@ export default function Projects() {
       duration: "3 weeks",
       teamSize: "3 people (I led architecture + security)",
       githubUrl: "https://github.com/nohahatem24/litefinance-bank",
-
-      role: `
-        <strong class="block mb-2 ml-4">Lead Developer - Architecture & Security</strong>
-        <ul class="list-disc ml-10 mb-4 text-justify">
-          <li>Designed database schema with transaction isolation and locking strategy</li>
-          <li>Implemented BCrypt password hashing and secure authentication flow</li>
-          <li>Built comprehensive logging system with sensitive data sanitization</li>
-          <li>Coordinated with team to ensure consistent OOP design patterns</li>
-        </ul>
-      `,
 
       keyLearning:
         "Building financial software taught me that 'defensive programming' isn't paranoia—it's professionalism. Assume every function receives malicious input. Assume logs will be leaked. Designing for correctness and security from day one is non-negotiable when real money is involved.",
@@ -1497,6 +1516,14 @@ const ProjectCard = ({
           }`}
           onLoad={() => setImageLoaded(true)}
         />
+        <div>
+                <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-2">
+                  Project Overview
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {project.fullDescription}
+                </p>
+              </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
           <span className="mb-2 inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md w-fit">
