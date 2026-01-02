@@ -763,7 +763,8 @@ export default function Projects() {
       apkUrl:
         "https://drive.google.com/file/d/1FfX8CG-apIgtesMyiNCtTQip9AznZ4RY/view",
       presentationUrl:
-        "https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view",
+        "https://www.canva.com/design/DAGxEkwj3qw/i45eLbOtjaOb9u5lPhJtPg/view?utm_content=DAGxEkwj3qw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcdfea1da54",
+
 
       keyLearning:
         "Building for two opposite audiences taught me that 'one size fits all' rarely works. Also learned that ML accuracy numbers mean nothing without understanding real-world failure modes.",
@@ -1050,8 +1051,8 @@ export default function Projects() {
 
       duration: "5 Days (Intensive)",
       teamSize: "Solo Project",
-      githubUrl: "https://github.com/nohahatem24/ProFinance-Tracker",
-      websiteUrl: "https://pro-finance-tracker.vercel.app/login",
+      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
+      websiteUrl: "https://gratitude-trigger-map.lovable.app/",
 
       keyLearning:
         "The best way to learn a framework isn't to read docs cover-to-cover—it's to build something challenging under time pressure. I learned more about Vue in 5 days of shipping than I would in weeks of tutorials.",
@@ -1166,8 +1167,8 @@ export default function Projects() {
 
       duration: "1 month",
       teamSize: "Solo Project",
-      websiteUrl: "https://mindtrack-companion.vercel.app/",
-      githubUrl: "https://github.com/nohahatem24/mindtrack-companion",
+      websiteUrl: "https://mind-track-website.vercel.app/",
+      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
 
       keyLearning:
         "Building for yourself is the ultimate user research. I knew exactly what frustrated me about existing mental health apps because I lived it. Also learned that mental health tools need warmth and encouragement built into every interaction—clinical accuracy matters, but so does feeling supported.",
@@ -1281,8 +1282,8 @@ export default function Projects() {
 
       duration: "2 months",
       teamSize: "Solo Project (Clients: 2 English teachers)",
-      websiteUrl: "https://lingonest-academy.vercel.app/",
-      githubUrl: "https://github.com/nohahatem24/lingonest-academy",
+      githubUrl: "https://github.com/nohahatem24/lingotree/tree/main",
+      websiteUrl: "https://lingotree.vercel.app/",
 
       keyLearning:
         "Building for specific users (two teachers) instead of 'all teachers' made design decisions 10x easier. When stuck, I just asked them: 'How do you do this now?' Their workarounds revealed what features actually mattered. Also learned that a complete, polished front-end is valuable even without backend—it proves the concept and gets stakeholder buy-in.",
