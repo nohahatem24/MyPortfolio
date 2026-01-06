@@ -13,7 +13,7 @@ import {
   FileText, Palette, Code, Wrench, PenTool, Sparkles, GitBranch, Users, Map,
 } from "lucide-react";
 import {
-  SiFigma, SiFlutter, SiFirebase, SiGithub, SiAdobephotoshop, SiAdobeillustrator, SiCanva, SiOpenai, SiDart, SiHtml5, SiCss3, SiJavascript, SiReact,
+  SiFigma, SiFlutter, SiFirebase, SiGithub, SiAdobephotoshop, SiAdobeillustrator, SiCanva, SiOpenai, SiDart, SiHtml5, SiCss3, SiJavascript, SiReact, SiVite, SiTypescript, SiTailwindcss, SiAstro, SiVuedotjs,
 } from "react-icons/si";
 
 export default function AboutSection() {
@@ -67,8 +67,14 @@ export default function AboutSection() {
         { name: "Flutter", icon: SiFlutter },
         { name: "Dart", icon: SiDart },
         { name: "HTML/CSS", icon: SiHtml5 },
-        { name: "JavaScript", icon: SiJavascript },
+        { name: "CSS3", icon: SiCss3 },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "TypeScript", icon: SiTypescript },
         { name: "React", icon: SiReact },
+        { name: "Vite", icon: SiVite },
+        { name: "Astro", icon: SiAstro },
+        { name: "Vue.js", icon: SiVuedotjs },
+        { name: "JavaScript", icon: SiJavascript },
       ],
     },
     {
