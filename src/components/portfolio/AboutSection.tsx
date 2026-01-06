@@ -117,7 +117,7 @@ export default function AboutSection() {
             About Me
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-            A Product Designer with an Engineer's mind and an Artist's heart.
+            A Product Builder with an Engineer's mind and an Artist's heart.
           </p>
           <div className="w-28 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
@@ -147,7 +147,7 @@ export default function AboutSection() {
                 </div>
                 <div className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                   <p className="mb-4">
-                    I'm a Software Engineer with the heart of a Product
+                    I'm a Software Developer with the heart of a Product
                     Designer. My passion is crafting digital experiences that
                     are not only functional and beautiful but also deeply human
                     and impactful.

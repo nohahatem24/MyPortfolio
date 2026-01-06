@@ -63,7 +63,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-700 dark:text-gray-300 lg:mx-0"
             >
-              As a <span className="font-semibold text-gray-800 dark:text-white">Software Engineer</span>, <span className="font-semibold text-gray-800 dark:text-white">Product Builder</span>, and <span className="font-semibold text-gray-800 dark:text-white">Creative Technologist</span>, I transform complex human needs into beautiful and impactful digital experiences. My work is where engineering precision meets artistic soul.
+              As a <span className="font-semibold text-gray-800 dark:text-white">Software Developer</span>, <span className="font-semibold text-gray-800 dark:text-white">Product Builder</span>, and <span className="font-semibold text-gray-800 dark:text-white">Creative Technologist</span>, I transform complex human needs into beautiful and impactful digital experiences. My work is where engineering precision meets artistic soul.
             </motion.p>
 
             <motion.div 
@@ -116,7 +116,7 @@ export default function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-full bg-white/60 p-2 shadow-2xl backdrop-blur-lg dark:bg-gray-800/60">
                 <OptimizedImage
                   src={HeroImage}
-                  alt="Noha Hatem - Product Designer & Creative Technologist"
+                  alt="Noha Hatem - Product Builder & Creative Technologist"
                   className="h-full w-full rounded-full object-cover"
                   priority={true}
                   width={384}
@@ -126,10 +126,10 @@ export default function HeroSection() {
               
               <div className="absolute inset-0">
                 <span className="absolute top-0 left-0 lg:-top-4 lg:left-10 animate-float rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
-                  Software Engineer
+                  Software Developer
                 </span>
                 <span className="absolute top-1/4 -right-4 lg:-right-10 animate-float [animation-delay:-2s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
-                  Product Designer
+                  Product Builder
                 </span>
                 <span className="absolute bottom-0 right-1/4 lg:-bottom-4 animate-float [animation-delay:-4s] rounded-full bg-white/70 px-3 py-1 text-xs lg:px-4 lg:py-2 lg:text-sm font-medium text-pink-600 shadow-lg backdrop-blur-md dark:bg-white/10 dark:text-purple-300">
                   Creative Technologist
