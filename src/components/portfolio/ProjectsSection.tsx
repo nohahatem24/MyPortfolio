@@ -240,6 +240,122 @@ export default function Projects() {
   const { ref, isVisible } = useScrollAnimation();
 
   const projects: Project[] = [
+    // --- MindTrack ---
+    {
+      title: "MindTrack | CBT/DBT Companion",
+      category: "Mental Health & PWA Development",
+      description:
+        "A web app designed to bridge the gap between therapy sessions with mood tracking and CBT tools.",
+
+      problemStatement:
+        "As someone who personally needed CBT/DBT tools but found existing apps either too simplistic (just mood logging) or too clinical (felt like homework), I wanted to build something comprehensive yet approachable. Therapy patients need a single place for: mood tracking, trigger identification, gratitude journaling, CBT cognitive restructuring, DBT distress tolerance skills, goal setting, and relationship tracking. Most apps do one or two of these—none do all in a way that feels supportive, not overwhelming.",
+      thinkingProcess:
+        "I approached this as someone who would use this tool myself. I researched CBT/DBT deeply—not just surface-level definitions, but actual worksheets therapists use. Then I translated each technique into a digital format that's easier to use than paper. The key insight: make it feel like a supportive companion, not a clinical tool. Warm colors, encouraging language, and celebrate small wins (like 'You logged your mood 3 days in a row!').",
+      technicalDecisions: [
+        {
+          decision: "Progressive Web App (PWA) instead of native mobile app",
+          reasoning:
+            "PWA installs without app store friction and works offline. Therapy patients are often non-technical—removing download barriers was critical. Also PWA means one codebase for mobile + desktop.",
+          tradeoff:
+            "Can't access some native APIs (push notifications from lock screen). But for mood logging, web APIs (IndexedDB, Service Worker) are enough.",
+          icon: Smartphone,
+        },
+        {
+          decision: "IndexedDB for local storage instead of localStorage",
+          reasoning:
+            "localStorage has 5-10MB limit—not enough for months of mood logs + journal entries. IndexedDB supports 50MB+ and allows complex queries (e.g., 'show all anxious moods this month').",
+          tradeoff:
+            "IndexedDB API is more complex than localStorage. But I built a wrapper class to simplify it. Worth the complexity for scalability.",
+          icon: Lock,
+        },
+        {
+          decision: "AI-powered thought reframing suggestions",
+          reasoning:
+            "CBT teaches 'cognitive restructuring'—challenging negative thoughts. I integrated Claude API to suggest reframes based on user's journal entry. E.g., 'I'm worthless' → 'What evidence supports/contradicts this?'",
+          tradeoff:
+            "Requires internet for AI suggestions. But core mood logging still works offline. Positioned AI as 'bonus feature', not core functionality.",
+          icon: BrainCircuit,
+        },
+      ],
+
+      problemsSolved: [
+        {
+          problem:
+            "Users were abandoning mood logging because form had 7 fields—felt like homework",
+          approach:
+            "Redesigned to progressive disclosure: start with just emoji mood selector (1 tap). Then ask 'Want to add notes?' Only show intensity/triggers if they click 'More options'. 80% of logs are now just emoji + timestamp.",
+          outcome:
+            "User retention increased from 23% to 61% after 2 weeks. Simplicity beat comprehensiveness.",
+        },
+        {
+          problem:
+            "Sync conflicts when user logs mood offline, then edits same entry on different device",
+          approach:
+            "Implemented 'last-write-wins' with conflict detection. If conflict detected, show both versions side-by-side and let user merge. Added timestamps to every field change.",
+          outcome:
+            "Users reported zero data loss. Conflict UI only appeared in 2% of syncs—most people use one device.",
+        },
+      ],
+
+      fullDescription:
+        "MindTrack is a comprehensive mental wellness companion that brings together CBT techniques, DBT skills, mood/trigger tracking, gratitude journaling, goal setting, and relationship insights—all in one place. Built from personal need and validated by my psychiatrist, who confirmed these tools would genuinely help patients between therapy sessions.",
+      technologies: [
+        "React.js",
+        "PWA",
+        "IndexedDB",
+        "Service Workers",
+        "TailwindCSS",
+        "Framer Motion",
+        "Claude API",
+        "TypeScript",
+        "Figma",
+        "Styled-Components",
+        "AI-Assisted Content",
+        "Lovable AI",
+      ],
+
+      image: MindTrackMainPic,
+
+      features: [
+        { title: "Daily Mood & Trigger Tracking", icon: Calendar },
+        { title: "CBT Cognitive Restructuring Tools", icon: BrainCircuit },
+        { title: "DBT Distress Tolerance Skills", icon: ShieldCheck },
+        { title: "Gratitude & Reflection Journal", icon: BookOpenCheck },
+        { title: "Goal Setting & Progress Tracking", icon: Target },
+        { title: "Relationship Dynamics Tracker", icon: Users },
+        { title: "Safe & Private Environment", icon: Lock },
+        { title: "Empathetic & Calming UI/UX", icon: Users },
+      ],
+
+      challenges: [
+        "Translating complex therapeutic concepts (CBT/DBT) into intuitive, non-clinical UI",
+        "Designing an interface that feels supportive and encouraging, not like 'homework'",
+        "Balancing comprehensiveness (many tools) with simplicity (not overwhelming)",
+        "Learning CBT/DBT deeply enough to build accurate, helpful tools",
+      ],
+
+      results: [
+        "Built comprehensive toolkit covering 7 therapeutic domains",
+        "Validated by psychiatrist as 'genuinely helpful for patients'",
+        "Designed complete UI/UX for all CBT/DBT techniques",
+        "Created from personal experience—solving a problem I personally faced",
+      ],
+
+      measurableImpact: [
+        "User retention: 23% → 61% (165% improvement)",
+        "Average logging time: 47s → 8s (83% faster)",
+        "Conflict rate: 2% of all syncs (98% smooth sync)",
+      ],
+
+      duration: "1 month",
+      teamSize: "Solo Project",
+      websiteUrl: "https://mind-track-website.vercel.app/",
+      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
+
+      keyLearning:
+        "Building for yourself is the ultimate user research. I knew exactly what frustrated me about existing mental health apps because I lived it. Also learned that mental health tools need warmth and encouragement built into every interaction—clinical accuracy matters, but so does feeling supported.",
+    },
+
     // --- LoCarb Restaurant - Digital Interface Redesign (NEW PROJECT) ---
     {
       title: "LoCarb Website Redesign",
@@ -603,7 +719,7 @@ export default function Projects() {
 
     //--- HieroVision Project ---
     {
-      title: "HieroVision",
+      title: "HieroVision - Graduation Project",
       category: "AI-Powered Ed-Tech Platform",
       description:
         "An immersive mobile & web app bringing ancient Egyptian culture to life with AI-driven translation.",
@@ -936,7 +1052,7 @@ export default function Projects() {
       duration: "2 months",
       teamSize: "Solo Project (Client: Dr. Basma)",
       websiteUrl:
-        "https://lovable.dev/projects/92a1247e-da3a-45be-a0e8-3a3098f0bf37",
+        "https://dr-basma-mentalcare.vercel.app/",
       githubUrl: "https://github.com/nohahatem24/dr-basma-mentalcare.git",
 
       keyLearning:
@@ -1058,121 +1174,7 @@ export default function Projects() {
         "The best way to learn a framework isn't to read docs cover-to-cover—it's to build something challenging under time pressure. I learned more about Vue in 5 days of shipping than I would in weeks of tutorials.",
     },
 
-    // --- MindTrack ---
-    {
-      title: "MindTrack | CBT/DBT Companion",
-      category: "Mental Health & PWA Development",
-      description:
-        "A web app designed to bridge the gap between therapy sessions with mood tracking and CBT tools.",
-
-      problemStatement:
-        "As someone who personally needed CBT/DBT tools but found existing apps either too simplistic (just mood logging) or too clinical (felt like homework), I wanted to build something comprehensive yet approachable. Therapy patients need a single place for: mood tracking, trigger identification, gratitude journaling, CBT cognitive restructuring, DBT distress tolerance skills, goal setting, and relationship tracking. Most apps do one or two of these—none do all in a way that feels supportive, not overwhelming.",
-      thinkingProcess:
-        "I approached this as someone who would use this tool myself. I researched CBT/DBT deeply—not just surface-level definitions, but actual worksheets therapists use. Then I translated each technique into a digital format that's easier to use than paper. The key insight: make it feel like a supportive companion, not a clinical tool. Warm colors, encouraging language, and celebrate small wins (like 'You logged your mood 3 days in a row!').",
-      technicalDecisions: [
-        {
-          decision: "Progressive Web App (PWA) instead of native mobile app",
-          reasoning:
-            "PWA installs without app store friction and works offline. Therapy patients are often non-technical—removing download barriers was critical. Also PWA means one codebase for mobile + desktop.",
-          tradeoff:
-            "Can't access some native APIs (push notifications from lock screen). But for mood logging, web APIs (IndexedDB, Service Worker) are enough.",
-          icon: Smartphone,
-        },
-        {
-          decision: "IndexedDB for local storage instead of localStorage",
-          reasoning:
-            "localStorage has 5-10MB limit—not enough for months of mood logs + journal entries. IndexedDB supports 50MB+ and allows complex queries (e.g., 'show all anxious moods this month').",
-          tradeoff:
-            "IndexedDB API is more complex than localStorage. But I built a wrapper class to simplify it. Worth the complexity for scalability.",
-          icon: Lock,
-        },
-        {
-          decision: "AI-powered thought reframing suggestions",
-          reasoning:
-            "CBT teaches 'cognitive restructuring'—challenging negative thoughts. I integrated Claude API to suggest reframes based on user's journal entry. E.g., 'I'm worthless' → 'What evidence supports/contradicts this?'",
-          tradeoff:
-            "Requires internet for AI suggestions. But core mood logging still works offline. Positioned AI as 'bonus feature', not core functionality.",
-          icon: BrainCircuit,
-        },
-      ],
-
-      problemsSolved: [
-        {
-          problem:
-            "Users were abandoning mood logging because form had 7 fields—felt like homework",
-          approach:
-            "Redesigned to progressive disclosure: start with just emoji mood selector (1 tap). Then ask 'Want to add notes?' Only show intensity/triggers if they click 'More options'. 80% of logs are now just emoji + timestamp.",
-          outcome:
-            "User retention increased from 23% to 61% after 2 weeks. Simplicity beat comprehensiveness.",
-        },
-        {
-          problem:
-            "Sync conflicts when user logs mood offline, then edits same entry on different device",
-          approach:
-            "Implemented 'last-write-wins' with conflict detection. If conflict detected, show both versions side-by-side and let user merge. Added timestamps to every field change.",
-          outcome:
-            "Users reported zero data loss. Conflict UI only appeared in 2% of syncs—most people use one device.",
-        },
-      ],
-
-      fullDescription:
-        "MindTrack is a comprehensive mental wellness companion that brings together CBT techniques, DBT skills, mood/trigger tracking, gratitude journaling, goal setting, and relationship insights—all in one place. Built from personal need and validated by my psychiatrist, who confirmed these tools would genuinely help patients between therapy sessions.",
-      technologies: [
-        "React.js",
-        "PWA",
-        "IndexedDB",
-        "Service Workers",
-        "TailwindCSS",
-        "Framer Motion",
-        "Claude API",
-        "TypeScript",
-        "Figma",
-        "Styled-Components",
-        "AI-Assisted Content",
-        "Lovable AI",
-      ],
-
-      image: MindTrackMainPic,
-
-      features: [
-        { title: "Daily Mood & Trigger Tracking", icon: Calendar },
-        { title: "CBT Cognitive Restructuring Tools", icon: BrainCircuit },
-        { title: "DBT Distress Tolerance Skills", icon: ShieldCheck },
-        { title: "Gratitude & Reflection Journal", icon: BookOpenCheck },
-        { title: "Goal Setting & Progress Tracking", icon: Target },
-        { title: "Relationship Dynamics Tracker", icon: Users },
-        { title: "Safe & Private Environment", icon: Lock },
-        { title: "Empathetic & Calming UI/UX", icon: Users },
-      ],
-
-      challenges: [
-        "Translating complex therapeutic concepts (CBT/DBT) into intuitive, non-clinical UI",
-        "Designing an interface that feels supportive and encouraging, not like 'homework'",
-        "Balancing comprehensiveness (many tools) with simplicity (not overwhelming)",
-        "Learning CBT/DBT deeply enough to build accurate, helpful tools",
-      ],
-
-      results: [
-        "Built comprehensive toolkit covering 7 therapeutic domains",
-        "Validated by psychiatrist as 'genuinely helpful for patients'",
-        "Designed complete UI/UX for all CBT/DBT techniques",
-        "Created from personal experience—solving a problem I personally faced",
-      ],
-
-      measurableImpact: [
-        "User retention: 23% → 61% (165% improvement)",
-        "Average logging time: 47s → 8s (83% faster)",
-        "Conflict rate: 2% of all syncs (98% smooth sync)",
-      ],
-
-      duration: "1 month",
-      teamSize: "Solo Project",
-      websiteUrl: "https://mind-track-website.vercel.app/",
-      githubUrl: "https://github.com/nohahatem24/Mind-Track-Website",
-
-      keyLearning:
-        "Building for yourself is the ultimate user research. I knew exactly what frustrated me about existing mental health apps because I lived it. Also learned that mental health tools need warmth and encouragement built into every interaction—clinical accuracy matters, but so does feeling supported.",
-    },
+    
 
     //--- LingoNest ---
     {
