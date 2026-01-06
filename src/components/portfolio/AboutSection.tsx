@@ -42,6 +42,23 @@ export default function AboutSection() {
     tools: { name: string; icon: React.ElementType; }[];
   }[] = [
     {
+      category: "Development",
+      icon: Code,
+      tools: [
+        { name: "Flutter", icon: SiFlutter },
+        { name: "Dart", icon: SiDart },
+        { name: "HTML/CSS", icon: SiHtml5 },
+        { name: "CSS3", icon: SiCss3 },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "React", icon: SiReact },
+        { name: "Vite", icon: SiVite },
+        { name: "Astro", icon: SiAstro },
+        { name: "Vue.js", icon: SiVuedotjs },
+        { name: "JavaScript", icon: SiJavascript },
+      ],
+    },
+    {
       category: "Product Design",
       icon: PenTool,
       tools: [
@@ -58,23 +75,6 @@ export default function AboutSection() {
         { name: "Illustrator", icon: SiAdobeillustrator },
         { name: "Canva", icon: SiCanva },
         { name: "AI Design", icon: Sparkles },
-      ],
-    },
-    {
-      category: "Development",
-      icon: Code,
-      tools: [
-        { name: "Flutter", icon: SiFlutter },
-        { name: "Dart", icon: SiDart },
-        { name: "HTML/CSS", icon: SiHtml5 },
-        { name: "CSS3", icon: SiCss3 },
-        { name: "Tailwind CSS", icon: SiTailwindcss },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "React", icon: SiReact },
-        { name: "Vite", icon: SiVite },
-        { name: "Astro", icon: SiAstro },
-        { name: "Vue.js", icon: SiVuedotjs },
-        { name: "JavaScript", icon: SiJavascript },
       ],
     },
     {
