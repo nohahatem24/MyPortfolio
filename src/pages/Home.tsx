@@ -22,10 +22,9 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <EducationSection />
-        
         <ProjectsSection />
-        <ArtSection />
         <CertificatesSection />
+        <ArtSection />
         <ContactSection />
       </main>
     </div>

@@ -20,8 +20,8 @@ export default function Navigation() {
     { id: 'about', label: 'About' },
     { id: 'education', label: 'Education' },
     { id: 'projects', label: 'Projects' },
-    { id: 'art', label: 'Art' },
     { id: 'certificates', label: 'Certificates' },
+    { id: 'art', label: 'Art' },
     { id: 'contact', label: 'Contact' }
   ];
 
